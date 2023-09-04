@@ -1,0 +1,14 @@
+pickType=0
+pickRatio=0.5
+pickLimit=1200
+blurContribute=0.5
+eyeContribute=0.5
+targetPath=images\*
+resultPath=result
+
+**pickType=0 -> Limit the pick by pickLimit with margin of error (+-5%)**
+**pickType=1 -> Pick with a constant ratio of pickRatio**
+
+**The sum of blurContribute and eyeContribute must be 1**
+
+**Do not change userPreferences while classifier is working**
