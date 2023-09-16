@@ -6,13 +6,13 @@ if(os.path.isfile("extraction") == True):
     read = open("extraction", "r")
     line = read.readlines()
     read.close()
-    print("Loaded Successfully :)")
+    print("<Classifier>Loaded Successfully :)")
 else:
-    print("Cannot find file :(")
+    print("<Classifier>Cannot find file :(")
 
-print(str(len(line)) + " of photoes are going to be processed")
+print("<Classifier>" + str(len(line)) + " of photoes are going to be processed")
 
-file = open("classification", "a")
+file = open("classification", "w")
 curGroup = '0'
 groups = []
 maxVar=0
@@ -40,7 +40,7 @@ for i in range(0, len(line)):
     else:
         #print("G:%s, MC:%s, maxV:%f, maxE:%f"%(curGroup, memCount, maxVar, maxEar))
         for j in range(0, len(groups)):
-            print(groups[j])
+            #print(groups[j])
             data1 = groups[j].split(',')
             group1 = data1[0]
             path1 = data1[1]
@@ -64,7 +64,7 @@ for i in range(0, len(line)):
 
 #print("G:%s, MC:%s, maxV:%f, maxE:%f"%(curGroup, memCount, maxVar, maxEar))
 for j in range(0, len(groups)):
-    print(groups[j])
+    #print(groups[j])
     data1 = groups[j].split(',')
     group1 = data1[0]
     path1 = data1[1]

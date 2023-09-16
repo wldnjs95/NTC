@@ -6,13 +6,13 @@ if(os.path.isfile("classification") == True):
     read = open("classification", "r")
     line = read.readlines()
     read.close()
-    print("Loaded Successfully :)")
+    print("<Remover>Loaded Successfully :)")
 else:
-    print("Cannot find file :(")
+    print("<Remover>Cannot find file :(")
 
-print(str(len(line)) + " of photoes are going to be processed")
+print("<Remover>" + str(len(line)) + " of photoes are going to be processed")
 
-file = open("elimination", "a")
+file = open("elimination", "w")
 curGroup = '0'
 groups = []
 
@@ -43,7 +43,6 @@ for i in range(0, len(line)):
         if(t < 1):
             t = 1
         for k in range(0, t):
-            print(sortGroup[k])
             group1 = sortGroup[k][0]
             path1 = sortGroup[k][1]
             scr1 = sortGroup[k][2]

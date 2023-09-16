@@ -31,11 +31,17 @@ if(len(trash) > 0):
     input()
     exit()
 
+print("Extractor running...")
 import Extractor
+print("Classifier running...")
 import Classifier
+print("Remover running...")
 import Remover
+print("Remover1 running...")
 import Remover1
+print("Remover2 running...")
 import Remover2
+print("Picker running...")
 import Picker
 
 os.remove("extraction")
@@ -43,3 +49,4 @@ os.remove("elimination")
 os.remove("elimination1")
 os.remove("elimination2")
 os.remove("classification")
+

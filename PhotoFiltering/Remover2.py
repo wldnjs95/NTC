@@ -38,11 +38,11 @@ if(os.path.isfile("elimination1") == True):
     read = open("elimination1", "r")
     line = read.readlines()
     read.close()
-    print("Loaded Successfully :)")
+    print("<Remover2>Loaded Successfully :)")
 else:
-    print("Cannot find file :(")
+    print("<Remover2>Cannot find file :(")
     
-file = open("elimination2", "a")
+file = open("elimination2", "w")
 
 if(len(line)>=10):
     gl = int(line[len(line)-1].split(',')[0]) + 1
