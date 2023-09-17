@@ -3,7 +3,7 @@ pickRatio=0.5
 pickLimit=1200
 blurContribute=0.5
 eyeContribute=0.5
-targetPath=images\*
+targetPath=images\*.jpg
 resultPath=result
 
 **pickType=0 -> Limit the pick by pickLimit with margin of error (+-5%)**
