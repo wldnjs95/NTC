@@ -3,14 +3,14 @@ import time
 import datetime
 import glob
 import shutil
+from pathlib import Path
+
+RAW_FORMAT = "raf crw cr2 cr3 srw tif k25 kdc dcs dcr drf mrw nef nrw orf dng ptx pef arw srf sr2 x3f erf mef mos rw2 cap iiq r3d fff pxn bay"
 
 def Log(txt):
     file.write("[" + str(time.time()) + "]:" + txt + '\n')
     file.flush()
     os.fsync(file.fileno())
-
-file = open("log.txt", "a")
-Log("Log Started at " + str(datetime.datetime.now()))
 
 def LoadInput():
     flag = 0
@@ -41,13 +41,13 @@ def main():
     if(flag == 1):
         return
     jout = glob.glob(jpg+'/**/*.jpg', recursive=True)
-    rout = glob.glob(raw+'/**/*.raw', recursive=True)
+    rout = glob.glob(raw+'/**/*.[' + RAW_FORMAT + ']*', recursive=True)
     jprc, rprc = GetNameOnly(jout, rout)
     for i in range(0, len(rprc)):
         if((rprc[i] in jprc) == True):
             shutil.copyfile(rout[i], rout[i].replace(raw, 'result'))
-            
-    
-    
+
+file = open("log.txt", "a")
+Log("Log Started at " + str(datetime.datetime.now()))    
 main()
 file.close()
