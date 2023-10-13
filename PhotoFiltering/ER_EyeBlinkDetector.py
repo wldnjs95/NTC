@@ -1,3 +1,13 @@
+'''
+source : ER_EyeBlinkDetector.py
+summary : Using shape predictor and data file of "shape_predictor_68_face_landmarks.dat",
+          Ai will predict and mark 68 point on face that has specific properties.
+          And using Eye-Aspect-Ratio, determine closed-ness of eye in range of
+          approximately 0 to 1. and from number of faces, returns smallest value.
+'''
+
+
+
 import sys
 import os
 import dlib

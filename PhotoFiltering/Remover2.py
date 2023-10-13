@@ -1,3 +1,10 @@
+'''
+source : Remover2.py
+summary : Picks 10 picture randomly considering score
+'''
+
+
+
 import os.path
 import userPLoader as loader #New
 import random

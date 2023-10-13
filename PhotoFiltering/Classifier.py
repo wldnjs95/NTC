@@ -1,3 +1,10 @@
+'''
+source : Classifier.py
+summary : from extracted feature, It creates normalized scalar for order photos by total score(per Group)
+'''
+
+
+
 import os.path
 import userPLoader as loader#New
 

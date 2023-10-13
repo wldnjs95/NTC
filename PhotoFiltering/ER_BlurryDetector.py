@@ -1,3 +1,13 @@
+'''
+source : ER_BlurryDetector.py
+summary : Find relative blurryness based on laplacian variance.
+          Note that this values are very sensitive to environmental noise,
+          value will be useless on two different photos, but for similar two
+          images, It is pretty meaningful :)
+'''
+
+
+
 import cv2
 
 def GetBlurryness(img):

@@ -1,3 +1,10 @@
+'''
+source : Picker.py
+summary : Copies pictures by result of removers
+'''
+
+
+
 import os.path
 import shutil
 import userPLoader as loader#New

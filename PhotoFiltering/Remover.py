@@ -1,3 +1,10 @@
+'''
+source : Remover.py
+summary : Picks roughly 1200 pictures considering score
+'''
+
+
+
 import os.path
 import userPLoader as loader #New
 

@@ -1,37 +1,47 @@
+'''
+source : userPLoader.py
+summary : Takes user preferences from "userPreferences.txt" located at the
+          same path that program is running.
+
+          <Output of Load() function>
+          {
+          settings[0] = pickType
+          settings[1] = pickRatio(0~1)
+          settings[2] = pickLimit
+          *Now these three settings are meaningless since result are fixed to
+           10/500/1200 images.
+
+          
+          settings[3] = blurContribute
+          settings[4] = eyeContribute
+          * These two settings are affecting to classification step
+
+          
+          settings[5] = targetPath (In regular expression use by glob)
+          settings[6] = resultPath (name of result folder)
+          }
+'''
+
+
+
 import os.path
 
 line=[]
 
-pt=0
-pr=0
-pl=0
-bc=0
-ec=0
-
-if(os.path.isfile("userPreferences.txt") == True):
-    read = open("userPreferences.txt", "r")
-    line = read.readlines()
-    read.close()
-    print("User preferences Loaded Successfully :)")
-else:
-    print("Cannot find file :(")
-"""
-for p in range(0,5):
-    output = float(line[p].split('=')[1].replace('\n', ''))
-    print(output)
-"""
 def Load():
     if(os.path.isfile("userPreferences.txt") == True):
         read = open("userPreferences.txt", "r")
         line = read.readlines()
         read.close()
         print("User preferences Loaded Successfully :)")
+
+        res=[]
+        for i in range(0, 5):
+            res.append(float(line[i].split('=')[1].replace('\n', '')))
+        for i in range(5, 7):
+            res.append(line[i].split('=')[1].replace('\n', ''))
+        return res
     else:
         print("Cannot find file :(")
-    res=[]
-    for i in range(0, 5):
-        res.append(float(line[i].split('=')[1].replace('\n', '')))
-    for i in range(5, 7):
-        res.append(line[i].split('=')[1].replace('\n', ''))
-    return res
+        return None
 

@@ -1,3 +1,12 @@
+'''
+source : ER_SimilarityCheck.py
+summary : Using histogram comparison, results similarity between two images,
+          since It is sequence sensitive, and bigger value is meaningless,
+          function will return smaller number.
+'''
+
+
+
 import cv2
 import numpy as np
 import matplotlib.pylab as plt

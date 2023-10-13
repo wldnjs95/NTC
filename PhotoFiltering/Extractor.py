@@ -1,3 +1,10 @@
+'''
+source : Extractor.py
+summary : Extracts feature with face feature detect model
+'''
+
+
+
 import ER_EnumerateFiles as a
 import ER_SimilarityCheck as b
 import ER_BlurryDetector as c
