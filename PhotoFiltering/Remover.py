@@ -7,6 +7,9 @@ summary : Picks roughly 1200 pictures considering score
 
 import os.path
 import userPLoader as loader #New
+import logging as log #New
+
+log.basicConfig(filename="main.log", level=log.INFO, format='%(asctime)s %(message)s')
 
 line=[]
 if(os.path.isfile("classification") == True):
@@ -14,10 +17,13 @@ if(os.path.isfile("classification") == True):
     line = read.readlines()
     read.close()
     print("<Remover>Loaded Successfully :)")
+    log.info("Remover : classification found")
 else:
     print("<Remover>Cannot find file :(")
+    log.info("Remover : classification not found")
 
 print("<Remover>" + str(len(line)) + " of photoes are going to be processed")
+log.info("Remover : data length = " + str(len(line)))
 
 file = open("elimination", "w")
 curGroup = '0'

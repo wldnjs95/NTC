@@ -25,10 +25,13 @@ summary : Takes user preferences from "userPreferences.txt" located at the
 
 
 import os.path
+import logging as log
 
+log.basicConfig(filename="main.log", level=log.INFO, format='%(asctime)s %(message)s')
 line=[]
 
 def Load():
+    log.info("userPLoader : Setting loaded by someone")
     if(os.path.isfile("userPreferences.txt") == True):
         read = open("userPreferences.txt", "r")
         line = read.readlines()
@@ -42,6 +45,7 @@ def Load():
             res.append(line[i].split('=')[1].replace('\n', ''))
         return res
     else:
+        log.info("userPLoader : Cannot find setting file")
         print("Cannot find file :(")
         return None
 

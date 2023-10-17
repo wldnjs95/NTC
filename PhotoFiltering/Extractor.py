@@ -11,6 +11,9 @@ import ER_BlurryDetector as c
 import ER_EyeBlinkDetector as d
 import os.path
 import userPLoader as loader#New
+import logging as log #New
+
+log.basicConfig(filename="main.log", level=log.INFO, format='%(asctime)s %(message)s')
 
 settings = loader.Load()
 line = []
@@ -18,15 +21,19 @@ start = 0
 isApend = 0
 groupCount = 0
 if(os.path.isfile("extraction") == True):
+    log.info("Extractor : extraction file found")
     read = open("extraction", "r")
     line = read.readlines()
     start = len(line)
     print(start)
+    log.info("Extractor : start=" + str(start))
     read.close()
     if(start != 0):
         print(line[start-1])
         groupCount = int(line[start-1].split(',')[0])
         isApend = 1
+else:
+    log.info("Extractor : extraction file not found")
     
 file = open("extraction", "a")
 
@@ -59,24 +66,10 @@ for i in range(start, len(data)):
                 print("{0}~{1}".format(groupSeparation, i))
                 groupSeparation=i+1
                 groupCount += 1
-    except:
-        #It's the last photo
-        #print("Except")
-        #blur = c.GetBlurryness(data[i])
-        #ear = d.Detect(data[i])
-        #file.write(str(groupCount) + ',' + data[i] + ',' + str(blur) + ',' + str(ear) + '\n')
+    except Exception as e:
+        log.info("Extractor : exception caught : " + str(e))
         file.close()
         break
-        '''
-        s = b.GetSimilarity(data[i-1], data[i])
-        if(s < Threshold_similarity):
-            print("{0}~{1}".format(groupSeparation, i))
-            groupSeparation=i+1
-            groupCount += 1
-        file.write(str(groupCount) + ',' + data[i] + ',' + str(blur) + ',' + str(ear) + '\n')
-        file.close()
-        break
-        '''
     
     if(runCount >= 10):
         file.close()

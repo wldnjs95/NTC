@@ -8,6 +8,9 @@ summary : Picks 10 picture randomly considering score
 import os.path
 import userPLoader as loader #New
 import random
+import logging as log #New
+
+log.basicConfig(filename="main.log", level=log.INFO, format='%(asctime)s %(message)s')
 
 def Ten():
     pas = -1
@@ -46,8 +49,10 @@ if(os.path.isfile("elimination1") == True):
     line = read.readlines()
     read.close()
     print("<Remover2>Loaded Successfully :)")
+    log.info("Remover2 : elimination1 found")
 else:
     print("<Remover2>Cannot find file :(")
+    log.info("Remover2 : elimination1 not found")
     
 file = open("elimination2", "w")
 

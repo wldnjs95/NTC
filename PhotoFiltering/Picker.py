@@ -8,6 +8,9 @@ summary : Copies pictures by result of removers
 import os.path
 import shutil
 import userPLoader as loader#New
+import logging as log #New
+
+log.basicConfig(filename="main.log", level=log.INFO, format='%(asctime)s %(message)s')
 
 def Read(file):
     line=[]
@@ -16,8 +19,11 @@ def Read(file):
         line = read.readlines()
         read.close()
         print("<Picker>Loaded Successfully :)")
+        log.info("Picker : " + str(file) + " found")
     else:
         print("<Picker>Cannot find file :(")
+        log.info("Picker : classification found")
+        log.info("Picker : " + str(file) + " not found")
     return line
 
 settings = loader.Load()
@@ -51,10 +57,12 @@ for i in range(0, len(l2)):
     totalSize += os.path.getsize(l2[i].split(',')[1])
 total, used, free = shutil.disk_usage("/")
 if(free < totalSize):
+    log.info("Picker : Not enough storage space to copy files")
     print("Not enough space in paste path...")
     print("Press enter to exit...")
     input()
     exit()
+log.info("Picker : Storage space check passed")
     
 print("Picking 1200 images...")
 for i in range(0, len(l0)):
@@ -62,13 +70,15 @@ for i in range(0, len(l0)):
     path = data[1]
     name = path.split('\\')[len(path.split('\\'))-1]
     shutil.copyfile(path, targetPath0 + '\\' + name)
-    
+log.info("Picker : 1200 copied")
+
 print("Picking 500 images...")
 for i in range(0, len(l1)):
     data = l1[i].split(',')
     path = data[1]
     name = path.split('\\')[len(path.split('\\'))-1]
     shutil.copyfile(path, targetPath1 + '\\' + name)
+log.info("Picker : 500 copied")
 
 print("Picking 10 images...")
 for i in range(0, len(l2)):
@@ -76,6 +86,7 @@ for i in range(0, len(l2)):
     path = data[1]
     name = path.split('\\')[len(path.split('\\'))-1]
     shutil.copyfile(path, targetPath2 + '\\' + name)
-    
+log.info("Picker : 10 copied")
 
 print("Picking done")
+log.info("Picker : Picking done")

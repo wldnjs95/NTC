@@ -15,6 +15,13 @@ import glob
 import math
 
 import cv2
+import numpy as np
+
+#cv2 cannot handle unicode file name...2023/10/17 fixed
+def imread_korean_path(path):
+    with open(path, "rb") as fp:
+        numpy_array = np.asarray(bytearray(fp.read()), dtype=np.uint8)
+        return cv2.imdecode(numpy_array, cv2.IMREAD_UNCHANGED)
 
 def Dist(p1, p2):
     return math.sqrt(math.pow(p1.x-p2.x, 2) + math.pow(p1.y-p2.y, 2))
@@ -25,7 +32,7 @@ def Detect(f):
     predictor = dlib.shape_predictor(predictor_path)
     print("Processing file: {}".format(f))
     #img = dlib.load_rgb_image(f)
-    img = cv2.imread(f)
+    img = imread_korean_path(f)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     # Ask the detector to find the bounding boxes of each face. The 1 in the

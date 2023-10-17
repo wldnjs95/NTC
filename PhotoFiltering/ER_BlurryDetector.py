@@ -9,9 +9,17 @@ summary : Find relative blurryness based on laplacian variance.
 
 
 import cv2
+import numpy as np
+
+#cv2 cannot handle unicode file name...2023/10/17 fixed
+def imread_korean_path(path):
+    with open(path, "rb") as fp:
+        numpy_array = np.asarray(bytearray(fp.read()), dtype=np.uint8)
+        return cv2.imdecode(numpy_array, cv2.IMREAD_UNCHANGED)
 
 def GetBlurryness(img):
-    return GetLaplacianVariance(cv2.imread(img))
+    return GetLaplacianVariance(imread_korean_path(img))
+    #return GetLaplacianVariance(cv2.imread(img))
 
 def GetLaplacianVariance(img):
     grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

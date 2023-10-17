@@ -7,6 +7,9 @@ summary : from extracted feature, It creates normalized scalar for order photos 
 
 import os.path
 import userPLoader as loader#New
+import logging as log #New
+
+log.basicConfig(filename="main.log", level=log.INFO, format='%(asctime)s %(message)s')
 
 line=[]
 if(os.path.isfile("extraction") == True):
@@ -14,10 +17,13 @@ if(os.path.isfile("extraction") == True):
     line = read.readlines()
     read.close()
     print("<Classifier>Loaded Successfully :)")
+    log.info("Classifier : extraction file found")
 else:
     print("<Classifier>Cannot find file :(")
+    log.info("Classifier : extraction file not found")
 
 print("<Classifier>" + str(len(line)) + " of photoes are going to be processed")
+log.info("Classifier : data length = " + str(len(line)))
 
 file = open("classification", "w")
 curGroup = '0'
