@@ -10,8 +10,9 @@ import logging
 from time import time
 from time import localtime
 from time import strftime
+import imageio_ffmpeg as ffmpeg
 
-
+ffmpeg_exe = ffmpeg.get_ffmpeg_exe()
 
 TARGET_FILE = '노벰버송'
 FFMPEG_PATH = r"ffmpeg\bin\ffmpeg.exe"
@@ -94,7 +95,14 @@ def convert_to_mp4(video, newName, start_dir):
     if not video.lower().endswith((".mp4")):
         path_o = os.path.join(os.getcwd(), video)
         path_t = os.path.join(os.getcwd(), newName + ".mp4")
-        command = [os.path.join(start_dir, FFMPEG_PATH), '-i', path_o, path_t]
+        command = [
+            ffmpeg_exe,
+            '-i', path_o,
+            '-vcodec', 'libx264',  # video codec
+            '-acodec', 'aac',  # audio codec
+            '-strict', 'experimental',
+            path_t
+        ]
         try:
             #subprocess.run(command, check=True)
             CREATE_NO_WINDOW = 0x08000000
@@ -135,6 +143,7 @@ def unzip(start_dir):
     log_off_screen("Unzip started.", getCurrentFunction())
     target_dirs = list()
     zip_files = [f for f in os.listdir(start_dir) if f.endswith('.zip') and TARGET_FILE in f] #NovemberSong
+    print(zip_files)
     for i, zip_file in enumerate(zip_files):
         if not os.path.isdir(zip_file[:-4]):
             log_on_screen("Unzipping: " + zip_file)
@@ -152,7 +161,7 @@ def main():
         start_directory = os.getcwd()
         log_off_screen("Start directory is " + start_directory, getCurrentFunction())
         convert_target = unzip(start_directory)
-        
+
         log_on_screen("Following folders will be processed")
         for i in range(0, len(convert_target)):
             log_on_screen(str(i) + " : " + convert_target[i])
@@ -170,10 +179,4 @@ def main():
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(filename='log.txt', encoding='utf-8', level=logging.DEBUG)
-main()
-
-
-logger = logging.getLogger(__name__)
-logging.basicConfig(filename='log.txt', encoding='utf-8', level=logging.DEBUG, filemode='a')
-
 main()

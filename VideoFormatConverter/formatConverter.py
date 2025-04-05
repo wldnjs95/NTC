@@ -2,8 +2,9 @@ import subprocess
 import os
 import glob
 from shutil import copyfile
+import imageio_ffmpeg as ffmpeg
 
-FFMPEG_PATH = r"ffmpeg\bin\ffmpeg.exe"
+ffmpeg_exe = ffmpeg.get_ffmpeg_exe()
 
 conversion_src = "footages_raw"
 conversion_dst = "footages_converted"
@@ -13,7 +14,14 @@ def convert_to_mp4(input_file, output_file=None):
     if output_file is None:
         base, _ = os.path.splitext(input_file)
         output_file = f"{base}." + targetFormat
-    command = [FFMPEG_PATH, '-i', input_file, output_file]
+        command = [
+            ffmpeg_exe,
+            '-i', input_file,
+            '-vcodec', 'libx264',  # video codec
+            '-acodec', 'aac',  # audio codec
+            '-strict', 'experimental',
+            output_file
+        ]
     try:
         subprocess.run(command, check=True)
         print(f"{input_file} 파일을 성공적으로 {output_file} 로 변환 하였습니다.")
