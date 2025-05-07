@@ -1,22 +1,24 @@
 import os
-import sys
 import zipfile
 import shutil
-
+import numpy
 import cv2
-
-from distutils.dir_util import copy_tree
 
 mainFolderName = 'Popcorn' # also used for aep name
 mustInclude = '(POPCORN)'
 photoFolderName = '[photo]'
 convW = []
 
+def numberToStr(n):
+    if n < 10:
+        return '0' + str(n)
+    else:
+        return str(n)
+
 def png_to_jpg(Dir, quality):
-    count = 0
-    cur_dir = os.path.join(Dir, photoFolderName)
-    os.chdir(cur_dir)
-    photo_list = os.listdir(cur_dir)
+    count = 1
+    os.chdir(Dir)
+    photo_list = os.listdir(Dir)
 
     for photo in photo_list :
         if '.jpg' not in photo and '.JPG' not in photo :
@@ -24,10 +26,8 @@ def png_to_jpg(Dir, quality):
                 cut = 5
             elif '.png' in photo or '.PNG' in photo:
                 cut = 4
-            print(photo)
-            print(cut)
-            img = cv2.imread(photo)
-            cv2.imwrite(photo[:-cut]+'.jpg', img, [cv2.IMWRITE_JPEG_QUALITY,quality])
+            img = cv2.imdecode(numpy.fromfile(photo, dtype=numpy.uint8), cv2.IMREAD_COLOR)
+            cv2.imwrite(numberToStr(count)+'.jpg', img, [cv2.IMWRITE_JPEG_QUALITY,quality])
             count = count + 1
             os.remove(photo)
     
@@ -62,16 +62,6 @@ def lovesome_unzip(startDir):
     cur_dir = startDir
     zip_list = get_ext_file(cur_dir, '.zip')
     user_zip = lovesome_userselection(zip_list)
-    '''
-    eflag = lovesome_folderExist(cur_dir, mainFolderName)
-    innerDir = os.path.join(cur_dir, mainFolderName,WEDDING_TYPE)
-
-    if eflag:
-        print('Folder already exists')
-    else:
-        os.mkdir(mainFolderName)
-        os.mkdir(innerDir)
-    '''
     k=-1
     for i in user_zip:
         if(os.path.isdir(i[:-4])):
@@ -90,7 +80,7 @@ def lovesome_unzip(startDir):
     return mainFolderName
 
 def unzip(cur_dir, innerDir, user_zip):
-    dir_to_extract = os.path.join(innerDir, user_zip[:-4])
+    dir_to_extract = os.path.join(innerDir, user_zip[:-4], photoFolderName)
     print('unzipping file : ' + user_zip)
     zip_dir = os.path.join(cur_dir, user_zip)
     with zipfile.ZipFile(zip_dir, 'r') as zip_ref:
@@ -138,6 +128,5 @@ def way_to_start():
 
 
 myDir, myFolder = way_to_start()
-print(convW)
 for i in convW:
     png_to_jpg(i,100)
