@@ -4,21 +4,21 @@ import shutil
 import numpy
 import cv2
 
-mainFolderName = 'Popcorn' # also used for aep name
-mustInclude = '(POPCORN)'
-photoFolderName = '[photo]'
-convW = []
+main_folder_name = 'Popcorn' # also used for aep name
+must_include = '(POPCORN)'
+photo_folder_name = '[photo]'
+conversion_widths = []
 
-def numberToStr(n):
+def format_number(n):
     if n < 10:
         return '0' + str(n)
     else:
         return str(n)
 
-def png_to_jpg(Dir, quality):
+def convert_images_to_jpg(directory, quality):
     count = 1
-    os.chdir(Dir)
-    photo_list = os.listdir(Dir)
+    os.chdir(directory)
+    photo_list = os.listdir(directory)
 
     for photo in photo_list :
         if '.jpg' not in photo and '.JPG' not in photo :
@@ -27,70 +27,70 @@ def png_to_jpg(Dir, quality):
             elif '.png' in photo or '.PNG' in photo:
                 cut = 4
             img = cv2.imdecode(numpy.fromfile(photo, dtype=numpy.uint8), cv2.IMREAD_COLOR)
-            cv2.imwrite(numberToStr(count)+'.jpg', img, [cv2.IMWRITE_JPEG_QUALITY,quality])
+            cv2.imwrite(format_number(count)+'.jpg', img, [cv2.IMWRITE_JPEG_QUALITY,quality])
             count = count + 1
             os.remove(photo)
     
     count = str(count)
     print(count + ' converted to jpg')
 
-def lovesome_userselection(userlist):
+def select_users(userlist):
     if len(userlist)==0:
        print('It is empty')
        print('ShutDown system')
        quit()
 
-    multipleSelection = []
+    multiple_selection = []
     i = 1
     print('Select multiple from below(numbers only, type 0 to end selection)')
     for item in userlist:
-        if(item.find(mustInclude) != -1):
-            multipleSelection.append(item)
+        if(item.find(must_include) != -1):
+            multiple_selection.append(item)
 
-    return multipleSelection
+    return multiple_selection
  
-def get_ext_file(Dir,Ext):
-    return [ file for file in os.listdir(Dir) if file.endswith(Ext)]
+def get_files_with_ext(directory,Ext):
+    return [ file for file in os.listdir(directory) if file.endswith(Ext)]
 
-def lovesome_folderExist(Dir, folder):
-    newDir = os.path.join(Dir, folder)
-    if os.path.isdir(newDir):
+def ensure_folder_exists(directory, folder):
+    new_directory = os.path.join(directory, folder)
+    if os.path.isdir(new_directory):
         return 1
 
-def lovesome_unzip(startDir):
+def unzip_selected_files(start_dir):
+    cur_dir = start_dir
+    zip_list = get_files_with_ext(cur_dir, '.zip')
+    user_zip = select_users(zip_list)
+    last_unzipped_index = -1
 
-    cur_dir = startDir
-    zip_list = get_ext_file(cur_dir, '.zip')
-    user_zip = lovesome_userselection(zip_list)
-    k=-1
-    for i in user_zip:
-        if(os.path.isdir(i[:-4])):
-            k += 1
-    
-    if(k<len(user_zip)):
-        if(k == -1): #no end == no unzip there was
-            k = 0
-        print("Latest Zip Stopped at ", user_zip[k], "Starting from there...")
-        for i in range(k, len(user_zip)):
-            unzip(cur_dir, cur_dir, user_zip[i])
-            copyAep(os.getcwd(), user_zip[i][:-4])
+    for file in user_zip:
+        if os.path.isdir(file[:-4]):
+            last_unzipped_index += 1
+
+    if last_unzipped_index < len(user_zip):
+        if last_unzipped_index == -1:
+            last_unzipped_index = 0
+        print("Latest Zip Stopped at", user_zip[last_unzipped_index], "Starting from there...")
+        for i in range(last_unzipped_index, len(user_zip)):
+            extract_zip_file(cur_dir, cur_dir, user_zip[i])
+            copy_aep(os.getcwd(), user_zip[i][:-4])
     else:
         print("No more zip to unzip")
-        
-    return mainFolderName
+    
+    return main_folder_name
 
-def unzip(cur_dir, innerDir, user_zip):
-    dir_to_extract = os.path.join(innerDir, user_zip[:-4], photoFolderName)
-    print('unzipping file : ' + user_zip)
-    zip_dir = os.path.join(cur_dir, user_zip)
-    with zipfile.ZipFile(zip_dir, 'r') as zip_ref:
+def extract_zip_file(cur_dir, inner_dir, zip_filename):
+    dir_to_extract = os.path.join(inner_dir, zip_filename[:-4], photo_folder_name)
+    print('Unzipping file:', zip_filename)
+    zip_path = os.path.join(cur_dir, zip_filename)
+    with zipfile.ZipFile(zip_path, 'r') as zip_ref:
         zip_ref.extractall(dir_to_extract)
-    print('unzip is done')
-    convW.append(dir_to_extract)
+    print('Unzip is done')
+    conversion_widths.append(dir_to_extract)
 
 def get_aep(Dir):
     cur_dir = Dir
-    aep_list = get_ext_file(cur_dir, mainFolderName + '.aep')
+    aep_list = get_files_with_ext(cur_dir, main_folder_name + '.aep')
     size = len(aep_list)
     if size == 0:
         print('no aep file exist')
@@ -100,10 +100,10 @@ def get_aep(Dir):
     elif size == 1:
         return aep_list[0]
     else:
-        user_aep = lovesome_userselection(aep_list)
+        user_aep = select_users(aep_list)
         return user_aep
 
-def copyAep(Dir, newFolder_name):
+def copy_aep(Dir, newFolder_name):
     cur_dir = Dir
     file_list = os.listdir(cur_dir)
 
@@ -111,7 +111,7 @@ def copyAep(Dir, newFolder_name):
     aep_File = get_aep(cur_dir)
     #COPY AEP
     newPath = os.path.join(cur_dir, newFolder_name)
-    newFileName = mainFolderName + '.aep'
+    newFileName = main_folder_name + '.aep'
 
     shutil.copy(aep_File, os.path.join(newPath, newFileName))
     #CHANGE
@@ -122,11 +122,11 @@ def copyAep(Dir, newFolder_name):
     print('aep copy finished')
 
 def way_to_start():
-    start_Dir = os.getcwd()
-    newFoldername = lovesome_unzip(start_Dir)
-    return start_Dir, newFoldername
+    start_dir = os.getcwd()
+    unzip_selected_files(start_dir)
+    return start_dir, main_folder_name
 
 
 myDir, myFolder = way_to_start()
-for i in convW:
-    png_to_jpg(i,100)
+for i in conversion_widths:
+    convert_images_to_jpg(i,100)
