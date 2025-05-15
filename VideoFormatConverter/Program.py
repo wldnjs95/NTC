@@ -7,9 +7,9 @@ import logging
 from time import time
 from time import localtime
 from time import strftime
-import imageio_ffmpeg as ffmpeg
 
-ffmpeg_exe = ffmpeg.get_ffmpeg_exe()
+FFMPEG_PATH = r"ffmpeg\bin\ffmpeg.exe"
+ffmpeg_exe = FFMPEG_PATH
 
 TARGET_FILE = '노벰버송'
 FOLDER_NAME = '[NovemberSong]'
@@ -117,14 +117,7 @@ def convert_to_mp4(video, newName, start_dir):
     if not video.lower().endswith((".mp4")):
         path_o = os.path.join(os.getcwd(), video)
         path_t = os.path.join(os.getcwd(), VIDEO_FOLDER_NAME, newName + ".mp4")
-        command = [
-            ffmpeg_exe,
-            '-i', path_o,
-            '-vcodec', 'mpeg4',  # video codec
-            '-acodec', 'aac',  # audio codec
-            '-strict', 'experimental',
-            path_t
-        ]
+        command = [os.path.join("..", ffmpeg_exe), '-i', path_o, path_t]
         try:
             # subprocess.run(command, check=True)
             CREATE_NO_WINDOW = 0x08000000
