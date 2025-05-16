@@ -154,8 +154,8 @@ def convert_to_jpg(photo, newName, quality=100):
         os.remove(photo)
         log_on_screen(photo + " converted to " + newName + ".jpg")
     else:
-        os.rename(photo, os.path.join(PHOTO_FOLDER_NAME, newName + '.' + photo.split('.')[1]))
-        log_on_screen(photo + " renamed to " + newName + '.' + photo.split('.')[1])
+        os.rename(photo, os.path.join(PHOTO_FOLDER_NAME, newName + '.jpg'))
+        log_on_screen(photo + " renamed to " + newName + '.jpg')
 
 
 def copy_aep_file(directory, new_folder, aep_name):
