@@ -1,0 +1,9 @@
+# macOS system file
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Compressed files
+*.zip

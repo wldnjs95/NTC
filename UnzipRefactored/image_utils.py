@@ -2,6 +2,7 @@
 import os, cv2, numpy
 from config import conversion_widths
 from utils import format_number
+from logging_utils import log_user, log_debug, log_error
 
 def convert_images_to_jpg(directory, quality):
     os.chdir(directory)
@@ -14,4 +15,4 @@ def convert_images_to_jpg(directory, quality):
             os.remove(photo)
             count += 1
 
-    print(f'{count - 1} converted to jpg')
+    log_user(f'{count - 1} converted to jpg')

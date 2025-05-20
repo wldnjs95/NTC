@@ -1,7 +1,7 @@
 # utils.py
 import os
-from config import must_include
 import inspect
+from logging_utils import log_user, log_debug, log_error
 
 def format_number(n):
     return f'{n:02}'
@@ -9,9 +9,11 @@ def format_number(n):
 def get_files_with_ext(directory, ext):
     return [file for file in os.listdir(directory) if file.endswith(ext)]
 
-def select_users(file_list):
+def select_users(file_list, must_include):
     filtered = [f for f in file_list if must_include in f]
     if not filtered:
-        print(f"[{os.path.basename(__file__)}][{inspect.currentframe().f_code.co_name}] No zip file found.\nShutDown system")
-        quit()
+        log_debug(f"[{os.path.basename(__file__)}][{inspect.currentframe().f_code.co_name}] No zip file found.")
+        log_debug(f"keyword: {must_include}")
+        log_user(f"No zip file found.")
+        return None
     return filtered

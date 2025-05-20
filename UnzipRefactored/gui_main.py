@@ -1,27 +1,58 @@
 import customtkinter as ctk
 import os
 import config
+from config import LIMIT_DAYS, LAUNCH_CUTOFF_DATE, DEMO_MODE
 import gui_config
+import json
+import datetime
 from zip_utils import unzip_selected_files
 from image_utils import convert_images_to_jpg
-
 import sys
-class PrintLogger:
-    def __init__(self, textbox):
-        self.textbox = textbox
+import tkinter.messagebox as msg
+import logging_utils as logu
+from logging_utils import log_user, log_debug, log_error
 
-    def write(self, message):
-        self.textbox.insert("end", message)
-        self.textbox.see("end")  # 스크롤 자동 이동
+def after_gui_loaded():
+    update_footer_label()
 
-    def flush(self):  # for compatibility
-        pass
+def update_footer_label():
+    remaining_days = get_remaining_days()
+
+    if remaining_days < 0:
+        footer_label.configure(text="Unzip Helper v1.0  •  Invalid system date")
+    elif not DEMO_MODE:
+        footer_label.configure(text="Unzip Helper v1.0  •  (Official Version)")
+    else:
+        footer_label.configure(
+            text=f"Unzip Helper v1.0\n( {remaining_days} days remaining )"
+        )
+
+def get_remaining_days():
+    if not DEMO_MODE:
+        log_debug("[Demo Mode :False]")
+        return 999
     
+    log_user("DEMO_MODE: True")
+    today = datetime.date.today()
+    days_passed = (today - LAUNCH_CUTOFF_DATE).days
+    log_debug(f"Today: {today}, \nLaunch cutoff: {LAUNCH_CUTOFF_DATE},\nDays passed: {days_passed}")
+
+
+    if days_passed < 0:
+        msg.showerror("Error", "System date is incorrect. Please check your system date.")
+        return -999
+    
+    remaining = LIMIT_DAYS - days_passed
+    log_debug(f"Remaining days: {remaining}")
+    return remaining
+
+
+
     
 def run_script():
     log_box.delete("1.0", "end")  # 실행 전 로그 초기화
 
-    main_name = entry_main_folder.get().strip()
+    product_name = entry_main_folder.get().strip()
     keyword = entry_keyword.get().strip()
 
     has_error = False
@@ -30,7 +61,7 @@ def run_script():
     entry_main_folder.configure(border_color="#D6F1FF")
     entry_keyword.configure(border_color="#D6F1FF")
 
-    if not main_name:
+    if not product_name:
         entry_main_folder.configure(border_color="red")
         has_error = True
 
@@ -42,20 +73,19 @@ def run_script():
         status_label.configure(text="⚠️ Warning: 모든 입력칸을 채워주세요", text_color="orange")
         return
     
-    config.main_folder_name = main_name
-    config.must_include = keyword
     
     status_label.configure(text="실행 중...", text_color="lightblue")
     
 
     try:
         start_dir = os.getcwd()
-        unzip_selected_files(start_dir)
+        unzip_selected_files(start_dir, product_name, keyword)
         for path in config.conversion_widths:
             convert_images_to_jpg(path, config.jpeg_quality)
         status_label.configure(text="Program Finished Successfully", text_color="green")
     except Exception as e:
-        status_label.configure(text=f"⚠️ Error: {e}", text_color="red")
+        log_error(f"Error: {e}")
+        status_label.configure(text=f"⚠️ Error: check app.log file", text_color="red")
 
 # GUI 설정
 ctk.set_appearance_mode("System")
@@ -65,14 +95,6 @@ app = ctk.CTk()
 app.title("Unzip Helper")
 app.geometry("480x540")
 app.grid_columnconfigure(0, weight=1)
-
-
-# ────── log box ──────
-log_box = ctk.CTkTextbox(app, height=100, font=ctk.CTkFont(size=12))
-log_box.grid(row=5, column=0, padx=30, pady=(0, 10), sticky="ew")
-
-sys.stdout = PrintLogger(log_box)
-sys.stderr = PrintLogger(log_box)
 
 
 
@@ -100,7 +122,7 @@ entry_main_folder.grid(row=1, column=0, sticky="w", pady=(5, 2))
 
 desc_main = ctk.CTkLabel(
     product_frame,
-    text="입력한 이름으로 작업 폴더가 생성됩니다.",
+    text="입력한 이름으로 내부 폴더와 AEP 파일명이 생성됩니다.",
     text_color="gray",
     font=ctk.CTkFont(size=12),
     anchor="w"
@@ -149,10 +171,20 @@ status_label.grid(row=3, column=0)
 # ────── Footer  ──────
 footer_label = ctk.CTkLabel(
     app,
-    text="Unzip Helper v1.0",
+    text="Unzip Helper v1.0",  # 일단 기본값
     text_color="gray",
     font=ctk.CTkFont(size=12)
 )
 footer_label.grid(row=4, column=0, sticky="s", pady=(0, 10))
 
+
+# ────── log box ──────
+log_box = ctk.CTkTextbox(app, height=100, font=ctk.CTkFont(size=12))
+log_box.grid(row=5, column=0, padx=30, pady=(10, 10), sticky="ew")
+
+logu.init_logging()
+sys.stdout = logu.DualLogger(log_box)
+sys.stderr = logu.DualLogger(log_box)
+# ────── GUI 로드 후 실행 ──────
+app.after(100, after_gui_loaded if DEMO_MODE else lambda: None)
 app.mainloop()
