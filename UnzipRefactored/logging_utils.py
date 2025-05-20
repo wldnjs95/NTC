@@ -7,13 +7,26 @@ import sys
 status_label = None
 
 def init_logging(logfile="app.log"):
-    logging.basicConfig(
-        level=logging.DEBUG,  # 파일에는 DEBUG 이상 모두 기록됨
-        filename=logfile,
-        filemode="a",  # 기존 로그 덮어쓰기
-        format="%(asctime)s [%(levelname)s] %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S"
-    )
+    logger = logging.getLogger()
+    logger.setLevel(logging.DEBUG)
+
+    # 파일 핸들러 (UTF-8 인코딩 명시)
+    file_handler = logging.FileHandler(logfile, mode='a', encoding='utf-8')
+    file_handler.setLevel(logging.DEBUG)
+    file_formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s', datefmt="%Y-%m-%d %H:%M:%S")
+    file_handler.setFormatter(file_formatter)
+
+    # 콘솔 핸들러 (선택적으로 추가 가능)
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(file_formatter)
+
+    # 핸들러 중복 방지
+    if logger.hasHandlers():
+        logger.handlers.clear()
+
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
 
 class DualLogger:
     def __init__(self, textbox):
