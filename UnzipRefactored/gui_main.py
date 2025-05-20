@@ -1,4 +1,5 @@
 import customtkinter as ctk
+import platform
 import os
 import config
 from config import LIMIT_DAYS, LAUNCH_CUTOFF_DATE, DEMO_MODE
@@ -12,6 +13,12 @@ import tkinter.messagebox as msg
 import logging_utils as logu
 from logging_utils import log_user, log_debug, log_error
 from state import global_state
+
+if platform.system() == "Windows":
+    mono_font = "Consolas"
+else:
+    mono_font = "Menlo"
+
 
 def after_gui_loaded():
     update_footer_label()
@@ -100,17 +107,28 @@ app.title("Unzip Helper")
 app.geometry("480x540")
 app.grid_columnconfigure(0, weight=1)
 
+# ────── 유저 입력 전체 프레임 ──────
+input_frame = ctk.CTkFrame(app, fg_color="transparent")
+input_frame.grid(row=0, column=0, padx=30, pady=(30, 0), sticky="n")
+input_frame.grid_columnconfigure(0, weight=1)
+
+# ────── 제품 이름 프레임 ──────
+product_frame = ctk.CTkFrame(input_frame, fg_color="transparent")
+product_frame.grid(row=0, column=0, pady=(0, 10), sticky="ew")
+
+# ────── 키워드 프레임 ──────
+keyword_frame = ctk.CTkFrame(input_frame, fg_color="transparent")
+keyword_frame.grid(row=1, column=0, sticky="ew")
+
 
 
 # ────── 제품 이름 섹션 ──────
-product_frame = ctk.CTkFrame(app, fg_color="transparent")
-product_frame.grid(row=0, column=0, padx=30, pady=(30, 0))
 
 label_main = ctk.CTkLabel(
     product_frame,
     text="제품 이름",
     anchor="w",
-    font=ctk.CTkFont(family="Apple SD Gothic Neo", size=12, weight="bold")
+    font=ctk.CTkFont(family=mono_font, size=12, weight="bold")
 )
 label_main.grid(row=0, column=0, sticky="w", padx=(3, 0))
 
@@ -134,14 +152,12 @@ desc_main = ctk.CTkLabel(
 desc_main.grid(row=2, column=0, sticky="w", padx=(9, 0), pady=(0, 10))
 
 # ────── 키워드 섹션 ──────
-keyword_frame = ctk.CTkFrame(app, fg_color="transparent")
-keyword_frame.grid(row=1, column=0, padx=30)
 
 label_keyword = ctk.CTkLabel(
     keyword_frame,
     text="키워드",
     anchor="w",
-    font=ctk.CTkFont(family="Apple SD Gothic Neo", size=12, weight="bold")
+    font=ctk.CTkFont(family=mono_font, size=12, weight="bold")
 )
 label_keyword.grid(row=0, column=0, sticky="w", padx=(3, 0))
 
