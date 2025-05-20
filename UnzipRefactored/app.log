@@ -1,0 +1,64 @@
+2025-05-20 04:06:27 [INFO] DEMO_MODE: True
+2025-05-20 04:06:27 [DEBUG] Today: 2025-05-20, 
+Launch cutoff: 2025-05-20,
+Days passed: 0
+2025-05-20 04:06:27 [DEBUG] Remaining days: 7
+2025-05-20 04:06:43 [DEBUG] unzip_selected_files Activated
+2025-05-20 04:06:43 [INFO] Unzipping: 0407_0419 김철수 팝콘 (POPCORN) (빠른).zip
+2025-05-20 04:06:43 [INFO] Unzipping: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-05-20 04:06:43 [INFO] 2 converted to jpg
+2025-05-20 04:06:43 [INFO] 12 converted to jpg
+2025-05-20 04:21:33 [INFO] DEMO_MODE: True
+2025-05-20 04:21:33 [DEBUG] Today: 2025-05-20, 
+Launch cutoff: 2025-05-20,
+Days passed: 0
+2025-05-20 04:21:33 [DEBUG] Remaining days: 7
+2025-05-20 04:22:23 [DEBUG] unzip_selected_files Activated
+2025-05-20 04:22:23 [INFO] Unzipping: 0407_0419 김철수 팝콘 (POPCORN) (빠른).zip
+2025-05-20 04:25:25 [INFO] DEMO_MODE: True
+2025-05-20 04:25:25 [DEBUG] Today: 2025-05-20, 
+Launch cutoff: 2025-05-20,
+Days passed: 0
+2025-05-20 04:25:25 [DEBUG] Remaining days: 7
+2025-05-20 04:25:37 [DEBUG] unzip_selected_files Activated
+2025-05-20 04:25:37 [INFO] Unzipping: 0407_0419 김철수 팝콘 (POPCORN) (빠른).zip
+2025-05-20 04:25:37 [INFO] Aep copy finished
+2025-05-20 04:25:37 [INFO] Unzipping: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-05-20 04:25:37 [INFO] Aep copy finished
+2025-05-20 04:25:37 [INFO] 2 converted to jpg
+2025-05-20 04:25:38 [INFO] 12 converted to jpg
+2025-05-20 04:25:49 [ERROR] Error: [Errno 1] Operation not permitted
+2025-05-20 04:26:30 [ERROR] Error: [Errno 1] Operation not permitted
+2025-05-20 04:37:58 [INFO] DEMO_MODE: True
+2025-05-20 04:37:58 [DEBUG] Today: 2025-05-20, 
+Launch cutoff: 2025-05-20,
+Days passed: 0
+2025-05-20 04:37:58 [DEBUG] Remaining days: 7
+2025-05-20 04:38:03 [INFO] 
+--------------------
+2025-05-20 04:38:03 [INFO] 실행 시작
+2025-05-20 04:38:03 [DEBUG] unzip_selected_files Activated
+2025-05-20 04:38:03 [ERROR] Error: select_users() takes 1 positional argument but 2 were given
+2025-05-20 04:38:55 [INFO] DEMO_MODE: True
+2025-05-20 04:38:55 [DEBUG] Today: 2025-05-20, 
+Launch cutoff: 2025-05-20,
+Days passed: 0
+2025-05-20 04:38:55 [DEBUG] Remaining days: 7
+2025-05-20 04:39:01 [INFO] 
+--------------------
+2025-05-20 04:39:01 [INFO] 실행 시작
+2025-05-20 04:39:01 [DEBUG] unzip_selected_files Activated
+2025-05-20 04:39:01 [INFO] Unzipping: 0407_0419 김철수 팝콘 (POPCORN) (빠른).zip
+2025-05-20 04:39:01 [INFO] novem.aep file does not exist
+
+2025-05-20 04:39:01 [ERROR] Error: stat: path should be string, bytes, os.PathLike or integer, not NoneType
+2025-05-20 04:40:02 [INFO] 
+--------------------
+2025-05-20 04:40:02 [INFO] 실행 시작
+2025-05-20 04:40:02 [DEBUG] unzip_selected_files Activated
+2025-05-20 04:40:02 [INFO] Unzipping: 0407_0419 김철수 팝콘 (POPCORN) (빠른).zip
+2025-05-20 04:40:02 [INFO] Aep copy finished
+2025-05-20 04:40:02 [INFO] Unzipping: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-05-20 04:40:02 [INFO] Aep copy finished
+2025-05-20 04:40:02 [INFO] 2 converted to jpg
+2025-05-20 04:40:02 [INFO] 12 converted to jpg

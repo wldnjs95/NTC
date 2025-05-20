@@ -11,6 +11,7 @@ import sys
 import tkinter.messagebox as msg
 import logging_utils as logu
 from logging_utils import log_user, log_debug, log_error
+from state import global_state
 
 def after_gui_loaded():
     update_footer_label()
@@ -50,10 +51,13 @@ def get_remaining_days():
 
     
 def run_script():
-    log_box.delete("1.0", "end")  # 실행 전 로그 초기화
-
-    product_name = entry_main_folder.get().strip()
-    keyword = entry_keyword.get().strip()
+    #log_box.delete("1.0", "end")  # 실행 전 로그 초기화
+    log_user("\n--------------------")
+    log_user("실행 시작")
+    
+    global_state.conversion_widths = []
+    global_state.product_name = entry_main_folder.get().strip()
+    global_state.keyword = entry_keyword.get().strip()
 
     has_error = False
 
@@ -61,11 +65,11 @@ def run_script():
     entry_main_folder.configure(border_color="#D6F1FF")
     entry_keyword.configure(border_color="#D6F1FF")
 
-    if not product_name:
+    if not global_state.product_name:
         entry_main_folder.configure(border_color="red")
         has_error = True
 
-    if not keyword:
+    if not global_state.keyword:
         entry_keyword.configure(border_color="red")
         has_error = True
 
@@ -79,8 +83,8 @@ def run_script():
 
     try:
         start_dir = os.getcwd()
-        unzip_selected_files(start_dir, product_name, keyword)
-        for path in config.conversion_widths:
+        unzip_selected_files(start_dir)
+        for path in global_state.conversion_widths:
             convert_images_to_jpg(path, config.jpeg_quality)
         status_label.configure(text="Program Finished Successfully", text_color="green")
     except Exception as e:

@@ -1,8 +1,8 @@
 # image_utils.py
 import os, cv2, numpy
-from config import conversion_widths
 from utils import format_number
 from logging_utils import log_user, log_debug, log_error
+from state import global_state
 
 def convert_images_to_jpg(directory, quality):
     os.chdir(directory)

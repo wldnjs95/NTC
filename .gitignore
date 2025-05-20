@@ -1,9 +1,9 @@
 # macOS system file
 .DS_Store
 
-# Python cache
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
 
 # Compressed files
 *.zip
