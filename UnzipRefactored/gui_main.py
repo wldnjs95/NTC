@@ -22,6 +22,11 @@ else:
 
 
 def after_gui_loaded():
+    sys.stdout = logu.InfoOnlyLogger(log_box)
+    sys.stderr = logu.InfoOnlyLogger(log_box)
+    log_user("Start Logging")
+    log_debug("Debug also here!")
+    print("[INFO] Manual info print")
     update_footer_label()
 
 def update_footer_label():
@@ -216,8 +221,7 @@ log_box = ctk.CTkTextbox(app, height=100, font=ctk.CTkFont(size=12))
 log_box.grid(row=5, column=0, padx=30, pady=(10, 10), sticky="ew")
 
 logu.init_logging()
-sys.stdout = logu.DualLogger(log_box)
-sys.stderr = logu.DualLogger(log_box)
+
 # ────── GUI 로드 후 실행 ──────
 app.after(100, after_gui_loaded if DEMO_MODE else lambda: None)
 app.mainloop()

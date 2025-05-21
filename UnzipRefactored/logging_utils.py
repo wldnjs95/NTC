@@ -3,6 +3,7 @@ import inspect
 import logging
 from datetime import datetime
 import sys
+import os
 
 # Optional GUI label (set externally)
 status_label = None
@@ -46,9 +47,12 @@ class DualLogger:
 class InfoOnlyLogger:
     def __init__(self, textbox):
         self.textbox = textbox
-        self.original_stdout = sys.__stdout__
+        self.original_stdout = sys.__stdout__ or sys.stdout or open(os.devnull, 'w') #exe build 에러 방지
 
     def write(self, message):
+        with open("debug_log.txt", "a", encoding="utf-8") as f:
+            f.write(f"WRITE CALLED: {message}\n")
+            
         if "[INFO]" in message:
             self.textbox.insert("end", message)
             self.textbox.see("end")
