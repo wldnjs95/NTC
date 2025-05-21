@@ -50,8 +50,11 @@ class InfoOnlyLogger:
         self.original_stdout = sys.__stdout__ or sys.stdout or open(os.devnull, 'w') #exe build 에러 방지
 
     def write(self, message):
-        with open("debug_log.txt", "a", encoding="utf-8") as f:
-            f.write(f"WRITE CALLED: {message}\n")
+        if not message.endswith("\n"):
+            message += "\n"
+        
+        #with open("debug_log.txt", "a", encoding="utf-8") as f:
+        #    f.write(f"WRITE CALLED: {message}\n")
             
         if "[INFO]" in message:
             self.textbox.insert("end", message)
