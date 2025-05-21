@@ -13,8 +13,9 @@ def get_files_with_ext(directory, ext):
 def select_users(file_list):
     filtered = [f for f in file_list if global_state.must_include in f]
     if not filtered:
-        log_debug(f"[{os.path.basename(__file__)}][{inspect.currentframe().f_code.co_name}] No zip file found.")
+        log_debug(f"No zip file found.")
         log_debug(f"keyword: {global_state.must_include}")
         log_user(f"No zip file found.")
         return None
+    log_debug(f"Found zip file: {filtered}")
     return filtered

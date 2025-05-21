@@ -1,4 +1,5 @@
 # logging_utils.py
+import inspect
 import logging
 from datetime import datetime
 import sys
@@ -62,8 +63,12 @@ def log_user(msg):
     print(f"[{now}][INFO] {msg}")
     logging.info(msg)            
 
-def log_debug(msg):
-    logging.debug(msg)             # 로그 파일만 기록
+#def log_debug(msg):
+#    logging.debug(msg)             # 로그 파일만 기록
+    
+def log_debug(message=""):
+    caller = inspect.currentframe().f_back.f_code.co_name # 로그 파일만 기록
+    logging.debug(f"[{caller}] {message}")
 
 def log_error(msg):
     logging.error(msg)

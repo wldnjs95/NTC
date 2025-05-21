@@ -1,5 +1,6 @@
 import customtkinter as ctk
 import platform
+from utils import get_files_with_ext
 import os
 import config
 from config import LIMIT_DAYS, LAUNCH_CUTOFF_DATE, DEMO_MODE
@@ -58,13 +59,25 @@ def get_remaining_days():
 
     
 def run_script():
-    #log_box.delete("1.0", "end")  # 실행 전 로그 초기화
-    log_user("\n--------------------")
-    log_user("실행 시작")
+    
+    aep_count = get_files_with_ext(os.getcwd(),'.aep')
+    if len(aep_count)>1:
+        status_label.configure(text="⚠️ Error: Multiple AEP files found.", text_color="red")
+        log_debug("Multiple AEP files found.")
+        return
+    elif len(aep_count)==0:
+        status_label.configure(text="⚠️ Error: AEP file not found", text_color="red")
+        log_debug("AEP file not found")
+        return
+    else:
+        #log_box.delete("1.0", "end")  # 실행 전 로그 초기화
+        log_user("\n--------------------")
+        log_debug("Aep file exist, program started")
+        log_debug(f"Aep file: {aep_count[0]}")
     
     global_state.conversion_widths = []
     global_state.product_name = entry_main_folder.get().strip()
-    global_state.keyword = entry_keyword.get().strip()
+    global_state.must_include = entry_keyword.get().strip()
 
     has_error = False
 
@@ -76,7 +89,7 @@ def run_script():
         entry_main_folder.configure(border_color="red")
         has_error = True
 
-    if not global_state.keyword:
+    if not global_state.must_include:
         entry_keyword.configure(border_color="red")
         has_error = True
 
