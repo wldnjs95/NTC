@@ -11,6 +11,7 @@ def log_current_function():
     return caller
 
 def unzip_selected_files(start_dir):
+    log_user(f"Unzip attempted at directory: {start_dir}")
     log_debug(f"{log_current_function()} Activated")
     zip_list = get_files_with_ext(start_dir, '.zip')
     user_zip = select_users(zip_list)
@@ -22,7 +23,7 @@ def unzip_selected_files(start_dir):
             extract_path = os.path.join(folder_name, "["+global_state.product_name.lower()+"]")
             with zipfile.ZipFile(os.path.join(start_dir, zip_file), 'r') as z:
                 z.extractall(extract_path)
-            global_state.conversion_widths.append(extract_path)
+            global_state.conversion_targets.append(extract_path)
             copy_aep(start_dir, zip_file[:-4])
         else:
             log_user(f'Skipping already extracted: {zip_file}')
