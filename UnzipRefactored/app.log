@@ -91,3 +91,982 @@ Days passed: 1
 Launch cutoff: 2025-05-20,
 Days passed: 1
 2025-05-21 05:24:25 [DEBUG] [get_remaining_days] Remaining days: 9
+2025-06-24 03:48:19 [INFO] Start Logging
+2025-06-24 03:48:19 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 03:55:12 [INFO] Start Logging
+2025-06-24 03:55:12 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 03:55:35 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 03:55:35 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 03:55:35 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 03:55:35 [DEBUG] [update_recent_product] Updated recent product to 웨드루미나레 in appdata file.
+2025-06-24 03:56:37 [INFO] Start Logging
+2025-06-24 03:56:37 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 03:56:40 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 03:56:40 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 03:56:40 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 03:56:40 [DEBUG] [update_recent_product] Updated recent product to 버블탭 in appdata file.
+2025-06-24 03:56:40 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-24 03:56:40 [DEBUG] [select_users] No zip file found.
+2025-06-24 03:56:40 [DEBUG] [select_users] keyword: 버블탭
+2025-06-24 03:56:40 [INFO] No zip file found.
+2025-06-24 03:56:40 [ERROR] 'NoneType' object is not iterable
+2025-06-24 03:57:23 [INFO] Start Logging
+2025-06-24 03:57:23 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 03:58:38 [INFO] Start Logging
+2025-06-24 03:58:38 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 03:58:53 [INFO] Start Logging
+2025-06-24 03:58:53 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 03:59:30 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 03:59:30 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 03:59:30 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 03:59:30 [DEBUG] [update_recent_product] Updated recent product to 프로미스 in appdata file.
+2025-06-24 03:59:30 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-24 03:59:30 [DEBUG] [select_users] No zip file found.
+2025-06-24 03:59:30 [DEBUG] [select_users] keyword: 프로미스
+2025-06-24 03:59:30 [INFO] No zip file found.
+2025-06-24 03:59:30 [ERROR] 'NoneType' object is not iterable
+2025-06-24 03:59:56 [INFO] Start Logging
+2025-06-24 03:59:56 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:00:14 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:00:14 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 04:00:14 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 04:00:14 [DEBUG] [update_recent_product] Updated recent product to 팝콘 in appdata file.
+2025-06-24 04:00:14 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-24 04:00:14 [DEBUG] [select_users] Found zip file: ['0512_0312 박수 팝콘 (POPCORN).zip', '0512_0312 테스트1 팝콘 (노벰버송).zip']
+2025-06-24 04:00:14 [INFO] Unzipping: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-06-24 04:00:15 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-24 04:00:15 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-24 04:00:15 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-24 04:00:15 [INFO] Aep copy finished
+2025-06-24 04:00:15 [INFO] Unzipping: 0512_0312 테스트1 팝콘 (노벰버송).zip
+2025-06-24 04:00:15 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-24 04:00:15 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-24 04:00:15 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-24 04:00:15 [INFO] Aep copy finished
+2025-06-24 04:00:15 [INFO] 12 converted to jpg
+2025-06-24 04:00:15 [INFO] 12 converted to jpg
+2025-06-24 04:00:15 [ERROR] name 'selected_product' is not defined
+2025-06-24 04:00:45 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:00:45 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 04:00:45 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 04:00:47 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:02:49 [INFO] Start Logging
+2025-06-24 04:02:49 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:02:57 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:02:57 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 04:02:57 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 04:02:58 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:03:02 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:03:47 [INFO] Start Logging
+2025-06-24 04:03:47 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:03:54 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:03:54 [DEBUG] [delete_product] Deleting product: test
+2025-06-24 04:03:54 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 04:03:54 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 04:03:54 [DEBUG] [delete_product] Product test deleted successfully.
+2025-06-24 04:03:55 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:18 [INFO] Start Logging
+2025-06-24 04:07:18 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:07:24 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:24 [DEBUG] [delete_product] Deleting product: test2
+2025-06-24 04:07:24 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 04:07:24 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 04:07:24 [DEBUG] [delete_product] Product test2 deleted successfully.
+2025-06-24 04:07:25 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:25 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:33 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:33 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 04:07:33 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 04:07:34 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:37 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:43 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:43 [DEBUG] [delete_product] Deleting product: test
+2025-06-24 04:07:43 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 04:07:43 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 04:07:43 [DEBUG] [delete_product] Product test deleted successfully.
+2025-06-24 04:07:43 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:44 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:07:52 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:19:19 [INFO] Start Logging
+2025-06-24 04:19:19 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:19:31 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:34:40 [INFO] Start Logging
+2025-06-24 04:34:40 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:34:44 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:34:47 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:34:54 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:35:50 [INFO] Start Logging
+2025-06-24 04:35:50 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:36:08 [INFO] Start Logging
+2025-06-24 04:36:08 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:36:49 [INFO] Start Logging
+2025-06-24 04:36:49 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:36:58 [INFO] Start Logging
+2025-06-24 04:36:58 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:37:31 [INFO] Start Logging
+2025-06-24 04:37:31 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:37:54 [INFO] Start Logging
+2025-06-24 04:37:54 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:38:11 [INFO] Start Logging
+2025-06-24 04:38:11 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:38:29 [INFO] Start Logging
+2025-06-24 04:38:29 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:38:50 [INFO] Start Logging
+2025-06-24 04:38:50 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:39:05 [INFO] Start Logging
+2025-06-24 04:39:05 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:39:17 [INFO] Start Logging
+2025-06-24 04:39:17 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:41:21 [INFO] Start Logging
+2025-06-24 04:41:21 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:42:58 [INFO] Start Logging
+2025-06-24 04:42:58 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:43:18 [INFO] Start Logging
+2025-06-24 04:43:18 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:45:25 [INFO] Start Logging
+2025-06-24 04:45:25 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:45:35 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:47:04 [INFO] Start Logging
+2025-06-24 04:47:04 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:50:55 [INFO] Start Logging
+2025-06-24 04:50:55 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:51:19 [INFO] Start Logging
+2025-06-24 04:51:19 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:53:01 [INFO] Start Logging
+2025-06-24 04:53:01 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:53:27 [INFO] Start Logging
+2025-06-24 04:53:27 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:53:31 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:53:34 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:53:58 [INFO] Start Logging
+2025-06-24 04:53:58 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:54:36 [INFO] Start Logging
+2025-06-24 04:54:36 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:55:53 [INFO] Start Logging
+2025-06-24 04:55:53 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:56:02 [INFO] Start Logging
+2025-06-24 04:56:02 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:56:10 [INFO] Start Logging
+2025-06-24 04:56:10 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:56:18 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:56:20 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:56:21 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:56:22 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:56:34 [INFO] Start Logging
+2025-06-24 04:56:34 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:56:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:56:40 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:56:54 [INFO] Start Logging
+2025-06-24 04:56:54 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:57:52 [INFO] Start Logging
+2025-06-24 04:57:52 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:58:10 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 04:59:08 [INFO] Start Logging
+2025-06-24 04:59:08 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 04:59:50 [INFO] Start Logging
+2025-06-24 04:59:50 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:00:03 [INFO] Start Logging
+2025-06-24 05:00:03 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:00:06 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:07 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:14 [INFO] Start Logging
+2025-06-24 05:00:14 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:00:16 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:17 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:22 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:23 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:24 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:36 [INFO] Start Logging
+2025-06-24 05:00:36 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:00:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:40 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:00:41 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:02:07 [INFO] Start Logging
+2025-06-24 05:02:07 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:02:10 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:02:43 [INFO] Start Logging
+2025-06-24 05:02:43 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:03:06 [INFO] Start Logging
+2025-06-24 05:03:06 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:03:08 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:03:09 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:04:38 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:04:44 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:04:53 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:05:03 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:05:03 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 05:05:03 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 05:05:03 [DEBUG] [update_recent_product] Updated recent product to 팝콘 in appdata file.
+2025-06-24 05:05:03 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-24 05:05:03 [DEBUG] [select_users] Found zip file: ['0512_0312 박수 팝콘 (POPCORN).zip', '0512_0312 테스트1 팝콘 (노벰버송).zip']
+2025-06-24 05:05:03 [INFO] Skipping already extracted: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-06-24 05:05:03 [INFO] Skipping already extracted: 0512_0312 테스트1 팝콘 (노벰버송).zip
+2025-06-24 05:05:03 [INFO] ✅ 실행 완료: popcorn
+2025-06-24 05:05:19 [INFO] Start Logging
+2025-06-24 05:05:19 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:07:19 [INFO] Start Logging
+2025-06-24 05:07:19 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:10:17 [INFO] Start Logging
+2025-06-24 05:10:17 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:10:19 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:10:25 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:10:26 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:11:11 [INFO] Start Logging
+2025-06-24 05:11:11 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:11:18 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:11:18 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:11:19 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:12:04 [INFO] Start Logging
+2025-06-24 05:12:04 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:12:08 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:12:10 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:12:11 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:12:16 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:12:18 [INFO] Start Logging
+2025-06-24 05:12:18 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:13:46 [INFO] Start Logging
+2025-06-24 05:13:46 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:13:46 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:15:40 [INFO] Start Logging
+2025-06-24 05:15:40 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:15:40 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:20:32 [INFO] Start Logging
+2025-06-24 05:20:32 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:20:32 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:20:36 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:20:42 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:20:45 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:20:57 [INFO] Start Logging
+2025-06-24 05:20:57 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:20:57 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:20:59 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:21:01 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:21:05 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:21:09 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:22:55 [INFO] Start Logging
+2025-06-24 05:22:55 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:22:55 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:22:59 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:23:18 [INFO] Start Logging
+2025-06-24 05:23:18 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:23:18 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:24:01 [INFO] Start Logging
+2025-06-24 05:24:01 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:24:01 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:24:13 [INFO] Start Logging
+2025-06-24 05:24:13 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:24:13 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:25:49 [INFO] Start Logging
+2025-06-24 05:25:49 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:25:49 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:26:48 [INFO] Start Logging
+2025-06-24 05:26:48 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:26:48 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:28:35 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:28:35 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 05:28:35 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 05:28:35 [DEBUG] [update_recent_product] Updated recent product to 팝콘 in appdata file.
+2025-06-24 05:28:35 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-24 05:28:35 [DEBUG] [select_users] Found zip file: ['0512_0312 박수 팝콘 (POPCORN).zip', '0512_0312 테스트1 팝콘 (노벰버송).zip']
+2025-06-24 05:28:35 [INFO] Skipping already extracted: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-06-24 05:28:35 [INFO] Skipping already extracted: 0512_0312 테스트1 팝콘 (노벰버송).zip
+2025-06-24 05:28:35 [INFO] ✅ Execution Completed: popcorn
+2025-06-24 05:29:55 [INFO] Start Logging
+2025-06-24 05:29:55 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:29:55 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:30:02 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:30:09 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:31:56 [INFO] Start Logging
+2025-06-24 05:31:56 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:31:56 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:31:57 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:31:57 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 05:31:57 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 05:31:57 [DEBUG] [update_recent_product] Updated recent product to 팝콘 in appdata file.
+2025-06-24 05:31:57 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-24 05:31:57 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-24 05:31:57 [DEBUG] [select_users] Found zip file: ['0512_0312 박수 팝콘 (POPCORN).zip', '0512_0312 테스트1 팝콘 (노벰버송).zip']
+2025-06-24 05:31:57 [INFO] Skipping already extracted: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-06-24 05:31:57 [INFO] Skipping already extracted: 0512_0312 테스트1 팝콘 (노벰버송).zip
+2025-06-24 05:31:57 [INFO] ✅ Execution Completed: popcorn
+2025-06-24 05:32:19 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:34:27 [INFO] Start Logging
+2025-06-24 05:34:27 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:34:27 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:35:14 [INFO] Start Logging
+2025-06-24 05:35:14 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:35:14 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:36:34 [INFO] Start Logging
+2025-06-24 05:36:34 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 05:36:34 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:36:48 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 05:36:50 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:34:53 [INFO] Start Logging
+2025-06-24 14:34:53 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:34:53 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:35:47 [INFO] Start Logging
+2025-06-24 14:35:47 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:35:47 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:35:51 [INFO] Start Logging
+2025-06-24 14:35:51 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:35:51 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:35:57 [INFO] Start Logging
+2025-06-24 14:35:57 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:35:57 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:36:24 [INFO] Start Logging
+2025-06-24 14:36:24 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:36:24 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:37:39 [INFO] Start Logging
+2025-06-24 14:37:39 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:37:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:39:06 [INFO] Start Logging
+2025-06-24 14:39:06 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:39:06 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:39:13 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:39:17 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:39:31 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:39:35 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:39:36 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:41:24 [INFO] Start Logging
+2025-06-24 14:41:24 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:41:24 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:41:30 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:41:31 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:42:18 [INFO] Start Logging
+2025-06-24 14:42:18 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:42:18 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:42:45 [INFO] Start Logging
+2025-06-24 14:42:45 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:42:45 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:44:12 [INFO] Start Logging
+2025-06-24 14:44:12 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:44:12 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:44:16 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:45:06 [INFO] Start Logging
+2025-06-24 14:45:06 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:45:06 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:46:00 [INFO] Start Logging
+2025-06-24 14:46:00 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:46:00 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:46:21 [INFO] Start Logging
+2025-06-24 14:46:21 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:46:21 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:46:59 [INFO] Start Logging
+2025-06-24 14:46:59 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:46:59 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:47:22 [INFO] Start Logging
+2025-06-24 14:47:22 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:47:22 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:47:41 [INFO] Start Logging
+2025-06-24 14:47:41 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:47:41 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:48:09 [INFO] Start Logging
+2025-06-24 14:48:09 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:48:09 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:49:34 [INFO] Start Logging
+2025-06-24 14:49:34 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:49:34 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:50:39 [INFO] Start Logging
+2025-06-24 14:50:39 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:50:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:50:58 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:50:59 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:51:08 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:51:35 [INFO] Start Logging
+2025-06-24 14:51:35 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:51:35 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:52:03 [INFO] Start Logging
+2025-06-24 14:52:03 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:52:03 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:52:23 [INFO] Start Logging
+2025-06-24 14:52:23 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:52:23 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:53:01 [INFO] Start Logging
+2025-06-24 14:53:01 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:53:01 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:53:07 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:53:26 [INFO] Start Logging
+2025-06-24 14:53:26 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:53:26 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:53:51 [INFO] Start Logging
+2025-06-24 14:53:51 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:53:51 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:53:58 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:54:01 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:54:17 [INFO] Start Logging
+2025-06-24 14:54:17 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:54:17 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:55:09 [INFO] Start Logging
+2025-06-24 14:55:09 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:55:09 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:55:44 [INFO] Start Logging
+2025-06-24 14:55:44 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:55:44 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:56:59 [INFO] Start Logging
+2025-06-24 14:56:59 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:56:59 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 14:58:37 [INFO] Start Logging
+2025-06-24 14:58:37 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 14:58:37 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:00:16 [INFO] Start Logging
+2025-06-24 15:00:16 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:00:16 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:00:47 [INFO] Start Logging
+2025-06-24 15:00:47 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:00:47 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:00:53 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:05:55 [INFO] Start Logging
+2025-06-24 15:05:55 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:05:55 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:16:47 [INFO] Start Logging
+2025-06-24 15:16:47 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:16:47 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:16:51 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:16:52 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:22:14 [INFO] Start Logging
+2025-06-24 15:22:14 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:22:14 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:23:49 [INFO] Start Logging
+2025-06-24 15:23:49 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:23:49 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:26:49 [INFO] Start Logging
+2025-06-24 15:26:49 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:26:49 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:27:21 [INFO] Start Logging
+2025-06-24 15:27:21 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:27:21 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:27:56 [INFO] Start Logging
+2025-06-24 15:27:56 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:27:56 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:28:07 [INFO] Start Logging
+2025-06-24 15:28:07 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:28:07 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:28:37 [INFO] Start Logging
+2025-06-24 15:28:37 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:28:37 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:30:28 [INFO] Start Logging
+2025-06-24 15:30:28 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:30:28 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:30:57 [INFO] Start Logging
+2025-06-24 15:30:57 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:30:57 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:32:09 [INFO] Start Logging
+2025-06-24 15:32:09 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:32:09 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:32:13 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:33:47 [INFO] Start Logging
+2025-06-24 15:33:47 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:33:47 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:34:01 [INFO] Start Logging
+2025-06-24 15:34:01 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:34:01 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:35:12 [INFO] Start Logging
+2025-06-24 15:35:12 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:35:12 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:35:34 [INFO] Start Logging
+2025-06-24 15:35:34 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:35:34 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:35:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:35:41 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:36:15 [INFO] Start Logging
+2025-06-24 15:36:15 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:36:15 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:36:39 [INFO] Start Logging
+2025-06-24 15:36:39 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:36:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:36:57 [INFO] Start Logging
+2025-06-24 15:36:57 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:36:57 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:37:15 [INFO] Start Logging
+2025-06-24 15:37:15 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:37:15 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:37:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:37:56 [INFO] Start Logging
+2025-06-24 15:37:56 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:37:56 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:38:11 [INFO] Start Logging
+2025-06-24 15:38:11 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:38:11 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:38:21 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:38:30 [INFO] Start Logging
+2025-06-24 15:38:30 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:38:30 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:38:33 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:38:34 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:38:47 [INFO] Start Logging
+2025-06-24 15:38:47 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:38:47 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:38:56 [INFO] Start Logging
+2025-06-24 15:38:56 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:38:56 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:38:58 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:39:12 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:39:26 [INFO] Start Logging
+2025-06-24 15:39:26 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:39:26 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:39:35 [INFO] Start Logging
+2025-06-24 15:39:35 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:39:35 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:39:37 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:39:38 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:39:41 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:39:42 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:40:18 [INFO] Start Logging
+2025-06-24 15:40:18 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:40:18 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:40:20 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:40:22 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:40:25 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:40:28 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-24 15:40:28 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-24 15:40:28 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-24 15:40:28 [DEBUG] [update_recent_product] Updated recent product to 가족바라기 in appdata file.
+2025-06-24 15:40:28 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-24 15:40:28 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-24 15:40:28 [DEBUG] [select_users] No zip file found.
+2025-06-24 15:40:28 [DEBUG] [select_users] keyword: 가족바라기
+2025-06-24 15:40:28 [INFO] No zip file found.
+2025-06-24 15:40:28 [ERROR] 'NoneType' object is not iterable
+2025-06-24 15:40:32 [INFO] Start Logging
+2025-06-24 15:40:32 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-24 15:40:32 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 15:02:54 [INFO] Start Logging
+2025-06-25 15:02:54 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 15:02:54 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 15:02:55 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 15:02:55 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-25 15:02:55 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-25 15:02:55 [DEBUG] [update_recent_product] Updated recent product to 가족바라기 in appdata file.
+2025-06-25 15:02:55 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-25 15:02:56 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-25 15:02:56 [DEBUG] [select_users] No zip file found.
+2025-06-25 15:02:56 [DEBUG] [select_users] keyword: 가족바라기
+2025-06-25 15:02:56 [INFO] No zip file found.
+2025-06-25 15:02:56 [ERROR] 'NoneType' object is not iterable
+2025-06-25 16:14:29 [INFO] Start Logging
+2025-06-25 16:14:29 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 16:14:29 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:16:38 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:18:01 [INFO] Start Logging
+2025-06-25 16:18:01 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 16:18:01 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:18:25 [INFO] Start Logging
+2025-06-25 16:18:25 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 16:18:25 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:18:54 [INFO] Start Logging
+2025-06-25 16:18:54 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 16:18:54 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:18:59 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:35:10 [INFO] Start Logging
+2025-06-25 16:35:10 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 16:35:10 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:35:32 [INFO] Start Logging
+2025-06-25 16:35:32 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 16:35:32 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:35:37 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:36:01 [INFO] Start Logging
+2025-06-25 16:36:01 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 16:36:01 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:36:24 [INFO] Start Logging
+2025-06-25 16:36:24 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 16:36:24 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 16:36:33 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 17:51:26 [INFO] Start Logging
+2025-06-25 17:51:26 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 17:51:26 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 17:52:01 [INFO] Start Logging
+2025-06-25 17:52:01 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 17:52:01 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 17:54:37 [INFO] Start Logging
+2025-06-25 17:54:37 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 17:54:37 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 17:55:05 [INFO] Start Logging
+2025-06-25 17:55:05 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 17:55:05 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 17:55:17 [INFO] Start Logging
+2025-06-25 17:55:17 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 17:55:17 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 17:55:48 [INFO] Start Logging
+2025-06-25 17:55:48 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-25 17:55:48 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-25 17:55:55 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:23:38 [INFO] Start Logging
+2025-06-26 03:23:38 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 03:23:38 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:23:43 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:23:43 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 03:23:43 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 03:23:43 [DEBUG] [update_recent_product] Updated recent product to 테스트1 in appdata file.
+2025-06-26 03:23:43 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:23:43 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 03:23:43 [DEBUG] [select_users] Found zip file: ['0512_0312 테스트1 test1 (노벰버송).zip']
+2025-06-26 03:23:43 [INFO] Unzipping: 0512_0312 테스트1 test1 (노벰버송).zip
+2025-06-26 03:23:43 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:23:43 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:23:43 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 03:23:43 [INFO] Aep copy finished
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for a - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for a - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for a - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for a - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for a - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for a.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for b - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for b - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for b - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for b - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for b - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [ERROR] cv2 conversion failed for b.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:23:43 [INFO] 0 converted to jpg
+2025-06-26 03:23:43 [INFO] Execution Completed: test1
+2025-06-26 03:27:17 [INFO] Start Logging
+2025-06-26 03:27:17 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 03:27:17 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:27:19 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:27:19 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 03:27:19 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 03:27:19 [DEBUG] [update_recent_product] Updated recent product to 테스트1 in appdata file.
+2025-06-26 03:27:19 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:27:19 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 03:27:19 [DEBUG] [select_users] Found zip file: ['0512_0312 테스트1 test1 (노벰버송).zip']
+2025-06-26 03:27:19 [INFO] Unzipping: 0512_0312 테스트1 test1 (노벰버송).zip
+2025-06-26 03:27:19 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:27:19 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:27:19 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 03:27:19 [INFO] Aep copy finished
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for a - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for a - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for a - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for a - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for a - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for a.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for b - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for b - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for b - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for b - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for b - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [ERROR] cv2 conversion failed for b.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:27:19 [INFO] 0 converted to jpg
+2025-06-26 03:27:19 [INFO] Execution Completed: test1
+2025-06-26 03:35:21 [INFO] Start Logging
+2025-06-26 03:35:21 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 03:35:21 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:35:27 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:35:27 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 03:35:27 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 03:35:27 [DEBUG] [update_recent_product] Updated recent product to 테스트1 in appdata file.
+2025-06-26 03:35:27 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:35:27 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 03:35:27 [DEBUG] [select_users] Found zip file: ['0512_0312 테스트1 test1 (노벰버송).zip']
+2025-06-26 03:35:27 [INFO] Unzipping: 0512_0312 테스트1 test1 (노벰버송).zip
+2025-06-26 03:35:27 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:35:27 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:35:27 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 03:35:27 [INFO] Aep copy finished
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for a - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for a - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for a - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for a - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for a - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for a.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for b - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for b - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for b - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for b - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for b - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [ERROR] cv2 conversion failed for b.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:35:27 [INFO] 0 converted to jpg
+2025-06-26 03:35:27 [ERROR] Conversion errors occurred in C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1].
+2025-06-26 03:41:17 [INFO] Start Logging
+2025-06-26 03:41:17 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 03:41:17 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:41:40 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:41:40 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 03:41:40 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 03:41:40 [DEBUG] [update_recent_product] Updated recent product to 팝콘 in appdata file.
+2025-06-26 03:41:40 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:41:40 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 03:41:40 [DEBUG] [select_users] Found zip file: ['0512_0312 박수 팝콘 (POPCORN).zip']
+2025-06-26 03:41:40 [INFO] Unzipping: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-06-26 03:41:40 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:41:40 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:41:40 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 03:41:40 [INFO] Aep copy finished
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for a - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for a - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for a - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for a - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for a - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for a.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for b - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for b - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for b - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for b - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for b - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [ERROR] cv2 conversion failed for b.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:41:40 [INFO] 0 converted to jpg
+2025-06-26 03:41:40 [ERROR] Conversion errors occurred in C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn].
+2025-06-26 03:43:37 [INFO] Start Logging
+2025-06-26 03:43:37 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 03:43:37 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:43:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:43:39 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 03:43:39 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 03:43:39 [DEBUG] [update_recent_product] Updated recent product to 팝콘 in appdata file.
+2025-06-26 03:43:39 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:43:39 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 03:43:39 [DEBUG] [select_users] Found zip file: ['0512_0312 박수 팝콘 (POPCORN).zip']
+2025-06-26 03:43:39 [INFO] Unzipping: 0512_0312 박수 팝콘 (POPCORN).zip
+2025-06-26 03:43:39 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:43:39 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:43:39 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 03:43:39 [INFO] Aep copy finished
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for a - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for a - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for a - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for a - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for a - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\a.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for a.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for b - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for b - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for b - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for b - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for b - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\b.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [ERROR] cv2 conversion failed for b.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn]\01.jpg
+2025-06-26 03:43:39 [INFO] 0 converted to jpg
+2025-06-26 03:43:39 [ERROR] Conversion errors occurred in C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 박수 팝콘 (POPCORN)\[popcorn].
+2025-06-26 03:46:35 [INFO] Start Logging
+2025-06-26 03:46:35 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 03:46:35 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:46:41 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:46:41 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 03:46:41 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 03:46:41 [DEBUG] [update_recent_product] Updated recent product to 테스트1 in appdata file.
+2025-06-26 03:46:41 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:46:41 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 03:46:41 [DEBUG] [select_users] Found zip file: ['0512_0312 테스트1 test1 (노벰버송).zip']
+2025-06-26 03:46:41 [INFO] Unzipping: 0512_0312 테스트1 test1 (노벰버송).zip
+2025-06-26 03:46:41 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:46:41 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:46:41 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 03:46:41 [INFO] Aep copy finished
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\a - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for a - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\a - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for a - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\a - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for a - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\a - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for a - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\a - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for a - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\a.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for a.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\b - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for b - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\b - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for b - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\b - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for b - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\b - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for b - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\b - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for b - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\b.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [ERROR] cv2 conversion failed for b.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1\01.jpg
+2025-06-26 03:46:41 [INFO] 0 converted to jpg
+2025-06-26 03:46:41 [ERROR] Conversion errors occurred in C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\test1.
+2025-06-26 03:53:56 [INFO] Start Logging
+2025-06-26 03:53:56 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 03:53:56 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:53:59 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:53:59 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 03:53:59 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 03:53:59 [DEBUG] [update_recent_product] Updated recent product to 테스트1 in appdata file.
+2025-06-26 03:53:59 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:53:59 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 03:53:59 [DEBUG] [select_users] Found zip file: ['0512_0312 테스트1 test1 (노벰버송).zip']
+2025-06-26 03:53:59 [INFO] Unzipping: 0512_0312 테스트1 test1 (노벰버송).zip
+2025-06-26 03:53:59 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:53:59 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:53:59 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 03:53:59 [INFO] Aep copy finished
+2025-06-26 03:53:59 [ERROR] cannot access local variable 'path' where it is not associated with a value
+2025-06-26 03:55:10 [INFO] Start Logging
+2025-06-26 03:55:10 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 03:55:10 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:55:15 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 03:55:15 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 03:55:15 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 03:55:15 [DEBUG] [update_recent_product] Updated recent product to 테스트1 in appdata file.
+2025-06-26 03:55:15 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:55:15 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 03:55:15 [DEBUG] [select_users] Found zip file: ['0512_0312 테스트1 test1 (노벰버송).zip']
+2025-06-26 03:55:15 [INFO] Unzipping: 0512_0312 테스트1 test1 (노벰버송).zip
+2025-06-26 03:55:15 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:55:15 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 03:55:15 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 03:55:15 [INFO] Aep copy finished
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for a - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for a - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for a - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for a - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for a - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\a.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for a.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (2).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for b - 복사본 (2).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (3).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for b - 복사본 (3).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (4).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for b - 복사본 (4).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본 (5).png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for b - 복사본 (5).png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b - 복사본.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for b - 복사본.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2.imwrite failed for input_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\b.png with output_path C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [ERROR] cv2 conversion failed for b.png: cv2.imwrite failed for C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1]\01.jpg
+2025-06-26 03:55:15 [INFO] 0 converted to jpg
+2025-06-26 03:55:15 [ERROR] Conversion errors occurred in C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0512_0312 테스트1 test1 (노벰버송)\[test1].
+2025-06-26 04:00:13 [INFO] Start Logging
+2025-06-26 04:00:13 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-26 04:00:13 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 04:00:15 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-26 04:00:15 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-26 04:00:15 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-26 04:00:15 [DEBUG] [update_recent_product] Updated recent product to 테스트1 in appdata file.
+2025-06-26 04:00:15 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 04:00:15 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-26 04:00:15 [DEBUG] [select_users] Found zip file: ['0512_0312 테스트1 test1 (노벰버송).zip']
+2025-06-26 04:00:15 [INFO] Unzipping: 0512_0312 테스트1 test1 (노벰버송).zip
+2025-06-26 04:00:15 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 04:00:15 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-26 04:00:15 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-26 04:00:15 [INFO] Aep copy finished
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 37027
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 37027
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 37027
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 37027
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 37027
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 37027
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 65445
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 65445
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 65445
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 65445
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 65445
+2025-06-26 04:00:15 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-26 04:00:15 [DEBUG] STREAM b'sRGB' 41 1
+2025-06-26 04:00:15 [DEBUG] STREAM b'gAMA' 54 4
+2025-06-26 04:00:15 [DEBUG] STREAM b'pHYs' 70 9
+2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 65445
+2025-06-26 04:00:15 [INFO] 12 converted, 0 errors.
+2025-06-26 04:00:15 [INFO] Execution Completed: test1
