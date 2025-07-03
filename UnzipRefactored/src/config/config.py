@@ -1,6 +1,9 @@
 import os
 import datetime
 
+# build command
+# pyinstaller --onefile --noconsole --icon=src/assets/unzip.ico --add-data "src/assets/unzip.ico;src/assets" --name=UnzipHelper2.6.1v run.py
+
 # image extensions
 VALID_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.heic', '.heif')
 
