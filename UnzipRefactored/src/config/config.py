@@ -1,18 +1,21 @@
 import os
 import datetime
 
+# image extensions
+VALID_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.heic', '.heif')
 
 # config.py
-VERSION_INFO = '2.6'
+VERSION_INFO = '2.6.1'
 photo_folder_name = '[photo]'
 jpeg_quality = 100
+
 
 # ----------- demo launch info -----------
 # This file is used to store demo launch information.
 
-DEMO_MODE = False
-LIMIT_DAYS = 10
-LAUNCH_CUTOFF_DATE = datetime.date(2025, 5, 20)
+DEMO_MODE = True
+LIMIT_DAYS = 7
+LAUNCH_CUTOFF_DATE = datetime.date(2025, 7,3)
 
 
 

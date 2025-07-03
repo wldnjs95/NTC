@@ -15,7 +15,8 @@ def select_users(file_list):
     if not filtered:
         log_debug(f"No zip file found.")
         log_debug(f"keyword: {global_state.must_include}")
-        log_user(f"No zip file found.")
+        log_debug(f"file_list: {file_list}")
+        log_user(f"압축 파일이 존재하지 않습니다.")
         return None
     log_debug(f"Found zip file: {filtered}")
     return filtered

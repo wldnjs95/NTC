@@ -7,11 +7,13 @@ from PIL import Image, UnidentifiedImageError
 from src.utils.general_utils import format_number
 from src.utils.logging_utils import log_user, log_debug, log_error
 from src.utils.state import global_state
+from src.config.config import VALID_EXTENSIONS
 
-VALID_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.heic', '.heif')
 register_heif_opener()
 
 def convert_images_to_jpg(directory, quality=95):
+    log_debug(f"Converting images in {directory} to JPG with quality {quality}")
+    log_debug(f"Current image list: {os.listdir(directory)}")
     count = 1
     converted = 0
     errors = 0

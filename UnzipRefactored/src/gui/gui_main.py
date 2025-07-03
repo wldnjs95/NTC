@@ -67,7 +67,7 @@ class SubFrame1(ctk.CTkFrame):
             days_passed = (today - LAUNCH_CUTOFF_DATE).days
             if days_passed > LIMIT_DAYS:
                 msg.showerror("Demo Expired", "New version required.")
-                log.debug(f"[DEBUG] Demo expired. Days passed: {days_passed}, Limit: {LIMIT_DAYS}")
+                log_debug(f"[DEBUG] Demo expired. Days passed: {days_passed}, Limit: {LIMIT_DAYS}")
                 self.status_label.configure(text="⛔ Demo Expired.", text_color="red")
                 return
         
@@ -99,7 +99,10 @@ class SubFrame1(ctk.CTkFrame):
 
         try:
             global_state.conversion_targets = []
-            unzip_selected_files(os.getcwd())
+            success = unzip_selected_files(os.getcwd())
+            if not success:
+                self.status_label.configure(text="⛔ Unzip Failed. Check Log", text_color="red")
+                return
             for path in global_state.conversion_targets:
                 if not os.path.exists(path):
                     log_error(f"[CRITICAL] Target directory does NOT exist: {path}")

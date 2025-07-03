@@ -1070,3 +1070,106 @@ Days passed: 1
 2025-06-26 04:00:15 [DEBUG] STREAM b'IDAT' 91 65445
 2025-06-26 04:00:15 [INFO] 12 converted, 0 errors.
 2025-06-26 04:00:15 [INFO] Execution Completed: test1
+2025-06-30 02:04:28 [INFO] Start Logging
+2025-06-30 02:04:28 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-30 02:04:28 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-30 02:05:08 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-30 02:24:13 [INFO] Start Logging
+2025-06-30 02:24:13 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-30 02:24:13 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-30 02:24:14 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-30 02:24:14 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-30 02:24:14 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-30 02:24:14 [DEBUG] [update_recent_product] Updated recent product to 러브썸 in appdata file.
+2025-06-30 02:24:14 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-30 02:24:14 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-30 02:24:14 [DEBUG] [select_users] Found zip file: ['0514 박지 러브썸 lovesome.zip']
+2025-06-30 02:24:14 [INFO] Unzipping: 0514 박지 러브썸 lovesome.zip
+2025-06-30 02:24:14 [DEBUG] [unzip_selected_files] Extracting 0514 박지 러브썸 lovesome.zip to C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0514 박지 러브썸 lovesome\[lovesome]
+2025-06-30 02:24:14 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-30 02:24:14 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-30 02:24:14 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-30 02:24:14 [INFO] Aep copy finished
+2025-06-30 02:24:14 [DEBUG] [convert_images_to_jpg] Converting images in C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0514 박지 러브썸 lovesome\[lovesome] to JPG with quality 95
+2025-06-30 02:24:14 [DEBUG] [convert_images_to_jpg] Current image list: ['0513 박하 러브썸 lovesome']
+2025-06-30 02:24:14 [INFO] Skipping 0513 박하 러브썸 lovesome (invalid extension)
+2025-06-30 02:24:14 [INFO] 0 converted, 0 errors.
+2025-06-30 02:24:14 [INFO] Execution Completed: lovesome
+2025-06-30 02:28:08 [INFO] Start Logging
+2025-06-30 02:28:08 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-30 02:28:08 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-30 02:28:09 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-30 02:28:09 [DEBUG] [save_products] Saving products to appdata file.
+2025-06-30 02:28:09 [DEBUG] [save_products] Finished saving products to appdata file.
+2025-06-30 02:28:09 [DEBUG] [update_recent_product] Updated recent product to 러브썸 in appdata file.
+2025-06-30 02:28:09 [INFO] Unzip attempted at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-30 02:28:09 [DEBUG] [unzip_selected_files] unzip_selected_files Activated
+2025-06-30 02:28:09 [DEBUG] [select_users] Found zip file: ['0514_0516 박하 러브썸.zip']
+2025-06-30 02:28:09 [INFO] Unzipping: 0514_0516 박하 러브썸.zip
+2025-06-30 02:28:09 [DEBUG] [unzip_selected_files] Extracting 0514_0516 박하 러브썸.zip to C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0514_0516 박하 러브썸\[lovesome]
+2025-06-30 02:28:09 [DEBUG] [copy_aep] Copy aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-30 02:28:09 [DEBUG] [get_aep] Get aep started at directory: C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored
+2025-06-30 02:28:09 [DEBUG] [get_aep] Aep file: Popcorn.aep
+2025-06-30 02:28:09 [INFO] Aep copy finished
+2025-06-30 02:28:09 [DEBUG] [convert_images_to_jpg] Converting images in C:\Users\wldnj\Desktop\NTC\GitFolder\NTC\UnzipRefactored\0514_0516 박하 러브썸\[lovesome] to JPG with quality 95
+2025-06-30 02:28:09 [DEBUG] [convert_images_to_jpg] Current image list: ['06.heif', '33.png', '37.jpg', '39.jpeg', 'P20250614_104517754_D6407FBB-9801-4BC9-A5FC-690AD2BD99BE.HEIC']
+2025-06-30 02:28:10 [DEBUG] STREAM b'IHDR' 16 13
+2025-06-30 02:28:10 [DEBUG] STREAM b'iCCP' 41 373
+2025-06-30 02:28:10 [DEBUG] iCCP profile name b'kCGColorSpaceDisplayP3'
+2025-06-30 02:28:10 [DEBUG] Compression method 0
+2025-06-30 02:28:10 [DEBUG] STREAM b'cICP' 426 4
+2025-06-30 02:28:10 [DEBUG] b'cICP' 426 4 (unknown)
+2025-06-30 02:28:10 [DEBUG] STREAM b'eXIf' 442 130
+2025-06-30 02:28:10 [DEBUG] STREAM b'iTXt' 584 495
+2025-06-30 02:28:10 [DEBUG] STREAM b'IDAT' 1091 16384
+2025-06-30 02:28:10 [DEBUG] tag: Make (271) - type: string (2) Tag Location: 22 - Data Location: 158 - value: b'Apple\x00'
+2025-06-30 02:28:10 [DEBUG] tag: Model (272) - type: string (2) Tag Location: 34 - Data Location: 164 - value: b'iPhone XS\x00'
+2025-06-30 02:28:10 [DEBUG] tag: Orientation (274) - type: short (3) - value: b'\x00\x06'
+2025-06-30 02:28:10 [DEBUG] tag: XResolution (282) - type: rational (5) Tag Location: 58 - Data Location: 174 - value: b'\x00\x00\x00H\x00\x00\x00\x01'
+2025-06-30 02:28:10 [DEBUG] tag: YResolution (283) - type: rational (5) Tag Location: 70 - Data Location: 182 - value: b'\x00\x00\x00H\x00\x00\x00\x01'
+2025-06-30 02:28:10 [DEBUG] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+2025-06-30 02:28:10 [DEBUG] tag: Software (305) - type: string (2) Tag Location: 94 - Data Location: 190 - value: b'14.0.1\x00'
+2025-06-30 02:28:10 [DEBUG] tag: DateTime (306) - type: string (2) Tag Location: 106 - Data Location: 198 - value: b'2020:11:04 13:07:31\x00'
+2025-06-30 02:28:10 [DEBUG] tag: TileWidth (322) - type: long (4) - value: b'\x00\x00\x02\x00'
+2025-06-30 02:28:10 [DEBUG] tag: TileLength (323) - type: long (4) - value: b'\x00\x00\x02\x00'
+2025-06-30 02:28:10 [DEBUG] tag: YCbCrPositioning (531) - type: short (3) - value: b'\x00\x01'
+2025-06-30 02:28:10 [DEBUG] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xda'
+2025-06-30 02:28:10 [DEBUG] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+2025-06-30 02:28:10 [DEBUG] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 86 - value: b'\x00\x00\x00H\x00\x00\x00\x01'
+2025-06-30 02:28:10 [DEBUG] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 94 - value: b'\x00\x00\x00H\x00\x00\x00\x01'
+2025-06-30 02:28:10 [DEBUG] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+2025-06-30 02:28:10 [DEBUG] tag: YCbCrPositioning (531) - type: short (3) - value: b'\x00\x01'
+2025-06-30 02:28:10 [DEBUG] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00f'
+2025-06-30 02:28:10 [INFO] 5 converted, 0 errors.
+2025-06-30 02:28:10 [INFO] Execution Completed: lovesome
+2025-06-30 03:33:29 [INFO] Start Logging
+2025-06-30 03:33:29 [DEBUG] [after_gui_loaded] Debug also here!
+2025-06-30 03:33:29 [DEBUG] [load_products] Loading products from appdata file.
+2025-06-30 03:34:02 [DEBUG] [run_script] [DEBUG] Demo expired. Days passed: 10, Limit: 5
+2025-07-01 22:08:11 [INFO] Start Logging
+2025-07-01 22:08:11 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:08:11 [DEBUG] [load_products] Loading products from appdata file.
+2025-07-01 22:11:18 [INFO] Start Logging
+2025-07-01 22:11:18 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:11:18 [DEBUG] [load_products] Loading products from appdata file.
+2025-07-01 22:11:39 [INFO] Start Logging
+2025-07-01 22:11:39 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:11:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-07-01 22:12:34 [INFO] Start Logging
+2025-07-01 22:12:34 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:12:34 [DEBUG] [load_products] Loading products from appdata file.
+2025-07-01 22:12:53 [INFO] Start Logging
+2025-07-01 22:12:53 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:12:53 [DEBUG] [load_products] Loading products from appdata file.
+2025-07-01 22:16:39 [INFO] Start Logging
+2025-07-01 22:16:39 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:16:39 [DEBUG] [load_products] Loading products from appdata file.
+2025-07-01 22:17:11 [INFO] Start Logging
+2025-07-01 22:17:11 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:17:11 [DEBUG] [load_products] Loading products from appdata file.
+2025-07-01 22:35:47 [INFO] Start Logging
+2025-07-01 22:35:47 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:35:47 [DEBUG] [load_products] Loading products from appdata file.
+2025-07-01 22:39:04 [INFO] Start Logging
+2025-07-01 22:39:04 [DEBUG] [after_gui_loaded] Debug also here!
+2025-07-01 22:39:04 [DEBUG] [load_products] Loading products from appdata file.

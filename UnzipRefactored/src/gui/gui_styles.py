@@ -4,6 +4,7 @@ import customtkinter as ctk
 
 
 def get_styles():
+    font_regular_bold = ctk.CTkFont(family="Helvetica", size=13, weight="bold")
     font_regular = ctk.CTkFont(family="Helvetica", size=13)
     font_bold    = ctk.CTkFont(family="Helvetica", size=13, weight="bold")
     font_small = ctk.CTkFont(family="Helvetica", size=11, weight="bold")
@@ -23,13 +24,13 @@ def get_styles():
     }
 
     OPTION_MENU_STYLE = {
-    "font": font_regular,
+    "font": font_regular_bold,
     "height": 30,
     "corner_radius": 6,
-    "fg_color": "#D4D4D4",     
+    "fg_color": "#F0F0F0",     
     "button_color": "#ABE9C5",
     "button_hover_color": "#92DCB1",
-    "text_color": "#234838"
+    "text_color": "#0C3121"
 }
 
     BUTTON_PRIMARY_STYLE = {
