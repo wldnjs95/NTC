@@ -73,6 +73,22 @@ def save_products(data:dict):
     with open(APPDATA_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     log_debug( "Finished saving products to appdata file." )
+    
+def save_products(data: dict):
+    log_debug("Saving products to appdata file.")
+
+    product_list = data.get("product_list", {})
+    sorted_product_list = dict(sorted(
+        product_list.items(),
+        key=lambda item: item[1].get("must_include", "")
+    ))
+
+    data["product_list"] = sorted_product_list
+
+    with open(APPDATA_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    log_debug("Finished saving products to appdata file.")
 
 def update_recent_product(product_name):
     products = load_products()

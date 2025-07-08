@@ -41,6 +41,15 @@ def get_styles():
         "hover_color": "#29B87A",
         "text_color": "white"
     }
+    
+    BUTTON_SECONDARY_STYLE = {
+        "font": font_bold,
+        "height": 42,
+        "corner_radius": 8,
+        "fg_color": "#A8C0B6",
+        "hover_color": "#9FB6AC",
+        "text_color": "white"
+    }
 
     BUTTON_DELETE_STYLE = {
         "font": font_bold,
@@ -70,5 +79,6 @@ def get_styles():
         "BUTTON_DELETE_STYLE": BUTTON_DELETE_STYLE,
         "DESCRIPTION_STYLE": DESCRIPTION_STYLE,
         "LABEL_STYLE": LABEL_STYLE,
-        "FONT_TITLE": FONT_TITLE
+        "FONT_TITLE": FONT_TITLE,
+        "BUTTON_SECONDARY_STYLE": BUTTON_SECONDARY_STYLE
     }

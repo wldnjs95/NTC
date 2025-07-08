@@ -8,7 +8,11 @@ import os
 # Optional GUI label (set externally)
 status_label = None
 
-def init_logging(logfile="app.log"):
+#LOG_FILE="app.log"
+LOG_FILE = os.path.join(os.getenv('LOCALAPPDATA'), 'NTC', 'UnzipRefactored', 'logs', 'app.log')
+
+def init_logging(logfile=LOG_FILE):
+    os.makedirs(os.path.dirname(logfile), exist_ok=True)
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
 

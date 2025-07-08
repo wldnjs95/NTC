@@ -8,14 +8,17 @@ import tkinter.messagebox as msg
 
 from src.config.config import DEMO_MODE, LIMIT_DAYS, LAUNCH_CUTOFF_DATE, VERSION_INFO
 import src.utils.logging_utils as logu
-from src.utils.logging_utils import log_user, log_debug, log_error
+from src.utils.logging_utils import log_user, log_debug, log_error, LOG_FILE
 from src.utils.general_utils import get_files_with_ext
 from src.utils.zip_utils import unzip_selected_files
 from src.utils.image_utils import convert_images_to_jpg
 from src.utils.state import global_state
 from src.utils.resource_utils import resource_path
-from src.utils.product_store import load_products, update_recent_product, delete_product, save_products
+from src.utils.product_store import load_products, update_recent_product, delete_product, save_products, APPDATA_FILE
 from .gui_styles import get_styles
+import subprocess
+import shutil
+import zipfile
 
 
 class SubFrame1(ctk.CTkFrame):
@@ -56,6 +59,29 @@ class SubFrame1(ctk.CTkFrame):
             kor = self.product_dict.get(self.recent_product, {}).get("must_include", "")
             if kor in self.dropdown_values:
                 self.dropdown.set(kor)
+        
+        
+        self.export_button = ctk.CTkButton(
+            self,
+            text="진단 파일 내보내기",
+            width=220,
+            command=self.export_diagnostics,
+            **self.styles["BUTTON_SECONDARY_STYLE"]
+        )
+        self.export_button.grid(row=4, column=1, pady=(0, 10))
+    
+    def export_diagnostics(self):
+        zip_name = "UnzipHelper_Diagnostics.zip"
+        zip_path = os.path.join(os.getcwd(), zip_name)
+
+        with zipfile.ZipFile(zip_path, 'w') as zipf:
+            if os.path.exists(LOG_FILE):
+                zipf.write(LOG_FILE, arcname="logs/app.log")
+            if os.path.exists(APPDATA_FILE):
+                zipf.write(APPDATA_FILE, arcname="config/ntc_wedding_products.json")
+
+        # Zip 생성 완료 후 탐색기에서 선택 상태로 열기
+        subprocess.Popen(f'explorer /select,"{zip_path}"')
 
     def run_script(self):
         # ─── Demo Mode Check ───
@@ -75,7 +101,7 @@ class SubFrame1(ctk.CTkFrame):
             
         selected_korean = self.dropdown.get()
         if selected_korean == self.placeholder:
-            msg.showwarning("Selection Error", "Please select a product.")
+            msg.showwarning("Selection Error", "Select a product to run.")
             return
 
         update_recent_product(selected_korean)
@@ -86,37 +112,48 @@ class SubFrame1(ctk.CTkFrame):
         global_state.product_name = product_name
         global_state.must_include = keyword
 
-        aep_count = get_files_with_ext(os.getcwd(), '.aep')
-        if len(aep_count) > 1:
-            self.status_label.configure(text="Error: Multiple AEP files found.", text_color="red")
-            return
-        elif len(aep_count) == 0:
-            log_debug(f"No AEP file found in the current directory. Expected: {os.getcwd()}")
-            self.status_label.configure(text="Error: AEP file not found", text_color="red")
-            return
-
-        self.status_label.configure(text="Running...", text_color="lightblue")
-
         try:
-            global_state.conversion_targets = []
+            aep_count = get_files_with_ext(os.getcwd(), '.aep')
+            if len(aep_count) > 1:
+                log_error(f"[CRITICAL] Multiple AEP files found in the current directory: {os.getcwd()}")
+                raise RuntimeError("AEP 파일이 여러 개 있습니다. 하나만 있어야 합니다")
+            elif len(aep_count) == 0:
+                log_debug(f"No AEP file found in the current directory. Expected: {os.getcwd()}")
+                raise RuntimeError(f"현재 디렉터리 {os.getcwd()}에 존재하는 AEP 파일이 없습니다")
+
+            self.status_label.configure(text="Running...", text_color="lightblue")
+
+            global_state.conversion_targets_mapping = {}
             success = unzip_selected_files(os.getcwd())
             if not success:
-                self.status_label.configure(text="⛔ Unzip Failed. Check Log", text_color="red")
+                self.status_label.configure(text="⛔ Unzip Failed.", text_color="red")
                 return
-            for path in global_state.conversion_targets:
+            for path in global_state.conversion_targets_mapping.keys():
                 if not os.path.exists(path):
                     log_error(f"[CRITICAL] Target directory does NOT exist: {path}")
                     raise FileNotFoundError(f"Target directory does NOT exist: {path}")
                 else:
                     converted, errors = convert_images_to_jpg(path)
+                    
                 if errors > 0:
                     log_error(f"Conversion errors occurred in {path}.")
                     self.status_label.configure(text=f"⚠️ Conversion Errors: {errors}", text_color="red")
                     return
+            
+            
+            
+            # 현재 압축 해제한 폴더 내에 original 이라는 이름의 폴더를 삭제
+            log_debug(f"Conversion mapping image count: {len(global_state.conversion_targets_mapping)}")
+            for original_folder in global_state.conversion_targets_mapping.keys():
+                if os.path.exists(original_folder):
+                    shutil.rmtree(original_folder)
+                    log_debug(f"Deleted original folder: {original_folder}")
+
             self.status_label.configure(text="Completed Successfully.", text_color="green")
-            log_user(f"Execution Completed: {product_name}")
+            log_user(f"프로그램 실행이 완료되었습니다. (키워드: {keyword})")
             
         except Exception as e:
+            log_user(str(e))
             log_error(str(e))
             self.status_label.configure(text="⚠️ Error Occurred. Check Log", text_color="red")
 

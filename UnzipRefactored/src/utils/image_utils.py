@@ -11,22 +11,22 @@ from src.config.config import VALID_EXTENSIONS
 
 register_heif_opener()
 
-def convert_images_to_jpg(directory, quality=95):
-    log_debug(f"Converting images in {directory} to JPG with quality {quality}")
-    log_debug(f"Current image list: {os.listdir(directory)}")
+def convert_images_to_jpg(original_directory, quality=95):
+    log_debug(f"Converting images in {original_directory} to JPG with quality {quality}")
+    log_debug(f"Current image list: {os.listdir(original_directory)}")
     count = 1
     converted = 0
     errors = 0
 
-    for photo in os.listdir(directory):
-        photo_path = os.path.join(directory, photo)
+    for photo in os.listdir(original_directory):
+        photo_path = os.path.join(original_directory, photo)
         photo_lower = photo.lower()
 
         if not photo_lower.endswith(VALID_EXTENSIONS):
             log_user(f"Skipping {photo} (invalid extension)")
             continue
 
-        output_path = os.path.join(directory, f"{format_number(count)}.jpg")
+        output_path = os.path.join(global_state.conversion_targets_mapping[original_directory], f"{format_number(count)}.jpg")
         try:
             img = Image.open(photo_path).convert("RGB")
             img.save(output_path, "JPEG", quality=quality)
