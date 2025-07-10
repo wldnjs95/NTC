@@ -15,6 +15,8 @@ from src.utils.image_utils import convert_images_to_jpg
 from src.utils.state import global_state
 from src.utils.resource_utils import resource_path
 from src.utils.product_store import load_products, update_recent_product, delete_product, save_products, APPDATA_FILE
+
+from UnzipRefactored.src.utils.product_store import load_recent
 from .gui_styles import get_styles
 import subprocess
 import shutil
@@ -30,7 +32,9 @@ class SubFrame1(ctk.CTkFrame):
         self.configure(fg_color="#f9f9f9")
 
         self.current_products = load_products()
-        self.recent_product = self.current_products.get('recent_product', None)
+
+        self.current_recent = load_recent()
+        self.recent_product = self.current_recent.get('recent_product', None)
         self.product_dict = self.current_products.get('product_list', {})
         self.must_include_map = {}
         
@@ -59,8 +63,7 @@ class SubFrame1(ctk.CTkFrame):
             kor = self.product_dict.get(self.recent_product, {}).get("must_include", "")
             if kor in self.dropdown_values:
                 self.dropdown.set(kor)
-        
-        
+
         self.export_button = ctk.CTkButton(
             self,
             text="진단 파일 내보내기",
@@ -169,7 +172,7 @@ class SubFrame1(ctk.CTkFrame):
         self.dropdown.configure(values=self.dropdown_values)
 
         # Recent value handling
-        recent_kor = self.current_products.get("recent_product")
+        recent_kor = self.recent_product
         if recent_kor in self.dropdown_values:
             self.dropdown.set(recent_kor)
         else:
