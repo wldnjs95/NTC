@@ -28,6 +28,9 @@ def add_product(product_name, keyword):
     elif product_name in current_products['product_list']:
         log_user(f"Product {product_name} already exists. Delete it first if you want to replace it.")
         return (False, "Product already exists.")
+    elif keyword in current_products['product_list'].values():
+        log_user(f"Keyword '{keyword}' is already used by another product.")
+        return (False, "Keyword already exists.")
     else:
         current_products['product_list'][product_name] = keyword
         save_products(current_products)
