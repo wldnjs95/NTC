@@ -28,4 +28,7 @@ __pycache__/
 *.log
 *.spec
 
+=======
 
+# PyCharm project config
+.idea/
