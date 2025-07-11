@@ -4,6 +4,7 @@ import src.config.config as config
 from src.utils.logging_utils import log_user, log_debug, log_error
 
 APPDATA_FILE = os.path.join(os.getenv('APPDATA'), 'NTC', 'UnzipRefactored', 'ntc_wedding_products.json')
+RECENT_FILE = "./recent"
 
 def create_init_appdata():
     """Create the initial appdata directory and file if they do not exist."""
@@ -90,8 +91,41 @@ def save_products(data: dict):
 
     log_debug("Finished saving products to appdata file.")
 
+
+def recent_file_exist():
+    """Check if the recent file exists."""
+    return os.path.exists(RECENT_FILE)
+
+def save_recent(data: dict):
+    log_debug("Saving recent product name")
+
+    with open(RECENT_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    log_debug("Finished saving recent product name")
+
+def load_recent():
+    log_debug("Loading recent product name")
+
+    if not recent_file_exist():
+        log_debug(f"Recent file {RECENT_FILE} does not exist. return empty dict")
+        return {}
+
+    with open(RECENT_FILE, 'r', encoding='utf-8') as file:
+        try:
+            recent = json.load(file)
+            return recent
+        except json.JSONDecodeError as e:
+            log_debug(f"Error decoding JSON from {RECENT_FILE}: {e}")
+            print(f"Error decoding JSON from {RECENT_FILE}: {e}")
+            return {}
+        except Exception as e:
+            log_error(f"Unexpected error loading products: {e}")
+            print(f"Unexpected error loading products: {e}")
+            return {}
+
 def update_recent_product(product_name):
-    products = load_products()
-    products["recent_product"] = product_name
-    save_products(products)
-    log_debug(f"Updated recent product to {product_name} in appdata file.")
+    recent = load_recent()
+    recent["recent_product"] = product_name
+    save_recent(recent)
+    log_debug(f"Updated recent product to {product_name} in recent file.")

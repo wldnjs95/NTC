@@ -24,7 +24,6 @@ LAUNCH_CUTOFF_DATE = datetime.date(2025, 7,4)
 
 # ----------- default product list -----------
 default_product_info = {
-    "recent_product": None,
     "product_list": {
         "bubbletap": {
             "product_name": "bubbletap",
