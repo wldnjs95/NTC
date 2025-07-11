@@ -16,7 +16,7 @@ from src.utils.state import global_state
 from src.utils.resource_utils import resource_path
 from src.utils.product_store import load_products, update_recent_product, delete_product, save_products, APPDATA_FILE
 
-from UnzipRefactored.src.utils.product_store import load_recent
+from src.utils.product_store import load_recent
 from .gui_styles import get_styles
 import subprocess
 import shutil

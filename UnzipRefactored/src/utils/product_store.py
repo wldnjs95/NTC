@@ -4,6 +4,7 @@ import src.config.config as config
 from src.utils.logging_utils import log_user, log_debug, log_error
 
 APPDATA_FILE = os.path.join(os.getenv('APPDATA'), 'NTC', 'UnzipRefactored', 'ntc_wedding_products.json')
+RECENT_FILE = "./recent"
 
 def create_init_appdata():
     """Create the initial appdata directory and file if they do not exist."""
@@ -90,7 +91,6 @@ def save_products(data: dict):
 
     log_debug("Finished saving products to appdata file.")
 
-RECENT_FILE = "./recent"
 
 def recent_file_exist():
     """Check if the recent file exists."""
