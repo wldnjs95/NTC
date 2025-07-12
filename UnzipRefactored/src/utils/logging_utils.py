@@ -66,12 +66,14 @@ def log_user(msg):
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     final_msg = f"[{now}][INFO] {msg}"
 
-    # GUI logging
     if log_box_widget is not None:
-        log_box_widget.insert("end", final_msg + "\n")
-        log_box_widget.see("end")
+        # thread-safe insert into the log box widget
+        log_box_widget.after(0, lambda: (
+            log_box_widget.insert("end", final_msg + "\n"),
+            log_box_widget.see("end")
+        ))
     else:
-        print(final_msg)  # fallback (예: 콘솔 실행 모드)
+        print(final_msg)
 
     logging.info(msg)
     
