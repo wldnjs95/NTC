@@ -8,7 +8,7 @@ import tkinter.messagebox as msg
 
 from src.config.config import DEMO_MODE, LIMIT_DAYS, LAUNCH_CUTOFF_DATE, VERSION_INFO
 import src.utils.logging_utils as logu
-from src.utils.logging_utils import log_user, log_debug, log_error, LOG_FILE
+from src.utils.logging_utils import log_user, log_debug, log_error, LOG_FILE, log_box_widget
 from src.utils.general_utils import get_files_with_ext
 from src.utils.zip_utils import unzip_selected_files
 from src.utils.image_utils import convert_images_to_jpg
@@ -352,6 +352,7 @@ class App(ctk.CTk):
         print("[INFO] Manual info print")
         self.update_footer_label()
         self.subframe1.reload_dropdown()
+        log_box_widget = self.log_box
 
     def update_footer_label(self):
         today = datetime.date.today()

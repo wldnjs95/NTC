@@ -7,6 +7,7 @@ import os
 
 # Optional GUI label (set externally)
 status_label = None
+log_box_widget = None
 
 #LOG_FILE="app.log"
 LOG_FILE = os.path.join(os.getenv('LOCALAPPDATA'), 'NTC', 'UnzipRefactored', 'logs', 'app.log')
@@ -34,19 +35,6 @@ def init_logging(logfile=LOG_FILE):
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
-class DualLogger:
-    def __init__(self, textbox):
-        self.textbox = textbox
-        self.original_stdout = sys.__stdout__
-
-    def write(self, message):
-        self.textbox.insert("end", message)
-        self.textbox.see("end")
-        self.original_stdout.write(message)
-
-    def flush(self):
-        pass
-    
 
 class InfoOnlyLogger:
     def __init__(self, textbox):
@@ -69,13 +57,23 @@ class InfoOnlyLogger:
         pass
 
 
+#def log_user(msg):
+#    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#    print(f"[{now}][INFO] {msg}")
+#    logging.info(msg)
+
 def log_user(msg):
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    print(f"[{now}][INFO] {msg}")
-    logging.info(msg)            
+    final_msg = f"[{now}][INFO] {msg}"
 
-#def log_debug(msg):
-#    logging.debug(msg)             # 로그 파일만 기록
+    # GUI logging
+    if log_box_widget is not None:
+        log_box_widget.insert("end", final_msg + "\n")
+        log_box_widget.see("end")
+    else:
+        print(final_msg)  # fallback (예: 콘솔 실행 모드)
+
+    logging.info(msg)
     
 def log_debug(message=""):
     caller = inspect.currentframe().f_back.f_code.co_name # 로그 파일만 기록

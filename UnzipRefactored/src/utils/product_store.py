@@ -2,6 +2,7 @@ import os
 import json
 import src.config.config as config
 from src.utils.logging_utils import log_user, log_debug, log_error
+import subprocess
 
 APPDATA_FILE = os.path.join(os.getenv('APPDATA'), 'NTC', 'UnzipRefactored', 'ntc_wedding_products.json')
 RECENT_FILE = "./recent"
@@ -102,8 +103,16 @@ def recent_file_exist():
 def save_recent(data: dict):
     log_debug("Saving recent product name")
 
+    file_already_exists = os.path.exists(RECENT_FILE)
+    
+    if file_already_exists and os.name == 'nt':
+        subprocess.run(['attrib', '-h', RECENT_FILE], shell=True)
+
     with open(RECENT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+
+    if not file_already_exists and os.name == 'nt':
+        subprocess.run(['attrib', '+h', RECENT_FILE], shell=True)
 
     log_debug("Finished saving recent product name")
 
