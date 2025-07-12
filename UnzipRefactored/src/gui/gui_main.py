@@ -22,6 +22,8 @@ import subprocess
 import shutil
 import zipfile
 
+import threading
+
 
 class SubFrame1(ctk.CTkFrame):
     def __init__(self, parent, styles):
@@ -87,6 +89,11 @@ class SubFrame1(ctk.CTkFrame):
         subprocess.Popen(f'explorer /select,"{zip_path}"')
 
     def run_script(self):
+        # run_script()를 thread에서 실행
+        thread = threading.Thread(target=self.run_script_worker)
+        thread.start()
+        
+    def run_script_worker(self):
         # ─── Demo Mode Check ───
         if DEMO_MODE:
             print("[DEBUG] DEMO_MODE:", DEMO_MODE)
@@ -345,6 +352,7 @@ class App(ctk.CTk):
             self.subframe1.reload_dropdown()
 
     def after_gui_loaded(self):
+        global log_box_widget
         sys.stdout = logu.InfoOnlyLogger(self.log_box)
         sys.stderr = logu.InfoOnlyLogger(self.log_box)
         log_user("Start Logging")
