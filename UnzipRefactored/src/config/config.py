@@ -2,13 +2,13 @@ import os
 import datetime
 
 # build command
-# pyinstaller --onefile --noconsole --icon=src/assets/unzip.ico --add-data "src/assets/unzip.ico;src/assets" --name=UnzipHelper2.6.6v run.py
+# pyinstaller --onefile --noconsole --icon=src/assets/unzip.ico --add-data "src/assets/unzip.ico;src/assets" --name=UnzipHelper2.6.8v run.py
 
 # image extensions
 VALID_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.heic', '.heif')
 
 # config.py
-VERSION_INFO = '2.6.6'
+VERSION_INFO = '2.6.8'
 photo_folder_name = '[photo]'
 jpeg_quality = 100
 
@@ -16,7 +16,7 @@ jpeg_quality = 100
 # ----------- demo launch info -----------
 # This file is used to store demo launch information.
 
-DEMO_MODE = True
+DEMO_MODE = False
 LIMIT_DAYS = 7
 LAUNCH_CUTOFF_DATE = datetime.date(2025, 7,10)
 

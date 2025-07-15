@@ -105,8 +105,8 @@ def save_recent(data: dict):
 
     file_already_exists = os.path.exists(RECENT_FILE)
     
-    if file_already_exists and os.name == 'nt':
-        subprocess.run(['attrib', '-h', RECENT_FILE], shell=True)
+    #if file_already_exists and os.name == 'nt':
+    #    subprocess.run(['attrib', '-h', RECENT_FILE], shell=True)
 
     with open(RECENT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
