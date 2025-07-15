@@ -1,6 +1,9 @@
 # UnzipHelper 2.6.8
 
 A lightweight desktop automation tool built with Python and CustomTkinter, designed to streamline batch file processing tasks such as unzipping files, converting images, and organizing outputs efficiently.
+This tool was developed in response to requests from small teams working on Adobe After Effects templates, who needed a pre-workout file management solution. 
+By automating repetitive tasks, it reduced the time required per zip file from approximately 5–15 minutes down to less than 1 minute, significantly improving productivity.
+
 
 ---
 
