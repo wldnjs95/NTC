@@ -32,6 +32,7 @@ A lightweight desktop automation tool built with Python and CustomTkinter, desig
 ---
 
 ## Folder Structure
+```
 UnzipHelper/
 ├── src/ # Source code root
 │ ├── config/ # UI style config and static settings
@@ -51,7 +52,7 @@ UnzipHelper/
 ├── assets/ # Static assets (icons, images, etc.)
 │ └── unzip.ico # Application icon for Windows executable
 └── README.md # Project description
-
+```
 ---
 
 ## Why I built this
