@@ -22,7 +22,7 @@ A lightweight desktop automation tool built with Python and CustomTkinter, desig
 
 ---
 
-## 🛠Technical Highlights
+## Technical Highlights
 - Python 3.11
 - CustomTkinter for modern UI design
 - Threading for non-blocking execution
