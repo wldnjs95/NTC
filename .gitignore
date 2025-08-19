@@ -32,3 +32,7 @@ __pycache__/
 
 # PyCharm project config
 .idea/
+
+# recent history file
+UnzipRefactored/recent
+recent
