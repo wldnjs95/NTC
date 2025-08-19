@@ -29,7 +29,12 @@ def convert_images_to_jpg(original_directory, quality=95):
         output_path = os.path.join(global_state.conversion_targets_mapping[original_directory], f"{format_number(count)}.jpg")
         try:
             img = Image.open(photo_path).convert("RGB")
-            img.save(output_path, "JPEG", quality=quality)
+            exif_data = img.info.get("exif")
+
+            if exif_data:
+                img.save(output_path, "JPEG", quality=quality, exif=exif_data)
+            else:
+                img.save(output_path, "JPEG", quality=quality)
             os.remove(photo_path)
             print(f"Converted: {photo} → {format_number(count)}.jpg")
             count += 1
