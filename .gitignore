@@ -6,6 +6,13 @@ dist/
 */sample*/
 sample*/
 
+# Download test folders
+download-test/
+
+# DownloadParser local-only folders
+DownloadParser/tests/
+DownloadParser/보자기카드 자료일괄다운 프로그램/
+
 # macOS system file
 .DS_Store
 
