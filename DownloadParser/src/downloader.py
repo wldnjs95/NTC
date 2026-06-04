@@ -32,13 +32,18 @@ def add_to_download_list(single_customer) -> int:
     스킵 조건:
       - 디스크에 이미 있고 크기가 0 이 아님  → 이전 실행에서 받은 파일
       - 같은 파일명이 이미 큐에 있음        → 같은 실행 안 중복
+      - 링크 정보가 부족함                  → 잘못된 HTML 구조
     """
     logger.info("executed")
 
-    sc_name = make_zip_filename(single_customer)
-    txt_link = get_text_page_link(single_customer)
-    http_txt_link = txt_link.replace("https", "http")
-    sc_link = get_zip_full_link(http_txt_link)
+    try:
+        sc_name = make_zip_filename(single_customer)
+        txt_link = get_text_page_link(single_customer)
+        http_txt_link = txt_link.replace("https", "http")
+        sc_link = get_zip_full_link(http_txt_link)
+    except (ValueError, IndexError, Exception) as e:
+        logger.warning(f"Skipping customer due to parsing error: {e}")
+        return 0
 
     logger.info("adding file download list")
     logger.info("file name : [%s] " % sc_name)

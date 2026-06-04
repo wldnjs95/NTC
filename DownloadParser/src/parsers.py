@@ -71,6 +71,11 @@ def get_text_page_link(single_customer) -> str:
     """
     logger.info("executed")
     anchors = single_customer.find_all("a", {"target": "_blank"})
+
+    if len(anchors) < 2:
+        logger.warning(f"Not enough links found: {len(anchors)} anchors. Customer row: {single_customer}")
+        raise ValueError(f"Expected at least 2 links with target='_blank', found {len(anchors)}")
+
     return anchors[1]["href"]
 
 
@@ -88,6 +93,14 @@ def get_zip_full_link(http_text_link: str) -> str:
     html = response.text
     text_soup = BeautifulSoup(html, "html.parser")
 
-    # <script>...</script> 안의 텍스트를 ';' 로 자른 3번째 조각, 그걸 "'"로 자른 2번째 조각이 경로
-    up_link = text_soup.find("script").text.split(";")[2].split("'")[1]
+    script_tag = text_soup.find("script")
+    if not script_tag:
+        raise ValueError(f"No <script> tag found in {http_text_link}")
+
+    try:
+        # <script>...</script> 안의 텍스트를 ';' 로 자른 3번째 조각, 그걸 "'"로 자른 2번째 조각이 경로
+        up_link = script_tag.text.split(";")[2].split("'")[1]
+    except IndexError:
+        raise ValueError(f"Could not parse download link from script in {http_text_link}")
+
     return config.FILE_HOST + up_link
