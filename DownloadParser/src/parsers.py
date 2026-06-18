@@ -20,12 +20,24 @@ from .log_setup import logger
 
 
 def get_product_type(single_customer) -> str:
-    """두 번째 <span>의 텍스트 = 상품 타입."""
-    return single_customer.select("span")[1].text
+    """
+    상품 타입: target=_blank 인 첫 <a> 의 텍스트 (상품 상세 페이지 링크).
+    등록 탭 / 수정 탭 모두 동일 구조.
+    """
+    a = single_customer.find("a", {"target": "_blank"})
+    return a.text.strip() if a else ""
 
 
 def get_customer_name(single_customer) -> str:
-    """첫 번째 <span>의 텍스트 = 고객명."""
+    """
+    고객명: onclick 에 'windowcopen' 이 들어간 <a> 의 텍스트.
+    수정 탭에는 앞에 '▶수정내역' 토글이 끼어 들어가서 span 인덱스 기반은 깨짐.
+    onclick=windowcopen 은 양쪽 탭 모두 고객 정보 팝업 링크라서 안정적.
+    """
+    for a in single_customer.find_all("a"):
+        if "windowcopen" in (a.get("onclick") or ""):
+            return a.text.strip()
+    # fallback (등록 탭 옛 동작)
     return single_customer.span.text
 
 
@@ -91,3 +103,32 @@ def get_zip_full_link(http_text_link: str) -> str:
     # <script>...</script> 안의 텍스트를 ';' 로 자른 3번째 조각, 그걸 "'"로 자른 2번째 조각이 경로
     up_link = text_soup.find("script").text.split(";")[2].split("'")[1]
     return config.FILE_HOST + up_link
+
+
+def extract_order_metadata(single_customer, step: str = "1") -> dict:
+    """
+    한 행에서 zip 직링크를 제외한 모든 메타데이터를 추출.
+
+    step="2" (수정 탭) 이면 파일명 뒤(확장자 앞)에 " (수정)" 접미사가 붙어
+    등록 탭의 같은 고객 zip 과 같은 폴더에서도 안 섞임.
+    예) "0414_0425 장형구 식전영상 (수정).zip"
+
+    zip 직링크(get_zip_full_link) 는 상세 페이지를 한 번 더 받아야 해서 비싸다.
+    목록 화면에서는 필요 없으므로 다운로드 시점까지 미룬다.
+    """
+    is_fast = "fast" in str(single_customer)
+    text_link = get_text_page_link(single_customer)
+    text_link = text_link.replace("https", "http")
+
+    suffix = " (수정)" if step == "2" else ""
+    zip_filename = make_zip_filename(single_customer) + suffix + ".zip"
+
+    return {
+        "order_date": get_order_date(single_customer),
+        "customer_name": get_customer_name(single_customer),
+        "product_type": get_product_type(single_customer),
+        "d_day": get_dday(single_customer),
+        "is_fast": is_fast,
+        "text_page_link": text_link,
+        "zip_filename": zip_filename,
+    }

@@ -7,7 +7,10 @@ pip install -r requirements.txt
 
 pyinstaller --onefile --noconsole ^
     --name "보자기카드 다운로드" ^
+    --icon "src/gui/assets/ntc_logo.ico" ^
     --hidden-import concurrent.futures.process ^
+    --add-data "src/gui/theme.json;src/gui" ^
+    --add-data "src/gui/assets/ntc_logo.png;src/gui/assets" ^
     run.py
 
 echo ----------------------------------------

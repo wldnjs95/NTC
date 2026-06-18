@@ -13,6 +13,8 @@ download-test/
 DownloadParser/tests/
 DownloadParser/보자기카드 자료일괄다운 프로그램/
 
+UnzipRefactored/failed-logs
+
 # macOS system file
 .DS_Store
 
@@ -20,7 +22,7 @@ DownloadParser/보자기카드 자료일괄다운 프로그램/
 __pycache__/
 *.py[cod]
 
-# Compressed files
+# Compressed files / build artifacts / test data
 *.zip
 *.jpg
 *.txt
@@ -32,10 +34,7 @@ __pycache__/
 *.log
 *.spec
 *.ico
-*.log
-*.spec
-
-=======
+*.docx
 
 # PyCharm project config
 .idea/
@@ -43,3 +42,9 @@ __pycache__/
 # recent history file
 UnzipRefactored/recent
 recent
+
+# --- 위 광범위 패턴(*.txt, *.html, *.ico)에 걸리지만 저장소에 꼭 포함해야 하는 파일 ---
+!DownloadParser/requirements.txt
+!DownloadParser/docs/사용법-가이드.html
+!DownloadParser/src/gui/assets/ntc_logo.ico
+!DownloadParser/logos/ntc_logo.ico

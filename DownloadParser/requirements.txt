@@ -1,0 +1,9 @@
+beautifulsoup4>=4.12
+requests>=2.31
+urllib3>=2.0
+customtkinter>=5.2
+pyinstaller>=6.0
+
+# Windows 전용: admin_id 를 DPAPI 로 PC 단위 암호화 저장하는 데 사용.
+# 다른 OS 에서는 평문 fallback 이라 의존성 없음.
+pywin32>=300; sys_platform == 'win32'

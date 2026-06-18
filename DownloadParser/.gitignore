@@ -1,0 +1,31 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 가상환경
+.venv/
+venv/
+env/
+
+# PyInstaller 산출물
+build/
+dist/
+*.spec
+
+# 로컬 로그 (앞으로는 LOCALAPPDATA 로 가지만 안전망)
+*.log
+*.log.*
+
+# OS 부산물
+.DS_Store
+Thumbs.db
+
+# 에디터
+.vscode/
+.idea/
+*.swp
+
+# docs
+*.md

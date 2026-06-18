@@ -12,13 +12,15 @@ notify 콜백은 GUI 가 진행 상황을 받기 위한 채널이다. (kind, **k
 import os
 import shutil
 import sys
-from typing import Callable, Optional
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Callable, List, Optional
 
 from . import config
 from .downloader import download
 from .helpers import format_memory
 from .log_setup import logger, user_log
 from .page import search_page
+from .parsers import get_zip_full_link
 from .validators import check_date_normality, ensure_download_path
 
 
@@ -96,6 +98,120 @@ def main(
 
     user_log.info(f"모든 다운로드 완료 — 총 {total_items}건")
     notify("done", message=f"{total_items}건 다운로드 완료 — 폴더를 확인하세요")
+
+
+def download_selected(
+    orders: List,
+    notify: Callable = lambda *a, **kw: None,
+) -> None:
+    """
+    GUI 가 선택한 Order 목록을 동시에 N개씩 다운로드 (config.PARALLEL_DOWNLOADS).
+
+    각 Order 는 text_page_link 까지만 채워져 있고, 실제 zip 직링크는 여기서 가져온다.
+    이미 받은 항목은 자동 스킵. 사용자가 중지를 누르면 진행 중인 다운로드도
+    chunk loop 안에서 cancel_event 를 확인해 자체 중단됨.
+
+    전체 진행률은 '완료된 파일 수 / 전체' 기준 (byte 단위 합산은 시작 시점에 총 크기를
+    모르므로 정확한 비율이 들쭉날쭉할 수 있어 단순 카운트가 더 안정적임).
+    각 행의 byte 단위 진행은 item_progress 이벤트로 그 행 상태 컬럼에만 표시.
+    """
+    config.cancel_event.clear()
+    ensure_download_path()
+
+    total, _used, free = shutil.disk_usage(config.DOWNLOAD_DIR)
+    logger.info("total mem : %s" % format_memory(total))
+    logger.info("free mem : %s" % format_memory(free))
+
+    user_log.info(f"저장 폴더: {config.DOWNLOAD_DIR} (여유: {format_memory(free)})")
+    user_log.info(
+        f"선택 항목 {len(orders)}건 다운로드 시작 — 동시 {config.PARALLEL_DOWNLOADS}개"
+    )
+    notify("progress", current=0, total=len(orders))
+
+    def _process_one(idx_in_order: int, order) -> None:
+        if config.cancel_event.is_set():
+            return
+        if order.already_downloaded:
+            user_log.info(f"건너뜀 (다운완료): {order.zip_filename}")
+            notify("item_done", row_id=order.row_id, status="다운완료")
+            return
+
+        user_log.info(f"받는 중: {order.zip_filename}")
+        notify("item_status", row_id=order.row_id, status="받는 중")
+
+        # 다운로드 직링크는 여기서 한 번에 가져온다 (지연 fetch).
+        try:
+            order.zip_url = get_zip_full_link(order.text_page_link)
+        except Exception as exc:
+            user_log.error(f"링크 추출 실패: {order.zip_filename} → {exc}")
+            notify("item_status", row_id=order.row_id, status="오류")
+            return
+
+        def _on_chunk(
+            done,
+            total_bytes,
+            _row=order.row_id,
+            _name=order.zip_filename,
+            _idx=idx_in_order,
+        ):
+            # 행별 진행 (퍼센트) — 모든 모드에서.
+            notify(
+                "item_progress",
+                row_id=_row,
+                bytes_done=done,
+                bytes_total=total_bytes,
+                filename=_name,
+            )
+            # 전체 byte 단위 부드러운 진행률은 순차(N=1) 일 때만 의미 있음.
+            # 병렬에선 여러 파일 chunk 가 섞여 와서 바가 들쭉날쭉해지므로 emit 안 함.
+            if config.PARALLEL_DOWNLOADS == 1:
+                notify(
+                    "chunk",
+                    file_index=_idx,
+                    total_files=len(orders),
+                    bytes_done=done,
+                    bytes_total=total_bytes,
+                    filename=_name,
+                )
+
+        download(order.zip_url, config.DOWNLOAD_DIR, order.zip_filename, on_chunk=_on_chunk)
+
+        target_path = os.path.join(config.DOWNLOAD_DIR, order.zip_filename)
+        if (
+            os.path.exists(target_path)
+            and os.path.getsize(target_path) >= config.MIN_VALID_FILE_BYTES
+        ):
+            saved_size = os.stat(target_path).st_size
+            logger.info(order.zip_filename + " : CHECK DOWNLOADED SIZE : " + str(saved_size))
+            user_log.info(
+                f"받기 완료: {order.zip_filename} ({format_memory(saved_size)})"
+            )
+            order.already_downloaded = True
+            notify("item_done", row_id=order.row_id, status="완료")
+        else:
+            user_log.error(f"받기 실패: {order.zip_filename} (사이즈 부족)")
+            order.already_downloaded = False
+            notify("item_status", row_id=order.row_id, status="오류")
+
+    completed = 0
+    with ThreadPoolExecutor(max_workers=config.PARALLEL_DOWNLOADS) as ex:
+        futures = [ex.submit(_process_one, i + 1, o) for i, o in enumerate(orders)]
+        for future in as_completed(futures):
+            if config.cancel_event.is_set():
+                user_log.info(f"사용자 요청으로 중지 ({completed}/{len(orders)} 완료)")
+                notify("status", text="중지됨")
+                # 진행 중 download() 는 chunk 루프에서 cancel_event 확인해 자체 중단,
+                # 미시작 future 는 _process_one 초입의 cancel 체크로 즉시 빠짐
+                break
+            try:
+                future.result()
+            except Exception as exc:
+                user_log.error(f"작업 예외: {exc}")
+            completed += 1
+            notify("progress", current=completed, total=len(orders))
+
+    user_log.info(f"모든 다운로드 완료 — 총 {completed}/{len(orders)}건 처리")
+    notify("done", message=f"{completed}/{len(orders)}건 처리 완료")
 
 
 def run_console() -> None:

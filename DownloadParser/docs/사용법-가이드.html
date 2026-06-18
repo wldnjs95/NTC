@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>보자기카드 다운로더 · 사용법 가이드</title>
+<style>
+  :root{
+    --bg:#f4f5f8; --card:#ffffff; --ink:#1c1d22; --muted:#6b6e78;
+    --line:#e6e7ec; --accent:#4f46e5; --accent-soft:#eef0ff;
+    --warn-bg:#fff6ed; --warn-ink:#9a5b2c; --warn-line:#f3d8bd;
+    --ok-bg:#edf8f0; --ok-ink:#2f7d4f; --ok-line:#cfeBd8;
+    --pill-bg:#fff1ed; --pill-ink:#8c5a45;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo",
+      "Malgun Gothic",sans-serif; line-height:1.7; font-size:15px;
+  }
+  .wrap{max-width:880px; margin:0 auto; padding:40px 20px 80px}
+  header.hero{
+    background:linear-gradient(135deg,#4f46e5,#7c6cf0); color:#fff;
+    border-radius:18px; padding:34px 34px 30px; box-shadow:0 10px 30px rgba(79,70,229,.25);
+  }
+  header.hero h1{margin:0 0 6px; font-size:26px; letter-spacing:-.3px}
+  header.hero p{margin:0; opacity:.92; font-size:14.5px}
+  header.hero .ver{
+    display:inline-block; margin-top:14px; padding:4px 12px; font-size:12.5px;
+    background:rgba(255,255,255,.18); border-radius:999px;
+  }
+
+  nav.toc{
+    margin:22px 0 30px; background:var(--card); border:1px solid var(--line);
+    border-radius:14px; padding:16px 20px;
+  }
+  nav.toc strong{display:block; font-size:13px; color:var(--muted); margin-bottom:8px}
+  nav.toc ol{margin:0; padding-left:20px; columns:2; column-gap:30px}
+  nav.toc a{color:var(--ink); text-decoration:none}
+  nav.toc a:hover{color:var(--accent); text-decoration:underline}
+
+  section{
+    background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:24px 26px; margin:18px 0;
+  }
+  section h2{
+    margin:0 0 14px; font-size:19px; letter-spacing:-.2px;
+    display:flex; align-items:center; gap:10px;
+  }
+  section h2 .num{
+    flex:0 0 auto; width:28px; height:28px; border-radius:8px;
+    background:var(--accent-soft); color:var(--accent); font-size:14px; font-weight:700;
+    display:grid; place-items:center;
+  }
+  h3{font-size:15.5px; margin:18px 0 6px}
+  p{margin:8px 0}
+  ul,ol{margin:8px 0; padding-left:22px}
+  li{margin:4px 0}
+  code{
+    background:#f0f1f5; border:1px solid #e3e4ea; border-radius:5px;
+    padding:1px 6px; font-size:13px; font-family:"SFMono-Regular",Consolas,monospace;
+  }
+  kbd{
+    background:#fff; border:1px solid #c9cbd3; border-bottom-width:2px;
+    border-radius:6px; padding:1px 7px; font-size:12.5px; font-weight:600;
+  }
+  .pill{
+    display:inline-block; background:var(--pill-bg); color:var(--pill-ink);
+    border-radius:5px; padding:1px 9px; font-size:12.5px; font-weight:600;
+  }
+  .steps{counter-reset:s; list-style:none; padding:0; margin:12px 0}
+  .steps li{
+    position:relative; padding:10px 0 10px 44px; border-bottom:1px dashed var(--line);
+  }
+  .steps li:last-child{border-bottom:0}
+  .steps li::before{
+    counter-increment:s; content:counter(s); position:absolute; left:0; top:9px;
+    width:28px; height:28px; border-radius:50%; background:var(--accent); color:#fff;
+    font-weight:700; font-size:13px; display:grid; place-items:center;
+  }
+  .callout{border-radius:12px; padding:14px 16px; margin:14px 0; font-size:14px}
+  .callout .tag{font-weight:700; display:block; margin-bottom:4px}
+  .warn{background:var(--warn-bg); border:1px solid var(--warn-line); color:var(--warn-ink)}
+  .ok{background:var(--ok-bg); border:1px solid var(--ok-line); color:var(--ok-ink)}
+  .tip{background:var(--accent-soft); border:1px solid #dfe1ff; color:#3f3aa3}
+
+  table{width:100%; border-collapse:collapse; margin:12px 0; font-size:14px}
+  th,td{border:1px solid var(--line); padding:9px 12px; text-align:left; vertical-align:top}
+  th{background:#fafafc; font-weight:700}
+
+  .faq dt{font-weight:700; margin-top:14px}
+  .faq dd{margin:4px 0 0; color:#33353c}
+
+  footer{margin-top:30px; text-align:center; color:var(--muted); font-size:12.5px}
+  @media print{
+    body{background:#fff}
+    section,nav.toc{break-inside:avoid; box-shadow:none}
+    header.hero{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>보자기카드 다운로더 — 사용법 가이드</h1>
+    <p>주문 자료(zip / 이미지)를 목록에서 골라 한 번에 내려받는 프로그램입니다.</p>
+    <span class="ver">버전 2.0.0 · NTC</span>
+  </header>
+
+  <nav class="toc">
+    <strong>목차</strong>
+    <ol>
+      <li><a href="#start">처음 실행 · 관리자 ID</a></li>
+      <li><a href="#screen">화면 구성</a></li>
+      <li><a href="#tabs">등록 / 수정 탭</a></li>
+      <li><a href="#folder">저장 폴더 설정</a></li>
+      <li><a href="#select">목록에서 선택하기</a></li>
+      <li><a href="#date">기간으로 한 번에 선택</a></li>
+      <li><a href="#download">다운로드 · 중지</a></li>
+      <li><a href="#status">상태 표시 읽는 법</a></li>
+      <li><a href="#multipc">여러 PC에서 쓰기</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+    </ol>
+  </nav>
+
+  <section id="start">
+    <h2><span class="num">1</span>처음 실행 · 관리자 ID</h2>
+    <p>프로그램을 처음 켜면 <b>보자기카드 관리자 ID</b>를 한 번 입력해야 합니다.</p>
+    <ul class="steps">
+      <li>실행하면 “준비 중…” 로딩 화면이 먼저 뜹니다.</li>
+      <li>저장된 ID가 없으면 <b>관리자 ID 입력창</b>이 나타납니다. ID를 입력하고 확인을 누르세요.</li>
+      <li>입력한 ID는 <b>이 PC에 안전하게 저장</b>되어, 다음부터는 다시 묻지 않습니다.</li>
+    </ul>
+    <div class="callout ok">
+      <span class="tag">✓ 한 번만 입력하면 됩니다</span>
+      같은 PC에서는 이후 자동으로 사용됩니다. ID는 암호화되어 저장되며(Windows), 프로그램을
+      다른 PC로 복사해도 ID는 따라가지 않아 그 PC에서 새로 입력해야 합니다(보안).
+    </div>
+    <div class="callout warn">
+      <span class="tag">⚠ “주문을 찾지 못했습니다” 창이 뜨면</span>
+      입력한 ID로 주문이 하나도 조회되지 않은 경우입니다. ID가 정확하다면 <b>[예] 이 ID로 계속</b>을,
+      오타가 의심되면 <b>[아니오] 다시 입력</b>을 누르세요.
+    </div>
+    <h3>관리자 ID를 바꾸려면</h3>
+    <p>화면 맨 아래 왼쪽의 <b>“관리자 ID 변경”</b> 글씨를 클릭하면 다시 입력할 수 있습니다.</p>
+  </section>
+
+  <section id="screen">
+    <h2><span class="num">2</span>화면 구성</h2>
+    <table>
+      <tr><th>위치</th><th>요소</th><th>설명</th></tr>
+      <tr><td>좌상단</td><td><b>새로고침</b></td><td>등록·수정 목록을 서버에서 다시 불러옵니다.</td></tr>
+      <tr><td>상단</td><td><b>저장 폴더</b></td><td>받은 파일이 저장될 폴더. 직접 입력하거나 ‘폴더 선택’.</td></tr>
+      <tr><td>중간 줄</td><td><span class="pill">빠른 처리</span></td><td>빠른제작 주문임을 표시하는 범례입니다.</td></tr>
+      <tr><td>중간 줄 오른쪽</td><td><b>기간(MMDD)</b></td><td>날짜 범위로 한 번에 선택·다운로드.</td></tr>
+      <tr><td>표 오른쪽 위</td><td><b>등록 / 수정</b> 탭</td><td>두 목록을 전환합니다.</td></tr>
+      <tr><td>가운데</td><td><b>주문 목록 표</b></td><td>주문일·고객·상품·상태. 클릭해서 선택합니다.</td></tr>
+      <tr><td>표 아래</td><td><b>선택/다운로드 버튼</b></td><td>전체 선택·해제, 선택 항목 다운로드, 중지.</td></tr>
+      <tr><td>하단</td><td><b>진행률 · 진행 상황</b></td><td>다운로드 진행 막대와 로그.</td></tr>
+    </table>
+  </section>
+
+  <section id="tabs">
+    <h2><span class="num">3</span>등록 / 수정 탭</h2>
+    <p>표 오른쪽 위의 <b>[등록 | 수정]</b> 버튼으로 두 목록을 전환합니다.</p>
+    <ul>
+      <li><b>등록</b> — 새로 등록된 주문 자료(zip 압축 파일)</li>
+      <li><b>수정</b> — 수정 요청된 자료. 받은 파일 이름 뒤에 <code>(수정)</code>이 붙어 등록본과 섞이지 않습니다.<br>
+        예) <code>0414_0425 장형구 식전영상 (수정).zip</code></li>
+    </ul>
+    <div class="callout tip">
+      <span class="tag">💡 전환은 즉시</span>
+      처음 켤 때 등록·수정 두 목록을 모두 불러와 두기 때문에, 탭을 누르면 기다림 없이 바로 바뀝니다.
+      최신 상태로 다시 받고 싶으면 <b>새로고침</b>을 누르세요(두 탭 모두 갱신).
+    </div>
+  </section>
+
+  <section id="folder">
+    <h2><span class="num">4</span>저장 폴더 설정</h2>
+    <ul class="steps">
+      <li><b>폴더 선택</b> 버튼으로 저장 위치를 고르거나, 입력칸에 경로를 직접 적고 <kbd>Enter</kbd>.</li>
+      <li><b>폴더 열기</b>로 현재 저장 폴더를 탐색기에서 바로 엽니다.</li>
+      <li>폴더를 바꾸면 목록의 <b>‘다운완료’ 표시가 그 폴더 기준으로 다시 계산</b>됩니다.</li>
+    </ul>
+    <div class="callout warn">
+      <span class="tag">⚠ 이미 받은 파일은 자동으로 건너뜁니다</span>
+      저장 폴더에 같은 이름 파일이 이미 있고 크기가 정상(50KB 이상)이면 ‘다운완료’로 보고 다시 받지 않습니다.
+      다시 받고 싶으면 그 파일을 폴더에서 지운 뒤 새로고침하세요.
+    </div>
+  </section>
+
+  <section id="select">
+    <h2><span class="num">5</span>목록에서 선택하기</h2>
+    <table>
+      <tr><th>동작</th><th>방법</th></tr>
+      <tr><td>한 건 선택/해제</td><td>해당 행을 <b>클릭</b> (체크박스 ☐ → ☑ 토글)</td></tr>
+      <tr><td>범위 선택</td><td>첫 행 클릭 후, 끝 행을 <kbd>Shift</kbd>+클릭</td></tr>
+      <tr><td>전체 선택 / 해제</td><td>표 아래 <b>전체 선택</b> · <b>선택 해제</b> 버튼</td></tr>
+      <tr><td>정렬</td><td>열 제목(주문일·고객·상품·상태) 클릭. 다시 누르면 역순</td></tr>
+    </table>
+    <p>현재 선택 수는 표 아래 <b>“선택 N건 / 전체 M건”</b>으로 표시됩니다.</p>
+  </section>
+
+  <section id="date">
+    <h2><span class="num">6</span>기간으로 한 번에 선택</h2>
+    <p>특정 날짜 범위의 주문을 한꺼번에 받고 싶을 때 사용합니다.</p>
+    <ul class="steps">
+      <li>오른쪽 위 <b>기간(MMDD)</b> 칸에 시작일과 종료일을 <b>4자리(월월일일)</b>로 입력. 예) <code>0531</code> ~ <code>0607</code></li>
+      <li><b>선택 날짜 다운로드</b> 버튼을 누르면 그 기간의 주문이 선택되어 바로 다운로드됩니다.</li>
+    </ul>
+    <div class="callout tip">
+      <span class="tag">💡 날짜 자동 채움</span>
+      목록을 불러오면 시작·종료일 칸이 현재 목록 범위로 자동으로 채워집니다. 그대로 쓰거나 수정하세요.
+    </div>
+  </section>
+
+  <section id="download">
+    <h2><span class="num">7</span>다운로드 · 중지</h2>
+    <ul class="steps">
+      <li>받을 항목을 선택합니다(위 5·6번).</li>
+      <li>오른쪽 아래 <b>선택 항목 다운로드</b>를 누릅니다.</li>
+      <li>진행 막대와 “진행 상황” 로그에서 상태를 확인합니다.</li>
+      <li>도중에 멈추려면 <b>중지</b> 버튼을 누릅니다.</li>
+    </ul>
+
+    <div class="callout tip">
+      <span class="tag">💡 다운로드 중에 다음 작업을 ‘예약’할 수 있어요 (순차 대기열)</span>
+      한 다운로드가 진행되는 동안 <b>탭을 자유롭게 오갈 수 있고</b>, 다른 탭(또는 같은 탭)에서
+      항목을 골라 <b>선택 항목 다운로드</b>를 다시 누르면 곧바로 시작하지 않고 <b>대기열에 쌓입니다</b>.
+      현재 다운로드가 끝나면 <b>대기열의 다음 작업이 자동으로 이어서</b> 실행됩니다.
+      <br><span style="opacity:.85">예) 등록 탭을 받는 중에 → 수정 탭으로 가서 항목 선택 후 다운로드 누름 → 등록이 끝나면 수정이 자동 시작.</span>
+    </div>
+    <ul>
+      <li>대기 중인 작업이 있으면 버튼 줄에 <span class="pill">⏳ 대기열 수정 12건</span> 같은 <b>표시가 계속 떠 있습니다</b>.
+        이 표시가 보이면 “받을 게 예약돼 기다리는 중”, 안 보이면 “예약된 게 없는 상태”로 한눈에 구분됩니다.</li>
+      <li>한 번에 하나씩 순서대로 받으므로 서버에 무리가 가지 않습니다.</li>
+      <li><b>중지</b>를 누르면 현재 다운로드와 함께 <b>대기 중이던 작업도 모두 취소</b>됩니다(표시도 사라짐).</li>
+    </ul>
+
+    <div class="callout warn">
+      <span class="tag">⚠ 일부 파일이 실패하면</span>
+      네트워크 상황에 따라 몇 건이 실패할 수 있습니다. 실패한 파일은 받지 않은 상태로 남으므로,
+      <b>다시 한 번 다운로드를 실행</b>하면 빠진 것만 채워집니다(이미 받은 건 자동 스킵).
+    </div>
+  </section>
+
+  <section id="status">
+    <h2><span class="num">8</span>상태 표시 읽는 법</h2>
+    <table>
+      <tr><th>표시</th><th>의미</th></tr>
+      <tr><td>대기 / 받기 전</td><td>아직 다운로드하지 않은 주문</td></tr>
+      <tr><td>다운완료 (스킵)</td><td>저장 폴더에 이미 정상 파일이 있어 건너뜀</td></tr>
+      <tr><td><span class="pill">빠른 처리</span> 색상 행</td><td>빠른제작 주문(우선 처리 대상)</td></tr>
+      <tr><td>진행률 막대</td><td>다운로드 중인 전체/개별 파일 진행 상태</td></tr>
+    </table>
+    <p>자세한 기록은 <b>“로그 폴더 열기”</b> 버튼으로 로그 파일을 확인할 수 있습니다.</p>
+  </section>
+
+  <section id="multipc">
+    <h2><span class="num">9</span>여러 PC에서 쓰기</h2>
+    <p>여러 대(예: 4대)의 PC에서 같은 프로그램을 쓸 수 있습니다.</p>
+    <ul>
+      <li>각 PC에 프로그램을 복사하고, <b>PC마다 관리자 ID를 한 번씩</b> 입력하면 됩니다(같은 ID 사용 가능).</li>
+      <li>ID는 PC마다 따로 암호화 저장되므로 안전합니다.</li>
+    </ul>
+    <div class="callout warn">
+      <span class="tag">⚠ 동시에 많이 받을 때</span>
+      여러 PC가 동시에 대량 다운로드하면 서버 부하로 일부 파일이 실패할 수 있습니다.
+      그럴 땐 <b>다운로드를 한 번 더 실행</b>하면 빠진 파일이 채워집니다. 가능하면 PC들의 다운로드 시점을
+      조금씩 어긋나게 하는 것도 도움이 됩니다.
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2><span class="num">10</span>자주 묻는 질문</h2>
+    <dl class="faq">
+      <dt>Q. 켤 때마다 관리자 ID를 또 물어봐요.</dt>
+      <dd>A. 정상적으로는 한 번만 묻습니다. 매번 묻는다면 저장 파일이 지워졌거나 다른 PC/계정일 수 있습니다. ID를 다시 입력하면 됩니다.</dd>
+
+      <dt>Q. 올바른 ID를 넣었는데 “주문을 찾지 못했습니다”가 떠요.</dt>
+      <dd>A. 그 ID로 조회되는 주문이 0건일 때 나오는 안내입니다. ID가 맞다면 <b>[예] 이 ID로 계속</b>을 누르세요. 목록은 비어 보일 수 있습니다.</dd>
+
+      <dt>Q. 받았는데 목록이 비어 있어요.</dt>
+      <dd>A. 등록/수정 탭을 확인하고, <b>새로고침</b>을 눌러 보세요. 기간 필터가 좁게 설정돼 있지 않은지도 확인하세요.</dd>
+
+      <dt>Q. 같은 파일을 다시 받고 싶어요.</dt>
+      <dd>A. 저장 폴더에서 그 파일을 지운 뒤 새로고침하면 ‘대기’ 상태가 되어 다시 받을 수 있습니다.</dd>
+
+      <dt>Q. 수정본과 등록본이 헷갈려요.</dt>
+      <dd>A. 수정 탭에서 받은 파일은 이름 뒤에 <code>(수정)</code>이 붙어 있어 같은 폴더에서도 구분됩니다.</dd>
+    </dl>
+  </section>
+
+  <footer>
+    보자기카드 다운로더 v2.0.0 · NTC &nbsp;|&nbsp; 이 문서는 프로그램 사용 안내용입니다.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+{
+  "CTk": {
+    "fg_color": ["#F7F7F8", "#161617"]
+  },
+  "CTkToplevel": {
+    "fg_color": ["#F7F7F8", "#161617"]
+  },
+  "CTkFrame": {
+    "corner_radius": 10,
+    "border_width": 0,
+    "fg_color": ["#FFFFFF", "#1F1F22"],
+    "top_fg_color": ["#FFFFFF", "#1F1F22"],
+    "border_color": ["#E5E5EA", "#2D2D30"]
+  },
+  "CTkButton": {
+    "corner_radius": 8,
+    "border_width": 0,
+    "fg_color": ["#5B6CFF", "#5B6CFF"],
+    "hover_color": ["#4856E0", "#7280FF"],
+    "border_color": ["#3E4BC0", "#3E4BC0"],
+    "text_color": ["#FFFFFF", "#FFFFFF"],
+    "text_color_disabled": ["#A0A0A8", "#5C5C62"]
+  },
+  "CTkLabel": {
+    "corner_radius": 0,
+    "fg_color": "transparent",
+    "text_color": ["#1A1A1F", "#F2F2F7"]
+  },
+  "CTkEntry": {
+    "corner_radius": 8,
+    "border_width": 1,
+    "fg_color": ["#FFFFFF", "#26262A"],
+    "border_color": ["#D5D5DC", "#36363A"],
+    "text_color": ["#1A1A1F", "#F2F2F7"],
+    "placeholder_text_color": ["#A0A0A8", "#7A7A82"]
+  },
+  "CTkCheckBox": {
+    "corner_radius": 6,
+    "border_width": 2,
+    "fg_color": ["#5B6CFF", "#5B6CFF"],
+    "border_color": ["#D5D5DC", "#3A3A3F"],
+    "hover_color": ["#4856E0", "#7280FF"],
+    "checkmark_color": ["#FFFFFF", "#FFFFFF"],
+    "text_color": ["#1A1A1F", "#F2F2F7"],
+    "text_color_disabled": ["#A0A0A8", "#5C5C62"]
+  },
+  "CTkSwitch": {
+    "corner_radius": 1000,
+    "border_width": 0,
+    "button_length": 0,
+    "fg_color": ["#D5D5DC", "#36363A"],
+    "progress_color": ["#5B6CFF", "#5B6CFF"],
+    "button_color": ["#FFFFFF", "#FFFFFF"],
+    "button_hover_color": ["#F0F0F5", "#E5E5EA"],
+    "text_color": ["#1A1A1F", "#F2F2F7"],
+    "text_color_disabled": ["#A0A0A8", "#5C5C62"]
+  },
+  "CTkSlider": {
+    "corner_radius": 1000,
+    "button_corner_radius": 1000,
+    "border_width": 0,
+    "button_length": 0,
+    "fg_color": ["#D5D5DC", "#36363A"],
+    "progress_color": ["#5B6CFF", "#5B6CFF"],
+    "button_color": ["#FFFFFF", "#FFFFFF"],
+    "button_hover_color": ["#F0F0F5", "#E5E5EA"]
+  },
+  "CTkOptionMenu": {
+    "corner_radius": 8,
+    "fg_color": ["#FFFFFF", "#26262A"],
+    "button_color": ["#5B6CFF", "#5B6CFF"],
+    "button_hover_color": ["#4856E0", "#7280FF"],
+    "text_color": ["#1A1A1F", "#F2F2F7"],
+    "text_color_disabled": ["#A0A0A8", "#5C5C62"]
+  },
+  "CTkComboBox": {
+    "corner_radius": 8,
+    "border_width": 1,
+    "fg_color": ["#FFFFFF", "#26262A"],
+    "border_color": ["#D5D5DC", "#36363A"],
+    "button_color": ["#D5D5DC", "#36363A"],
+    "button_hover_color": ["#C0C0C8", "#48484C"],
+    "text_color": ["#1A1A1F", "#F2F2F7"],
+    "text_color_disabled": ["#A0A0A8", "#5C5C62"]
+  },
+  "CTkScrollbar": {
+    "corner_radius": 1000,
+    "border_spacing": 4,
+    "fg_color": "transparent",
+    "button_color": ["#C8C8D0", "#3F3F44"],
+    "button_hover_color": ["#A0A0A8", "#56565A"]
+  },
+  "CTkScrollableFrame": {
+    "label_fg_color": ["#FFFFFF", "#1F1F22"]
+  },
+  "CTkSegmentedButton": {
+    "corner_radius": 8,
+    "border_width": 1,
+    "fg_color": ["#F0F0F5", "#26262A"],
+    "selected_color": ["#5B6CFF", "#5B6CFF"],
+    "selected_hover_color": ["#4856E0", "#7280FF"],
+    "unselected_color": ["#F0F0F5", "#26262A"],
+    "unselected_hover_color": ["#E5E5EA", "#36363A"],
+    "text_color": ["#1A1A1F", "#F2F2F7"],
+    "text_color_disabled": ["#A0A0A8", "#5C5C62"]
+  },
+  "CTkTextbox": {
+    "corner_radius": 8,
+    "border_width": 1,
+    "fg_color": ["#FFFFFF", "#1A1A1C"],
+    "border_color": ["#E5E5EA", "#2D2D30"],
+    "text_color": ["#1A1A1F", "#F2F2F7"],
+    "scrollbar_button_color": ["#C8C8D0", "#3F3F44"],
+    "scrollbar_button_hover_color": ["#A0A0A8", "#56565A"]
+  },
+  "CTkProgressBar": {
+    "corner_radius": 1000,
+    "border_width": 0,
+    "fg_color": ["#E5E5EA", "#2D2D30"],
+    "progress_color": ["#5B6CFF", "#5B6CFF"],
+    "border_color": ["#A0A0A8", "#3A3A3F"]
+  },
+  "DropdownMenu": {
+    "fg_color": ["#FFFFFF", "#26262A"],
+    "hover_color": ["#F0F0F5", "#36363A"],
+    "text_color": ["#1A1A1F", "#F2F2F7"]
+  },
+  "CTkFont": {
+    "macOS": {"family": "SF Pro Text", "size": 13, "weight": "normal"},
+    "Windows": {"family": "Segoe UI", "size": 13, "weight": "normal"},
+    "Linux": {"family": "Inter", "size": 13, "weight": "normal"}
+  }
+}

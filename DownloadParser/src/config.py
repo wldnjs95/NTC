@@ -7,13 +7,33 @@ import os
 import threading
 from pathlib import Path
 
-# 보자기카드 영상주문 검색 페이지 URL (페이지 번호는 page= 부분이 자동 증가)
-BASE_URL = (
+
+# 프로그램 메타 정보
+APP_NAME = "보자기카드 다운로더"
+APP_VERSION = "2.0.0"
+APP_VENDOR = "NTC"
+
+# 보자기카드 페이지의 탭 (URL 의 step 파라미터)
+STEP_REGISTERED = "1"   # 등록 — 압축(zip) 다운로드
+STEP_MODIFIED = "2"     # 수정 — 이미지 원본 다운로드 (변환 불필요)
+
+# 보자기카드 영상주문 검색 페이지 URL 템플릿.
+# {admin_id} 는 첫 실행 시 사용자가 입력한 SITE_ADMIN_ID 로 런타임 치환.
+# 이렇게 두면 EXE 디컴파일해도 ID 가 박혀있지 않음.
+BASE_URL_TEMPLATE = (
     "http://bojagicard.com/join/mov_list.php"
-    "?page=1&SITE_ADMIN_ID=ntccomm&step=1"
+    "?page=1&SITE_ADMIN_ID={admin_id}&step=1"
     "&&dates=&datee=&id=&list_mode=&keyword=&Search_mode="
     "&Search_text=&category=&color=&style=&stylegroup=&list_type=&mode="
 )
+
+# 런타임에 license_input 에서 채워짐. 빈 값이면 검색 호출 시 에러.
+SITE_ADMIN_ID: str = ""
+
+
+def base_url() -> str:
+    """현재 SITE_ADMIN_ID 가 들어간 검색 URL."""
+    return BASE_URL_TEMPLATE.format(admin_id=SITE_ADMIN_ID)
 
 # 다운로드 파일을 저장할 폴더 (기본값은 매핑된 네트워크 드라이브).
 # GUI 의 "찾아보기" 로 런타임에 덮어쓸 수 있음.
@@ -33,6 +53,11 @@ RESPONSE_ENCODING = "utf-8"
 
 # 네트워크 타임아웃 (초)
 HTTP_TIMEOUT = 30
+
+# 동시에 받을 zip 파일 개수.
+# 1 = 순차 (한 파일씩, 전체 진행률 바가 byte 단위로 부드럽게 차오름).
+# 2 이상 = 병렬 (속도 ↑, 단 전체 진행률 바는 파일 완료 카운트 기반).
+PARALLEL_DOWNLOADS = 3
 
 # 로그 파일 위치
 # Windows: %LOCALAPPDATA%\NTC\BojagiDownloader\logs\
@@ -55,6 +80,10 @@ LOG_FILENAME = "Time Rotate Log.log"
 LOG_PATH = LOG_DIR / LOG_FILENAME
 LOG_BACKUP_COUNT = 10
 LOG_ENCODING = "utf-8"
+
+# 사용자별 데이터 디렉터리 (로그 폴더의 부모) — 라이센스 파일 등 저장
+DATA_DIR = LOG_DIR.parent
+LICENSE_FILE = DATA_DIR / "admin_id.bin"
 
 # 메모리 단위 (memoryFormatting에서 사용)
 MEMORY_UNITS = {0: "B", 1: "KB", 2: "MB", 3: "GB", 4: "TB", 5: "PB", 6: "EB", 7: "ZB"}
