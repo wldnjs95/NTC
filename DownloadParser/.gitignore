@@ -29,3 +29,5 @@ Thumbs.db
 
 # docs
 *.md
+# 단, 변경 이력은 저장소에 포함
+!CHANGELOG.md

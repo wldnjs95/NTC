@@ -72,12 +72,13 @@ def pick_row_tag(is_fast: bool, modifier: str | None) -> str:
 
 
 def _platform_font_family() -> str:
-    """OS 기본 한글-친화 모던 폰트."""
-    if sys.platform == "darwin":
-        return "SF Pro Text"
-    if sys.platform == "win32":
-        return "Segoe UI"
-    return "Inter"
+    """주문 목록 표(ttk.Treeview)용 폰트.
+
+    번들된 Noto Sans KR (구글 폰트). main_window 에서 _load_bundled_font() 로
+    이미 프로세스에 로드돼 있어 시스템 설치 없이도 사용 가능. 만약 로드 실패면
+    Tk 가 알아서 기본 폰트로 대체한다.
+    """
+    return "Noto Sans KR"
 
 
 def _pick(pair: tuple) -> str:

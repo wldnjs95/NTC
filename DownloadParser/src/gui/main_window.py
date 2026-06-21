@@ -42,6 +42,18 @@ from .worker import DownloadWorker
 
 _THEME_PATH = os.path.join(os.path.dirname(__file__), "theme.json")
 _ICON_PATH = os.path.join(os.path.dirname(__file__), "assets", "ntc_logo.png")
+# 번들된 Noto Sans KR (구글 폰트). 시스템에 설치돼 있지 않아도 런타임에 로드해
+# 어느 PC 에서나 동일한 글꼴로 보이게 한다. theme.json / style_helpers 의 family
+# 이름("Noto Sans KR")과 반드시 일치해야 한다.
+_FONT_PATH = os.path.join(os.path.dirname(__file__), "assets", "fonts", "NotoSansKR-Variable.ttf")
+
+
+def _load_bundled_font() -> None:
+    """앱 폰트를 프로세스에 로드. 위젯/테마가 폰트를 쓰기 전에 한 번 호출."""
+    try:
+        ctk.FontManager.load_font(_FONT_PATH)
+    except Exception:
+        pass   # 실패해도 OS 기본 폰트로 동작 (글자만 다르게 보임)
 
 # 체크박스 표시 문자 (선택 / 미선택). 둥근 모서리 사각 (U+25A2 / U+25A3).
 _CHECK_ON = "▣"
@@ -87,9 +99,12 @@ _HEADING_TEXT = {
 class BojagiDownloaderApp(ctk.CTk):
     def __init__(self) -> None:
         super().__init__()
-        self.title("보자기카드 자료 일괄 다운로드")
-        self.geometry("960x720")
-        self.minsize(820, 560)
+        self.title(f"보자기카드 자료 일괄 다운로드 v{config.APP_VERSION}")
+        # 초기 크기를 넉넉히 — 모든 영역(목록·다운로드 버튼·진행률·로그·푸터)이
+        # 처음부터 한 화면에 다 보이도록. minsize 도 모든 요소가 항상 보이는
+        # 높이로 잡아, 사용자가 창을 줄여도 아래쪽이 잘리지 않게 한다.
+        self.geometry("1040x900")
+        self.minsize(900, 840)
         # 위젯·오버레이 배치가 끝날 때까지 창을 숨겨, 홈화면이 잠깐 비쳤다가
         # 로딩으로 넘어가는 깜빡임을 없앤다. 준비 끝나면 deiconify 로 한 번에 표시.
         self.withdraw()
@@ -126,6 +141,9 @@ class BojagiDownloaderApp(ctk.CTk):
         self.log_handler.setFormatter(logging.Formatter(_GUI_LOG_FORMAT, datefmt="%H:%M:%S"))
         user_log.addHandler(self.log_handler)
 
+        # 위젯/테마가 폰트를 참조하기 전에 번들 폰트를 먼저 로드한다.
+        _load_bundled_font()
+
         ctk.set_appearance_mode("System")
         # 커스텀 모던 테마 (없으면 기본값 fallback)
         try:
@@ -152,9 +170,25 @@ class BojagiDownloaderApp(ctk.CTk):
         self.deiconify()
         self._poll_events()
 
+        # 일부 환경(고DPI 디스플레이 / PyInstaller 프로즌 빌드)에서는 mainloop 가
+        # 시작되기 전에 호출한 deiconify() 가 실제로 창을 표시하지 못해, 창이
+        # WS_VISIBLE 없이 숨겨진 채로 남는다(데이터는 로드되는데 화면만 안 뜸).
+        # 이벤트 루프에 진입한 직후 한 번 더 확실히 표시해 이 문제를 막는다.
+        self.after(0, self._force_show)
+
         # 윈도우가 그려진 직후에 관리자 ID 확인 → 정상이면 첫 페이지 로드.
         # 모달이 부모 윈도우 위치를 참조하므로 윈도우가 렌더된 후 호출해야 함.
         self.after(150, self._startup_check)
+
+    def _force_show(self) -> None:
+        """mainloop 진입 직후 호출되어 메인 창을 확실히 화면에 표시한다."""
+        try:
+            self.deiconify()
+            self.state("normal")
+            self.lift()
+            self.focus_force()
+        except Exception:
+            pass
 
     def _startup_check(self) -> None:
         """
@@ -442,13 +476,13 @@ class BojagiDownloaderApp(ctk.CTk):
             footer,
             text=f"{config.APP_NAME} v{config.APP_VERSION} · {config.APP_VENDOR}",
             text_color=("gray50", "gray60"),
-            font=ctk.CTkFont(size=10),
+            font=ctk.CTkFont(size=12),
         ).pack(side="right")
         change_id = ctk.CTkLabel(
             footer,
             text="관리자 ID 변경",
             text_color=("gray50", "gray60"),
-            font=ctk.CTkFont(size=10, underline=True),
+            font=ctk.CTkFont(size=12, underline=True),
             cursor="hand2",
         )
         change_id.pack(side="left")

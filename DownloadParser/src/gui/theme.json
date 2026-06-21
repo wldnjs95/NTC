@@ -126,8 +126,8 @@
     "text_color": ["#1A1A1F", "#F2F2F7"]
   },
   "CTkFont": {
-    "macOS": {"family": "SF Pro Text", "size": 13, "weight": "normal"},
-    "Windows": {"family": "Segoe UI", "size": 13, "weight": "normal"},
-    "Linux": {"family": "Inter", "size": 13, "weight": "normal"}
+    "macOS": {"family": "Noto Sans KR", "size": 13, "weight": "normal"},
+    "Windows": {"family": "Noto Sans KR", "size": 13, "weight": "normal"},
+    "Linux": {"family": "Noto Sans KR", "size": 13, "weight": "normal"}
   }
 }
