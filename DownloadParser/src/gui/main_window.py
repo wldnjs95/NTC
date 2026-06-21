@@ -396,6 +396,15 @@ class BojagiDownloaderApp(ctk.CTk):
         tree_container.grid_rowconfigure(0, weight=1)
         tree_container.grid_columnconfigure(0, weight=1)
 
+        # 빈 목록 안내 — 주문이 0건일 때 표 가운데에 띄운다 (예: 수정 탭 0건).
+        # 평소엔 숨김(place_forget). _update_empty_state 가 토글.
+        self._empty_label = ctk.CTkLabel(
+            tree_container,
+            text="주문 목록이 없습니다.",
+            text_color=("gray45", "gray60"),
+            font=ctk.CTkFont(size=15),
+        )
+
         # 클릭 = 그 행만 토글 (Gmail/Notion 스타일).
         # 선택 변경되면 체크박스 글자도 갱신 + 카운트 라벨 갱신.
         self.tree.bind("<Button-1>", self._on_tree_click)
@@ -583,6 +592,15 @@ class BojagiDownloaderApp(ctk.CTk):
         self._append_orders(list(cached_orders.values()))
         self._update_selection_label()
         self._autofill_date_range()
+        self._update_empty_state()
+
+    def _update_empty_state(self) -> None:
+        """주문이 0건이면 표 가운데에 '주문 목록이 없습니다.' 안내를 띄우고,
+        1건 이상이면 숨긴다."""
+        if self.tree.get_children():
+            self._empty_label.place_forget()
+        else:
+            self._empty_label.place(relx=0.5, rely=0.5, anchor="center")
 
     def _start_browse(self, append: bool = False) -> None:
         """
