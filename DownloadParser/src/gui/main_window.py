@@ -1156,4 +1156,10 @@ def _is_valid_mmdd(s: str) -> bool:
 
 def launch() -> None:
     app = BojagiDownloaderApp()
-    app.mainloop()
+    try:
+        app.mainloop()
+    except tk.TclError:
+        # 시작 단계(예: 관리자 ID·비밀번호 입력창)에서 창을 닫으면, CustomTkinter 가
+        # 예약해 둔 after 콜백이 이미 파괴된 윈도우에 wm 명령을 호출하며 TclError 를
+        # 던진다. 정상 종료의 부작용일 뿐이므로 조용히 무시해 크래시 창을 막는다.
+        pass

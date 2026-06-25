@@ -10,7 +10,7 @@ from pathlib import Path
 
 # 프로그램 메타 정보
 APP_NAME = "보자기카드 다운로더"
-APP_VERSION = "2.0.10"
+APP_VERSION = "2.0.11"
 APP_VENDOR = "NTC"
 
 # 보자기카드 페이지의 탭 (URL 의 step 파라미터)
