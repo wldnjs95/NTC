@@ -48,6 +48,10 @@ class Order:
     text_page_link: str      # 상세 페이지 URL (zip 직링크는 여기서 다시 받음)
     zip_filename: str        # 최종 저장 파일명 (...zip)
 
+    # 수정 탭 전용
+    order_num: str = ""              # 행의 data-order_num (수정요청 이미지 조회용)
+    is_revision: bool = False        # 수정 탭(step=2) 주문 여부
+
     # 런타임 상태
     already_downloaded: bool = False   # 로드 시점 디스크 확인 결과
     zip_url: str = ""                  # 다운로드 시점에 채워짐
@@ -175,13 +179,22 @@ class OrdersLoader:
                 continue
 
             zip_filename = meta["zip_filename"]
-            target_path = os.path.join(config.DOWNLOAD_DIR, zip_filename)
-            # 단순히 존재만 보지 않고 최소 사이즈도 충족해야 '이미 받음' 으로 인정.
-            # 부분 다운로드 / 손상된 파일은 '대기' 로 두어 다시 받게 함.
-            already = (
-                os.path.isfile(target_path)
-                and os.path.getsize(target_path) >= config.MIN_VALID_FILE_BYTES
-            )
+            is_revision = (self._step == config.STEP_MODIFIED)
+
+            if is_revision:
+                # 수정 탭: zip 이 아니라 '수정요청 이미지' 들을 폴더에 저장한다.
+                # 폴더명 = zip_filename 에서 .zip 제거. 폴더에 파일이 있으면 '이미 받음'.
+                folder = os.path.join(config.DOWNLOAD_DIR, zip_filename[:-4])
+                already = os.path.isdir(folder) and any(os.scandir(folder)) \
+                    if os.path.isdir(folder) else False
+            else:
+                target_path = os.path.join(config.DOWNLOAD_DIR, zip_filename)
+                # 단순히 존재만 보지 않고 최소 사이즈도 충족해야 '이미 받음' 으로 인정.
+                # 부분 다운로드 / 손상된 파일은 '대기' 로 두어 다시 받게 함.
+                already = (
+                    os.path.isfile(target_path)
+                    and os.path.getsize(target_path) >= config.MIN_VALID_FILE_BYTES
+                )
 
             orders.append(
                 Order(
@@ -192,6 +205,8 @@ class OrdersLoader:
                     is_fast=meta["is_fast"],
                     text_page_link=meta["text_page_link"],
                     zip_filename=zip_filename,
+                    order_num=meta.get("order_num", ""),
+                    is_revision=is_revision,
                     already_downloaded=already,
                 )
             )

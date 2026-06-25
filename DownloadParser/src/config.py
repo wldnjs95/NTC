@@ -10,7 +10,7 @@ from pathlib import Path
 
 # 프로그램 메타 정보
 APP_NAME = "보자기카드 다운로더"
-APP_VERSION = "2.0.5"
+APP_VERSION = "2.0.6"
 APP_VENDOR = "NTC"
 
 # 보자기카드 페이지의 탭 (URL 의 step 파라미터)
@@ -41,6 +41,16 @@ DOWNLOAD_DIR = r"Z:\partner_bojagi"
 
 # 다운로드 직링크가 만들어질 때 앞에 붙는 호스트
 FILE_HOST = "http://gwl2.bojagicard.com"
+
+# ── 수정 탭(수정요청 이미지) 관련 ──
+# 수정요청 이미지 목록은 '로그인'해야만 보인다. (SITE_ADMIN_ID 파라미터만으론 빈 응답)
+LOGIN_URL = "http://bojagicard.com/join/login_proc.html"
+LOGIN_PAGE = "http://bojagicard.com/join/login.html"
+# 한 주문의 수정요청(시안) 이미지 목록을 주는 AJAX 엔드포인트.
+# 호출: SIAN_LIST_URL?order_num=<mvXXXX>&category=
+SIAN_LIST_URL = "http://bojagicard.com/join/mov_list_sian_list.php"
+# 수정요청 이미지 src 가 '/upload/...' 처럼 / 로 시작하면 앞에 붙일 호스트
+IMAGE_HOST = "http://bojagicard.com"
 
 # 검색 상한 (20page, infinite loop 방지)
 MAX_PAGES = 20
@@ -84,6 +94,8 @@ LOG_ENCODING = "utf-8"
 # 사용자별 데이터 디렉터리 (로그 폴더의 부모) — 라이센스 파일 등 저장
 DATA_DIR = LOG_DIR.parent
 LICENSE_FILE = DATA_DIR / "admin_id.bin"
+# 로그인 비밀번호 (수정요청 이미지 조회용). admin_id 와 같은 방식으로 PC 단위 암호화 저장.
+ADMIN_PW_FILE = DATA_DIR / "admin_pw.bin"
 
 # 메모리 단위 (memoryFormatting에서 사용)
 MEMORY_UNITS = {0: "B", 1: "KB", 2: "MB", 3: "GB", 4: "TB", 5: "PB", 6: "EB", 7: "ZB"}

@@ -65,6 +65,7 @@ def prompt_text(
     message: str,
     placeholder: str = "",
     initial: str = "",
+    show: str = "",
 ) -> str | None:
     """
     텍스트 입력 모달. 확인 시 입력 문자열 반환, 취소/X 시 None 반환.
@@ -92,6 +93,8 @@ def prompt_text(
     ).pack(fill="x", pady=(0, 10))
 
     entry = ctk.CTkEntry(right, width=320, placeholder_text=placeholder)
+    if show:
+        entry.configure(show=show)
     if initial:
         entry.insert(0, initial)
     entry.pack(fill="x")

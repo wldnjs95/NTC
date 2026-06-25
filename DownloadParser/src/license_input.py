@@ -84,6 +84,33 @@ def clear_admin_id() -> None:
 
 
 # ──────────────────────────────────────────────────────────────────────
+# 로그인 비밀번호 (수정요청 이미지 조회용) — admin_id 와 동일하게 PC 단위 암호화
+# ──────────────────────────────────────────────────────────────────────
+
+def load_admin_pw() -> Optional[str]:
+    """저장된 로그인 비밀번호를 읽어옴. 없거나 손상되면 None."""
+    p = config.ADMIN_PW_FILE
+    if not p.exists():
+        return None
+    try:
+        return _decrypt(p.read_bytes())
+    except Exception:
+        return None
+
+
+def save_admin_pw(pw: str) -> None:
+    """로그인 비밀번호를 PC 단위 암호화해 저장."""
+    config.ADMIN_PW_FILE.parent.mkdir(parents=True, exist_ok=True)
+    config.ADMIN_PW_FILE.write_bytes(_encrypt(pw))
+
+
+def clear_admin_pw() -> None:
+    """저장된 비밀번호 삭제."""
+    if config.ADMIN_PW_FILE.exists():
+        config.ADMIN_PW_FILE.unlink()
+
+
+# ──────────────────────────────────────────────────────────────────────
 # 유효성 검증
 # ──────────────────────────────────────────────────────────────────────
 

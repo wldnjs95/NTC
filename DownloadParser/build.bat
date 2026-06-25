@@ -6,7 +6,7 @@ REM 결과:   dist\보자기카드 다운로드.exe   (GUI 윈도우 모드)
 pip install -r requirements.txt
 
 pyinstaller --onefile --noconsole ^
-    --name "보자기카드 다운로드 v2.0.5" ^
+    --name "보자기카드 다운로드 v2.0.6" ^
     --icon "src/gui/assets/ntc_logo.ico" ^
     --hidden-import concurrent.futures.process ^
     --add-data "src/gui/theme.json;src/gui" ^

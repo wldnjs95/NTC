@@ -131,4 +131,6 @@ def extract_order_metadata(single_customer, step: str = "1") -> dict:
         "is_fast": is_fast,
         "text_page_link": text_link,
         "zip_filename": zip_filename,
+        # 수정요청 이미지 조회용. 행의 data-order_num (예: "mv1781613051").
+        "order_num": single_customer.get("data-order_num") or "",
     }

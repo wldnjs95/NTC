@@ -205,10 +205,40 @@ class BojagiDownloaderApp(ctk.CTk):
         if stored:
             config.SITE_ADMIN_ID = stored
             user_log.info("저장된 관리자 ID 사용")
-            self._start_browse(append=False)
+            self._ensure_pw_then_browse()
         else:
             # 저장된 ID 없음 → 바로 입력 모달 (네트워크 없음)
             self._request_admin_id(is_startup=True)
+
+    def _ensure_pw_then_browse(self) -> None:
+        """로그인 비밀번호(수정요청 이미지용)가 없으면 한 번 입력받은 뒤 목록을 로드한다.
+        비밀번호는 수정 탭 다운로드에만 필요하므로, 입력을 취소해도 목록 로드는 진행한다."""
+        if license_input.load_admin_pw() is None:
+            self._request_password(is_startup=True)
+        else:
+            self._start_browse(append=False)
+
+    def _request_password(self, is_startup: bool) -> None:
+        """로그인 비밀번호 입력 모달 (마스킹). 저장 후 동작 이어감."""
+        pw = prompt_text(
+            self,
+            title="로그인 비밀번호",
+            message=(
+                "보자기카드 로그인 비밀번호를 입력하세요.\n"
+                "수정 탭의 '수정요청 이미지' 다운로드에 필요합니다.\n"
+                "(PC 에 암호화되어 저장됩니다)"
+            ),
+            placeholder="비밀번호",
+            show="●",
+        )
+        if pw:
+            license_input.save_admin_pw(pw)
+            user_log.info("로그인 비밀번호 저장 완료")
+        else:
+            user_log.info("비밀번호 입력을 건너뜀 (수정요청 이미지는 받을 수 없음)")
+        # 시작 단계면 비번 유무와 상관없이 목록 로드로 진행
+        if is_startup:
+            self._start_browse(append=False)
 
     def _validate_admin_id_async(self, admin_id: str, on_result) -> None:
         """
@@ -255,7 +285,10 @@ class BojagiDownloaderApp(ctk.CTk):
             license_input.save_admin_id(new_id)
             config.SITE_ADMIN_ID = new_id
             user_log.info("관리자 ID 저장 완료")
-            self._start_browse(append=False)
+            # ID 가 바뀌면 계정이 달라지므로 비밀번호도 새로 입력받는다.
+            license_input.clear_admin_pw()
+            self._hide_loading_overlay()
+            self._request_password(is_startup=True)
 
         def on_result(status: str, msg: str) -> None:
             if status == "valid":
@@ -497,6 +530,16 @@ class BojagiDownloaderApp(ctk.CTk):
         change_id.pack(side="left")
         change_id.bind("<Button-1>", lambda _e: self._on_change_admin_id())
 
+        change_pw = ctk.CTkLabel(
+            footer,
+            text="비밀번호 변경",
+            text_color=("gray50", "gray60"),
+            font=ctk.CTkFont(size=12, underline=True),
+            cursor="hand2",
+        )
+        change_pw.pack(side="left", padx=(16, 0))
+        change_pw.bind("<Button-1>", lambda _e: self._on_change_password())
+
         # 8) 로딩 오버레이 — 화면 전체를 덮어 입력을 차단하고 "불러오는 중" 메시지를
         # 보여준다. 처음엔 숨김 (place 하지 않음). _show/_hide 로 토글.
         self._loading_overlay = ctk.CTkFrame(
@@ -545,6 +588,25 @@ class BojagiDownloaderApp(ctk.CTk):
         """푸터의 'ID 변경' 클릭 시. 재입력 받고 (백그라운드 검증) 성공 시 새로고침."""
         user_log.info("관리자 ID 변경 요청")
         self._request_admin_id(is_startup=False)
+
+    def _on_change_password(self) -> None:
+        """푸터의 '비밀번호 변경' 클릭 시. 새 비밀번호를 입력받아 저장 (마스킹)."""
+        user_log.info("로그인 비밀번호 변경 요청")
+        pw = prompt_text(
+            self,
+            title="로그인 비밀번호 변경",
+            message=(
+                "보자기카드 로그인 비밀번호를 입력하세요.\n"
+                "수정 탭의 '수정요청 이미지' 다운로드에 필요합니다.\n"
+                "(PC 에 암호화되어 저장됩니다)"
+            ),
+            placeholder="비밀번호",
+            show="●",
+        )
+        if pw:
+            license_input.save_admin_pw(pw)
+            user_log.info("로그인 비밀번호 저장 완료")
+            show_info(self, "완료", "비밀번호가 저장되었습니다.")
 
     # ──────────────────────────────────────────────────────────────────
     # 동작

@@ -16,6 +16,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Callable, List, Optional
 
 from . import config
+from . import revision
 from .downloader import download
 from .helpers import format_memory
 from .log_setup import logger, user_log
@@ -100,6 +101,41 @@ def main(
     notify("done", message=f"{total_items}건 다운로드 완료 — 폴더를 확인하세요")
 
 
+def _download_revision_order(order, session, notify: Callable) -> None:
+    """
+    수정 탭 주문 한 건: 수정요청(시안) 이미지들을 고객별 폴더에 저장한다.
+    폴더명 = zip_filename 에서 '.zip' 을 뗀 이름 (예: "0414_0425 장형구 식전영상 (수정)").
+    """
+    folder_name = order.zip_filename[:-4] if order.zip_filename.endswith(".zip") else order.zip_filename
+    folder = os.path.join(config.DOWNLOAD_DIR, folder_name)
+
+    notify("item_status", row_id=order.row_id, status="받는 중")
+    try:
+        urls = revision.fetch_revision_image_urls(session, order.order_num)
+    except Exception as exc:
+        user_log.error(f"수정내역 조회 실패: {order.zip_filename} → {exc}")
+        notify("item_status", row_id=order.row_id, status="오류")
+        return
+
+    if not urls:
+        user_log.info(f"수정요청 이미지가 없습니다: {order.zip_filename}")
+        notify("item_done", row_id=order.row_id, status="이미지없음")
+        return
+
+    def _each(i, n, fname):
+        notify("item_status", row_id=order.row_id, status=f"받는 중 {i}/{n}")
+
+    saved = revision.download_images(session, urls, folder, on_each=_each)
+    if saved > 0 and not config.cancel_event.is_set():
+        user_log.info(f"수정요청 이미지 {saved}장 저장: {folder_name}")
+        order.already_downloaded = True
+        notify("item_done", row_id=order.row_id, status="완료")
+    elif config.cancel_event.is_set():
+        notify("item_status", row_id=order.row_id, status="중지")
+    else:
+        notify("item_status", row_id=order.row_id, status="오류")
+
+
 def download_selected(
     orders: List,
     notify: Callable = lambda *a, **kw: None,
@@ -128,12 +164,31 @@ def download_selected(
     )
     notify("progress", current=0, total=len(orders))
 
+    # 수정 탭 주문이 하나라도 있으면, 수정요청 이미지 조회를 위해 '한 번만' 로그인한다.
+    # (로그인 실패 시 수정 항목은 오류 처리, 등록 항목은 정상 진행)
+    login_session = None
+    if any(getattr(o, "is_revision", False) for o in orders):
+        try:
+            login_session = revision.make_logged_in_session()
+            user_log.info("로그인 완료 — 수정요청 이미지 조회 준비됨")
+        except Exception as exc:
+            user_log.error(f"로그인 실패 — 수정요청 이미지를 받을 수 없습니다: {exc}")
+
     def _process_one(idx_in_order: int, order) -> None:
         if config.cancel_event.is_set():
             return
         if order.already_downloaded:
             user_log.info(f"건너뜀 (다운완료): {order.zip_filename}")
             notify("item_done", row_id=order.row_id, status="다운완료")
+            return
+
+        # 수정 탭: zip(작업 원본) 이 아니라 '수정요청 이미지' 들을 받는다.
+        if getattr(order, "is_revision", False):
+            if login_session is None:
+                user_log.error(f"로그인이 안 돼 건너뜀: {order.zip_filename}")
+                notify("item_status", row_id=order.row_id, status="로그인필요")
+                return
+            _download_revision_order(order, login_session, notify)
             return
 
         user_log.info(f"받는 중: {order.zip_filename}")
