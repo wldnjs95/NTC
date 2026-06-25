@@ -223,11 +223,7 @@ class BojagiDownloaderApp(ctk.CTk):
         pw = prompt_text(
             self,
             title="로그인 비밀번호",
-            message=(
-                "보자기카드 로그인 비밀번호를 입력하세요.\n"
-                "수정 탭의 '수정요청 이미지' 다운로드에 필요합니다.\n"
-                "(PC 에 암호화되어 저장됩니다)"
-            ),
+            message="보자기카드 로그인 비밀번호를 입력하세요.",
             placeholder="비밀번호",
             show="●",
         )
@@ -595,11 +591,7 @@ class BojagiDownloaderApp(ctk.CTk):
         pw = prompt_text(
             self,
             title="로그인 비밀번호 변경",
-            message=(
-                "보자기카드 로그인 비밀번호를 입력하세요.\n"
-                "수정 탭의 '수정요청 이미지' 다운로드에 필요합니다.\n"
-                "(PC 에 암호화되어 저장됩니다)"
-            ),
+            message="보자기카드 로그인 비밀번호를 입력하세요.",
             placeholder="비밀번호",
             show="●",
         )
