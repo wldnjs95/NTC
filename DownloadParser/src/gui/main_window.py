@@ -249,7 +249,7 @@ class BojagiDownloaderApp(ctk.CTk):
         new_pw = creds["pw"]
 
         # 검증 동안 오버레이 표시 (입력 끝났으니 이제 로딩 표시가 맞음)
-        self._show_loading_overlay("관리자 ID 확인 중...")
+        self._show_loading_overlay("관리자 정보 확인 중...")
 
         def commit() -> None:
             license_input.save_admin_id(new_id)
