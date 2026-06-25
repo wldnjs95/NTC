@@ -131,6 +131,84 @@ def prompt_text(
     return result["value"]
 
 
+def prompt_credentials(
+    parent,
+    title: str,
+    message: str,
+    id_initial: str = "",
+    id_label: str = "관리자 ID",
+    pw_label: str = "비밀번호",
+) -> dict | None:
+    """
+    관리자 ID + 비밀번호를 한 창에서 함께 입력받는 모달.
+    확인 시 {"id": ..., "pw": ...} 반환, 취소/X 시 None.
+    Enter = 확인, Escape = 취소. 비밀번호 칸은 ● 로 마스킹.
+    """
+    icon = _load_icon()
+    result: dict = {"value": None}
+
+    dialog = ctk.CTkToplevel(parent)
+    dialog.title(title)
+    dialog.resizable(False, False)
+    dialog.transient(parent)
+
+    body = ctk.CTkFrame(dialog, fg_color="transparent")
+    body.pack(padx=24, pady=(24, 8), fill="both", expand=True)
+
+    if icon is not None:
+        ctk.CTkLabel(body, image=icon, text="").pack(side="left", padx=(0, 16))
+
+    right = ctk.CTkFrame(body, fg_color="transparent")
+    right.pack(side="left", fill="both", expand=True)
+
+    ctk.CTkLabel(
+        right, text=message, justify="left", anchor="nw", wraplength=360,
+    ).pack(fill="x", pady=(0, 12))
+
+    ctk.CTkLabel(right, text=id_label, anchor="w").pack(fill="x")
+    id_entry = ctk.CTkEntry(right, width=320)
+    if id_initial:
+        id_entry.insert(0, id_initial)
+    id_entry.pack(fill="x", pady=(2, 10))
+
+    ctk.CTkLabel(right, text=pw_label, anchor="w").pack(fill="x")
+    pw_entry = ctk.CTkEntry(right, width=320, show="●")
+    pw_entry.pack(fill="x", pady=(2, 0))
+
+    # ID 가 이미 있으면(변경/업그레이드) 비밀번호 칸으로 포커스, 아니면 ID 부터.
+    (pw_entry if id_initial else id_entry).focus_set()
+
+    btns = ctk.CTkFrame(dialog, fg_color="transparent")
+    btns.pack(pady=(2, 18))
+
+    def _ok():
+        result["value"] = {"id": id_entry.get().strip(), "pw": pw_entry.get().strip()}
+        dialog.destroy()
+
+    def _cancel():
+        result["value"] = None
+        dialog.destroy()
+
+    ctk.CTkButton(btns, text="취소", width=80, command=_cancel,
+                  fg_color="transparent", border_width=1,
+                  border_color=("#D5D5DC", "#3A3A3F"),
+                  text_color=("#1A1A1F", "#F2F2F7"),
+                  hover_color=("#F0F0F5", "#26262A")).pack(side="left", padx=(0, 8))
+    ctk.CTkButton(btns, text="확인", width=80, command=_ok).pack(side="left")
+
+    dialog.update_idletasks()
+    ww, wh = parent.winfo_width(), parent.winfo_height()
+    wx, wy = parent.winfo_x(), parent.winfo_y()
+    dw, dh = dialog.winfo_width(), dialog.winfo_height()
+    dialog.geometry(f"+{wx + (ww - dw) // 2}+{wy + (wh - dh) // 2}")
+
+    dialog.bind("<Return>", lambda _e: _ok())
+    dialog.bind("<Escape>", lambda _e: _cancel())
+    dialog.grab_set()
+    parent.wait_window(dialog)
+    return result["value"]
+
+
 def _show_dialog(parent, title: str, message: str) -> None:
     icon = _load_icon()
 

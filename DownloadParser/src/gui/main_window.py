@@ -34,7 +34,7 @@ from .. import license_input
 from ..helpers import format_memory
 from ..log_setup import user_log
 from ..orders import Order
-from .dialogs import prompt_text, show_error, show_info
+from .dialogs import prompt_credentials, show_error, show_info
 from .log_bridge import QueueLogHandler
 from .style_helpers import apply_tree_style, apply_tree_tags, container_bg, pick_row_tag
 from .worker import DownloadWorker
@@ -192,58 +192,28 @@ class BojagiDownloaderApp(ctk.CTk):
 
     def _startup_check(self) -> None:
         """
-        관리자 ID 확보 후 첫 페이지 로드.
+        관리자 ID·비밀번호 확보 후 첫 페이지 로드.
 
-        저장된 ID 가 있으면 네트워크 재검증 없이 바로 신뢰하고 로드한다.
-        - 시작 시 네트워크 검증을 하면: ① 1~2초 멈춤(버벅임), ② 오프라인/서버
-          불안정 시 정상 ID 도 실패해 재입력 요구, ③ 등록 0건인 정상 계정이
-          매 시작마다 확인 모달에 걸림 — 모두 같은 PC 재사용을 방해한다.
-        - 잘못된 ID 가 저장돼 있으면 목록이 비어 보이고, 'ID 변경' 으로 고치면 됨.
-        ID 유효성 검증은 '처음 입력하는 순간' 에만 한다 (_request_admin_id).
+        저장된 ID(+비밀번호) 가 있으면 네트워크 재검증 없이 바로 신뢰하고 로드한다.
+        - 시작 시 네트워크 검증을 하면 ①버벅임 ②오프라인 시 정상 ID 도 실패
+          ③등록 0건 정상 계정이 매번 모달에 걸림 — 모두 재사용을 방해한다.
+        - ID 유효성 검증은 '처음 입력하는 순간' 에만 한다 (_request_credentials).
         """
-        stored = license_input.load_admin_id()
-        if stored:
-            config.SITE_ADMIN_ID = stored
-            user_log.info("저장된 관리자 ID 사용")
-            self._ensure_pw_then_browse()
-        else:
-            # 저장된 ID 없음 → 바로 입력 모달 (네트워크 없음)
-            self._request_admin_id(is_startup=True)
-
-    def _ensure_pw_then_browse(self) -> None:
-        """로그인 비밀번호(수정요청 이미지용)가 없으면 한 번 입력받은 뒤 목록을 로드한다.
-        비밀번호는 수정 탭 다운로드에만 필요하므로, 입력을 취소해도 목록 로드는 진행한다."""
-        if license_input.load_admin_pw() is None:
-            self._request_password(is_startup=True)
-        else:
+        stored_id = license_input.load_admin_id()
+        stored_pw = license_input.load_admin_pw()
+        if stored_id and stored_pw:
+            config.SITE_ADMIN_ID = stored_id
+            user_log.info("저장된 관리자 ID·비밀번호 사용")
             self._start_browse(append=False)
-
-    def _request_password(self, is_startup: bool) -> None:
-        """로그인 비밀번호 입력 모달 (마스킹). 저장 후 동작 이어감."""
-        # 입력 단계에선 '불러오는 중' 오버레이를 내린다 (로딩 표시 ↔ 입력 대기 모순 제거).
-        # 입력이 끝나면 _start_browse 가 로드 시점에 오버레이를 다시 띄운다.
-        self._hide_loading_overlay()
-        pw = prompt_text(
-            self,
-            title="로그인 비밀번호",
-            message="보자기카드 로그인 비밀번호를 입력하세요.",
-            placeholder="비밀번호",
-            show="●",
-        )
-        if pw:
-            license_input.save_admin_pw(pw)
-            user_log.info("로그인 비밀번호 저장 완료")
         else:
-            user_log.info("비밀번호 입력을 건너뜀 (수정요청 이미지는 받을 수 없음)")
-        # 시작 단계면 비번 유무와 상관없이 목록 로드로 진행
-        if is_startup:
-            self._start_browse(append=False)
+            # ID 또는 비밀번호가 없으면 한 창에서 함께 입력받는다.
+            config.SITE_ADMIN_ID = stored_id or ""
+            self._request_credentials(is_startup=True)
 
     def _validate_admin_id_async(self, admin_id: str, on_result) -> None:
         """
         관리자 ID 네트워크 검증을 백그라운드 스레드에서 수행.
-        on_result(status: str, msg: str) 는 항상 메인스레드에서 호출된다.
-        status 는 'valid' / 'empty' / 'error' (validate_admin_id 참고).
+        on_result(status, msg) 는 항상 메인스레드에서 호출된다. (valid/empty/error)
         """
         def work() -> None:
             status, msg = license_input.validate_admin_id(admin_id)
@@ -252,45 +222,42 @@ class BojagiDownloaderApp(ctk.CTk):
 
         threading.Thread(target=work, daemon=True).start()
 
-    def _request_admin_id(self, is_startup: bool) -> None:
+    def _request_credentials(self, is_startup: bool) -> None:
         """
-        관리자 ID 입력 모달을 띄우고, 입력값을 백그라운드로 검증.
+        관리자 ID + 로그인 비밀번호를 '한 창에서 함께' 입력받고 ID 를 검증한다.
         - is_startup=True  : 취소 시 앱 종료
-        - is_startup=False : 취소 시 아무 변경 없이 복귀 (ID 변경 메뉴)
+        - is_startup=False : 취소 시 변경 없이 복귀
 
-        검증 결과별 동작:
-        - valid : 저장 + 로드
-        - empty : 주문 0건 (틀린 ID 이거나 진짜 빈 계정) → 확인 다이얼로그.
-                  '이 ID로 계속' 이면 저장+로드, '다시 입력' 이면 재요청.
-        - error : 형식/네트워크 오류 → 에러 모달 후 재요청.
+        검증: valid → 저장(ID·비번)+로드 / empty → 확인 후 진행 / error → 재입력
+        비밀번호는 수정요청 이미지 다운로드에만 쓰이므로 비워둬도 ID 만으로 진행 가능.
         """
-        # 입력(설정) 단계에선 '불러오는 중' 오버레이를 내려, 로딩 표시와 입력 대기가
-        # 동시에 보이는 모순을 없앤다. 입력이 끝나면 검증/로드 시점에 다시 표시.
+        # 입력(설정) 단계에선 '불러오는 중' 오버레이를 내린다 (로딩 표시 ↔ 입력 대기 모순 제거).
         self._hide_loading_overlay()
-        new_id = prompt_text(
+        prefill_id = config.SITE_ADMIN_ID or (license_input.load_admin_id() or "")
+        creds = prompt_credentials(
             self,
-            title="관리자 ID 입력",
-            message=(
-                "보자기카드 관리자 ID 를 입력하세요.\n"
-            ),
-            placeholder=""
+            title="관리자 ID · 비밀번호 입력",
+            message="보자기카드 관리자 ID 와 로그인 비밀번호를 입력하세요.",
+            id_initial=prefill_id,
         )
-        if not new_id:
+        if not creds or not creds["id"]:
             if is_startup:
                 self.destroy()   # 시작 시 취소 → 종료
             return               # 변경 시 취소 → 그대로 둠
 
-        # 검증 동안 오버레이 표시 (변경 메뉴 경로는 아직 안 떠 있을 수 있음)
+        new_id = creds["id"]
+        new_pw = creds["pw"]
+
+        # 검증 동안 오버레이 표시 (입력 끝났으니 이제 로딩 표시가 맞음)
         self._show_loading_overlay("관리자 ID 확인 중...")
 
         def commit() -> None:
             license_input.save_admin_id(new_id)
+            if new_pw:
+                license_input.save_admin_pw(new_pw)
             config.SITE_ADMIN_ID = new_id
-            user_log.info("관리자 ID 저장 완료")
-            # ID 가 바뀌면 계정이 달라지므로 비밀번호도 새로 입력받는다.
-            license_input.clear_admin_pw()
-            self._hide_loading_overlay()
-            self._request_password(is_startup=True)
+            user_log.info("관리자 ID·비밀번호 저장 완료")
+            self._start_browse(append=False)
 
         def on_result(status: str, msg: str) -> None:
             if status == "valid":
@@ -309,10 +276,10 @@ class BojagiDownloaderApp(ctk.CTk):
                     self._show_loading_overlay("불러오는 중...")
                     commit()
                 else:
-                    self._request_admin_id(is_startup=is_startup)
+                    self._request_credentials(is_startup=is_startup)
             else:   # error
                 show_error(self, "관리자 ID 오류", f"확인 실패: {msg}\n\n다시 입력해 주세요.")
-                self._request_admin_id(is_startup=is_startup)
+                self._request_credentials(is_startup=is_startup)
 
         self._validate_admin_id_async(new_id, on_result)
 
@@ -524,23 +491,13 @@ class BojagiDownloaderApp(ctk.CTk):
         ).pack(side="right")
         change_id = ctk.CTkLabel(
             footer,
-            text="관리자 ID 변경",
+            text="관리자 ID · 비밀번호 변경",
             text_color=("gray50", "gray60"),
             font=ctk.CTkFont(size=12, underline=True),
             cursor="hand2",
         )
         change_id.pack(side="left")
         change_id.bind("<Button-1>", lambda _e: self._on_change_admin_id())
-
-        change_pw = ctk.CTkLabel(
-            footer,
-            text="비밀번호 변경",
-            text_color=("gray50", "gray60"),
-            font=ctk.CTkFont(size=12, underline=True),
-            cursor="hand2",
-        )
-        change_pw.pack(side="left", padx=(16, 0))
-        change_pw.bind("<Button-1>", lambda _e: self._on_change_password())
 
         # 8) 로딩 오버레이 — 화면 전체를 덮어 입력을 차단하고 "불러오는 중" 메시지를
         # 보여준다. 처음엔 숨김 (place 하지 않음). _show/_hide 로 토글.
@@ -587,24 +544,10 @@ class BojagiDownloaderApp(ctk.CTk):
             self._loading_msg.configure(text=text)
 
     def _on_change_admin_id(self) -> None:
-        """푸터의 'ID 변경' 클릭 시. 재입력 받고 (백그라운드 검증) 성공 시 새로고침."""
-        user_log.info("관리자 ID 변경 요청")
-        self._request_admin_id(is_startup=False)
-
-    def _on_change_password(self) -> None:
-        """푸터의 '비밀번호 변경' 클릭 시. 새 비밀번호를 입력받아 저장 (마스킹)."""
-        user_log.info("로그인 비밀번호 변경 요청")
-        pw = prompt_text(
-            self,
-            title="로그인 비밀번호 변경",
-            message="보자기카드 로그인 비밀번호를 입력하세요.",
-            placeholder="비밀번호",
-            show="●",
-        )
-        if pw:
-            license_input.save_admin_pw(pw)
-            user_log.info("로그인 비밀번호 저장 완료")
-            show_info(self, "완료", "비밀번호가 저장되었습니다.")
+        """푸터의 'ID·비밀번호 변경' 클릭 시. 한 창에서 ID·비밀번호를 다시 받아
+        (백그라운드 검증) 성공 시 새로고침."""
+        user_log.info("관리자 ID·비밀번호 변경 요청")
+        self._request_credentials(is_startup=False)
 
     # ──────────────────────────────────────────────────────────────────
     # 동작
