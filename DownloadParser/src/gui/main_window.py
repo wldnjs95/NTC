@@ -220,6 +220,9 @@ class BojagiDownloaderApp(ctk.CTk):
 
     def _request_password(self, is_startup: bool) -> None:
         """로그인 비밀번호 입력 모달 (마스킹). 저장 후 동작 이어감."""
+        # 입력 단계에선 '불러오는 중' 오버레이를 내린다 (로딩 표시 ↔ 입력 대기 모순 제거).
+        # 입력이 끝나면 _start_browse 가 로드 시점에 오버레이를 다시 띄운다.
+        self._hide_loading_overlay()
         pw = prompt_text(
             self,
             title="로그인 비밀번호",
@@ -261,6 +264,9 @@ class BojagiDownloaderApp(ctk.CTk):
                   '이 ID로 계속' 이면 저장+로드, '다시 입력' 이면 재요청.
         - error : 형식/네트워크 오류 → 에러 모달 후 재요청.
         """
+        # 입력(설정) 단계에선 '불러오는 중' 오버레이를 내려, 로딩 표시와 입력 대기가
+        # 동시에 보이는 모순을 없앤다. 입력이 끝나면 검증/로드 시점에 다시 표시.
+        self._hide_loading_overlay()
         new_id = prompt_text(
             self,
             title="관리자 ID 입력",
